@@ -39,11 +39,9 @@ File.open('metrics-collectl.txt', 'w') do |mfile|
         exit
       end	 	
       
-      cleanline = line.gsub(/\n/,'')
+      cleanline = line.gsub(/\n/,'')      
 
-      #puts "Metric line: #{cleanline}"
-
-      #Write this out to a flat file
+      # Write this out to a flat file
       mfile.puts(cleanline) 
       mfile.flush()
 
