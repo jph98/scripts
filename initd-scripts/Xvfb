@@ -1,0 +1,54 @@
+#
+# Specify run levels 3 and 5 with correct priorities
+# chkconfig: 35 90 12
+# description: Mango Xvfb script
+# author jholloway@mango-solutions.com
+#
+# Start the service
+EXEC_CMD="/usr/X11/bin/Xvfb"
+EXEC_OPTIONS=":5 -screen 0 1600x1200x16"
+EXEC_OUTPUT="/tmp/Xvfb.out"
+LOCK_FILE="/var/lock/Xvfb"
+
+start() {
+        #Check for the existence of Xvfb
+        command -v $EXEC_CMD >/dev/null 2>&1 || { echo "Could not find $EXEC_CMD" >&2; exit 1; }
+        echo -n "Starting $CMDEXEC"
+        $EXEC_CMD $EXEC_OPTIONS>>$EXEC_OUTPUT 2>&1 &
+
+        ### Create the lock file ###
+        touch $LOCK_FILE
+        echo -n "Xvfb started successfully"
+        echo
+}
+
+stop() {
+
+        echo -n "Stopping Xvfb server: "
+        killproc $EXEC_CMD
+
+        ### Now, delete the lock file ###
+        rm -f $LOCK_FILE
+        echo
+}
+
+### main logic ###
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  status)
+        status xvfb
+        ;;
+  restart|reload|condrestart)
+        stop
+        start
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|reload|status}"
+        exit 1
+esac
+exit 0
