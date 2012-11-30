@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 #
-# Collect processes script
+# Number of open files monitor
 #
 numopenfiles="lsof | wc -l"
 

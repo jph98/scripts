@@ -1,7 +1,7 @@
 #!/usr/bin/ruby
 
 #
-# Collect processes script
+# Monitor processes script (Java based)
 #
 numproc="ps -ef | grep java | wc -l"
 

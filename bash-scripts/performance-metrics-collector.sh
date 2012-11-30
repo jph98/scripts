@@ -1,4 +1,3 @@
-
 #!/bin/bash
 #
 # Bash script to collect various metrics provided by the commands on a given server
@@ -31,12 +30,10 @@ function start {
 
   # Remote operations for metrics collection
   scp $scriptsbundle $remoteuser@$serverhost:~/
-  #ssh $remoteuser@$serverhost "cd /tmp; mkdir -p remotecollect; cd remotecollect; unzip -o /tmp/$scriptsbundle; rm -f metrics.txt"
   ssh $remoteuser@$serverhost "unzip -o $scriptsbundle; rm -f metrics*.txt"
   echo -ne "\nCollecting metrics on $serverhost\n\n"
   for cmd in "${commands[@]}"
   do	
-   #pid=`ssh $remoteuser@$serverhost "nohup /tmp/remotecollect/$cmd > /dev/null & echo \\$!"`
    pid=`ssh $remoteuser@$serverhost "nohup ~/$cmd > /dev/null & echo \\$!"`
    echo "Pid is $pid" 
 
