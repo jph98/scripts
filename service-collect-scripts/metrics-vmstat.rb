@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 #
-# VMStat script
+# VMStat collector script
 #
 vmstat="vmstat 1 10"
 
