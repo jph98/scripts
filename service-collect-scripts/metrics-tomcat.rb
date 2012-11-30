@@ -10,7 +10,6 @@ require 'rexml/document'
 # This requires the manager application to be made available (in tomcat-users.xml)
 # with a username tomcat and password tomcat 
 #
-
 class TomcatStatus
 
 	def initialize(url)
