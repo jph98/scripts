@@ -44,6 +44,8 @@
 
 #####Backtick
 
+Take the output from a variable and store this:
+
     numscripts=`ls -l metrics*.rb 2> /dev/null | wc -l`
 
 #####Subshell
