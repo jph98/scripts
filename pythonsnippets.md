@@ -210,3 +210,28 @@ Map a specific function to a list of integers:
 #####Sleep
 
 	time.sleep(interval)
+
+###Decorators and Reuse
+
+Lots of examples of real world decorators here - http://wiki.python.org/moin/PythonDecoratorLibrary
+
+	class logger(object):
+	
+	    def __init__(self, f):
+	        self.f = f
+	
+	    def __call__(self):
+	        print "call dec"
+	        self.f()
+	        print "done dec"
+	
+	
+	@logger
+	def myfunction():
+	    print "\tmyfunction"
+	
+	myfunction()
+	
+###Generators
+
+Examples here - http://linuxgazette.net/100/pramode.html
