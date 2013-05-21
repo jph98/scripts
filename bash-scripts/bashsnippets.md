@@ -1,16 +1,15 @@
 #Bash Snippets
 
 
-##Basics and Rules of Thumb
+###Basics and Rules of Thumb
 
 
 * Always use round brackets for numeric comparisons.  With square brackets you have to use -eq instead of == ascii comparison
 
 
-##Variable Handing
+###Variable Handing
 
-
-###Die unless arguments are correct
+####Die unless arguments are correct
 
 
 die () {
@@ -20,40 +19,34 @@ die () {
 
 [ "$#" -eq 3 ] || die "Usage: $0 arguments "
 
-Check Argument Set Or Default Value
------------------------------------
+####Check Argument Set Or Default Value
 
 [ -z "$RPATH" ] && RPATH="/usr/bin/R"
 
 
-Shifting variables
-------------------
+####Shifting variables
 
 # Grab the servername then shift
 SERVER=$1
 shift
 
-Looping Constructs
-==================
+###Looping Constructs
 
-Simple for loop
----------------
+
+#####Simple for loop
 
 for JMETERTEST in "$@"
 do
     <stuff>
 done
 
-Executing Things
-================
+###Executing Things
 
-Backtick
---------
+#####Backtick
 
 numscripts=`ls -l metrics*.rb 2> /dev/null | wc -l`
 
-Subshell
---------
+#####Subshell
 
 for cmd in $(ls metrics*.rb)
 
