@@ -1,4 +1,4 @@
-#Bash Snippets
+##Bash Snippets
 
 
 ###Basics and Rules of Thumb
