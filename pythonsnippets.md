@@ -171,6 +171,10 @@ Map a specific function to a list of integers:
 	foo = [1,2,3,4]
 	print map(lambda x: x * 2 + 10, foo)
 
+#####Writing Functional Loops
+
+http://www.ibm.com/developerworks/linux/library/l-prog/index.html
+
 ###Regular Expressions
 
 #####Capture a regular expression and return matched group
@@ -214,6 +218,8 @@ Map a specific function to a list of integers:
 ###Decorators and Reuse
 
 Lots of examples of real world decorators here - http://wiki.python.org/moin/PythonDecoratorLibrary
+
+and metaprogramming here - http://www.onlamp.com/lpt/a/3388
 
 	class logger(object):
 	
