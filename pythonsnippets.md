@@ -84,3 +84,20 @@ Other file/directory operations are available in shutil - http://docs.python.org
 
     if not os.geteuid()==0:
       sys.exit("\nYou need to be root to run this script")
+
+###Concurrency
+
+#####Forking several processes and waiting for completion
+
+    jobs = []
+
+	# Filter out svn metadata (e.g. .svn), only process directories
+	if jobs in jobs:
+		process = Process(target=<function>, args=(<argstofunction>,))
+		jobs.append(process)
+		process.daemon = True
+		process.start()
+
+	# Wait for each daemonized job to finish up
+	for job in jobs:
+		job.join()
