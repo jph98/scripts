@@ -19,6 +19,10 @@
 
 ###Conversions and Types
 
+#####Display methods on an object
+
+	dir(itertools)
+	
 #####Handling Doubles
 
 	percent_failed = (Decimal(num_failed) / Decimal(total_num)) * 100
@@ -102,8 +106,72 @@ Other file/directory operations are available in shutil - http://docs.python.org
 ######Processing a directory and filtering by list comprehensions
 
     files = [ f for f in listdir(path) if isfile(join(path,f))
-    
-##Regular Expressions
+
+###Collections
+
+#####Tuple Example
+
+A tuple is an immutable list
+
+	 tup = ("1", "2", "3") 
+	 
+#####List Example
+
+Create a list and slice based on the second item to the end
+
+	example_list = ["1","2","3"] 
+	example_list[:2]
+	example_list.append("4")
+	
+List arithmetic with:
+
+	[1,2] + [3,4]
+
+Checking for an item in a list
+
+	if "1" in example_list:
+	
+Checking for the index of an item in a list
+
+	example_list.index("2")
+	
+#####Dictionary Example
+
+Operator is also very helpful here - http://docs.python.org/2/library/operator.html
+
+	example_dict = {"a":"1", "b":"2"}
+	example_dict["a"] = "5" 
+	example_dict.keys()
+	example_dict.values()	
+ 
+###List Comprehensions and Functions
+
+See this article for more - http://www.secnetix.de/olli/Python/list_comprehensions.hawk
+
+#####Simple Comprehension
+
+Applying a function to an item in each list:
+
+	words = ["cat", "dog", "apple"]
+	[w.upper() for w in words]
+
+#####Filtering a list of words based on a given function:
+
+	words = ["cat", "dog", "ab", "blah"]
+	[item for item in words if len(item) > 2] 
+	
+#####Joining a list of items in a dict
+
+	return ";".join(["s" % (k, v) for k, v in params.items()]) 
+
+#####Lambda Example
+
+Map a specific function to a list of integers:
+
+	foo = [1,2,3,4]
+	print map(lambda x: x * 2 + 10, foo)
+
+###Regular Expressions
 
 #####Capture a regular expression and return matched group
 
