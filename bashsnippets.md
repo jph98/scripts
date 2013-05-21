@@ -50,3 +50,29 @@
 
     for cmd in $(ls metrics*.rb)
 
+###Working With Arrays
+
+#####Adding an item to an array
+
+    remotepids=("${remotepids[@]}" $pid)
+    
+#####Checking an array length
+
+    if (( ${#remotepids[@]} > 0 )); then    
+    echo -ne "\nStarted processes [ ${remotepids[@]} ] \n"
+    echo ${remotepids[@]} > $pidsfile
+
+###Dates
+
+    `date +"%m-%d-%y_%T"-$serverhost`
+    
+###Functions
+
+See: http://www.linuxjournal.com/content/return-values-bash-functions
+
+#####Basic
+
+    function clean {
+    } 
+
+
