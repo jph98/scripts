@@ -3,9 +3,9 @@
 import urllib
 import json
 
-machine="cisjava1.mango.local"
+machine="javamachine1"
 
-url = "http://cismaster:8080/jenkins/computer/" + machine + "/api/json"
+url = "http://ciserver/jenkins/computer/" + machine + "/api/json"
 
 json_data = urllib.urlopen(url).read()
 
