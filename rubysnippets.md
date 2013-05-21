@@ -66,6 +66,14 @@ Then import with:
   text.upcase()
   text.capitalize()
 
+###Files and Directories
+
+Listing files matching a pattern in a given directory:
+
+    Dir.glob('*.rb').each do|f|
+        puts f
+    end
+    
 ###Networking
 
 #####HTTP Request
