@@ -1,7 +1,7 @@
 Bash Snippets
 =============
 
-Die unless arguments are correct
+h3. Die unless arguments are correct
 --------------------------------
 
 die () {
