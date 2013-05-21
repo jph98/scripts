@@ -16,6 +16,22 @@
 
     version = raw_input("\nEnter Option (or return to skip): ")
 
+#####Option parsing with optparse
+
+    parser = OptionParser()    
+    	parser.add_option("-b", action="store_true", dest="buildall", default=False, help="Rebuild")
+    	parser.add_option("-a", dest="packagename", help="Append a name")
+    	(options, args) = parser.parse_args()
+    	
+    	if options.buildall:
+    		print "Building all"
+    		build_all_packages()
+    	elif options.packagename:		
+    		add_description_from_file(options.packagename)
+    	else:
+    		print parser.print_help()
+
+
 ###Command Execution
 
 #####Executing a command and return the output
