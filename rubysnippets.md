@@ -66,6 +66,31 @@ Then import with:
   text.upcase()
   text.capitalize()
 
+###Collections
+
+Hamster is worth a look - https://github.com/harukizaemon/hamster
+
+Simple array:
+
+    array = [1, 2, 3, 4]
+    array.push(5)
+    array << 6
+    array.pop()
+    array.delete()
+    array.length()
+    
+
+Simple hash definition and iteration:
+
+    hsh = {:a => 1, :b => 2}
+    hash.each_key do |key|
+        puts key
+    end
+    
+    hash.each_pair do |k,v|
+        puts k + ":" + v
+    end
+
 ###Files and Directories
 
 Listing files matching a pattern in a given directory:
