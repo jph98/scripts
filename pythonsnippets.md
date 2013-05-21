@@ -2,7 +2,15 @@
 
 ###Class Skeleton
 
-	class ExtensionMapper(object):
+	class Person(object):
+
+		name = "Foo"
+	
+		def getname(self):
+			print self.name
+
+	person = Person()
+	person.getname()
 
 #####Private method
 
