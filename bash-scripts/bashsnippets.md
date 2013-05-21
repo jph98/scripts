@@ -1,18 +1,17 @@
-Bash Snippets
-=============
+#Bash Snippets
 
-Basics and Rules of Thumb
-=========================
+
+##Basics and Rules of Thumb
+
 
 * Always use round brackets for numeric comparisons.  With square brackets you have to use -eq instead of == ascii comparison
 
 
-Variable Handing
-================
+##Variable Handing
 
 
-Die unless arguments are correct
---------------------------------
+###Die unless arguments are correct
+
 
 die () {
     echo >&2 "$@"
