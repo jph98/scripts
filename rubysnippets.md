@@ -1,5 +1,89 @@
-#Snippets
+##Ruby Snippets
+
+###Classes
+
+######Skeleton
+
+    class JenkinsPoller
+      def initialize(jenkins_url)
+    		@jenkins_url = jenkins_url
+    	end
+    end
+    j = JenkinsPoller.new("myurl")
+    
+######Getters and Setters
+
+Accessors and getters can be defined automatically
+
+    class Match
+      attr_accessor :home
+      attr_reader :away
+      attr_writer :blah
+    end
+    
+Then import with:
+
+    require './match'
+    
+#####Main Method
+
+    if __FILE__ == $0
+
+#####Private Method
+
+    # Private method comment
+    private
+    def get_detail(doc)
+      # Content
+    end
 
 ###Variable Handing
 
-####Die unless arguments are correct
+#####Die unless arguments are correct
+
+###Looping
+
+#####When Loop
+
+    case colours
+
+      when "blue"
+        puts "Writing status for: #{project} [Success]"
+      end 
+    end
+
+#####Each Statement
+
+    jobs.each do |j|
+      print j
+    done
+
+###Text Parsing
+
+#####Changing Case
+
+  text.downcase()
+  text.upcase()
+  text.capitalize()
+
+###Networking
+
+#####HTTP Request
+
+    begin
+      uri = URI.parse(url)
+      http = Net::HTTP.new(uri.host, uri.port)
+      request = Net::HTTP::Get.new(uri.request_uri)
+      return http.request(request)
+    rescue Timeout::ErrorNet::HTTPBadResponse, Net::HTTPHeaderSyntaxError, Net::ProtocolError => e
+      abort("Could not access server for: #{@url}" + e)
+    end 
+
+######Parsing HTML
+
+    doc = Nokogiri::HTML(open(parse_url))
+    matches="//div/ol[contains(@class,'competitions unstyled')"
+    details = doc.search(matches).map do |match|
+      @match.link = match.at_xpath("a")[:href]
+    end
+    
