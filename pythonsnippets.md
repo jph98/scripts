@@ -44,7 +44,34 @@
     		lines = o.split("\n")	
     	lines = [line for line in lines if line is not ""]
     	return lines	 	
-      
+
+##File/Directory Handling
+
+#####Concatenate file/directory
+
+     namepart + os.sep + "DESCRIPTION"
+     
+#####Open a file with auto closing
+
+    with closing(open(file, "rb")) as f:
+
+#####Processing a gzip file
+
+    with closing(tarfile.open(filename, "r:gz")) as tar:
+        	descfile = get_description_name(filename)
+    		content = tar.extractfile(descfile).read()
+    		return content
+            
+#####Moving a file
+
+Other file/directory operations are available in shutil - http://docs.python.org/2/library/shutil.html
+
+    shutil.move(packages_file, packages_file + ".bk")
+
+######Processing a directory and filtering by list comprehensions
+
+    files = [ f for f in listdir(path) if isfile(join(path,f))
+    
 ##Regular Expressions
 
 #####Capture a regular expression and return matched group
