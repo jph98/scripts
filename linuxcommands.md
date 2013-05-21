@@ -4,4 +4,4 @@
 
 #####Start a Python webserver to serve files
 
-  python -m SimpleHTTPServer
+    python -m SimpleHTTPServer
