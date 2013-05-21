@@ -4,7 +4,7 @@ Bash Snippets
 Basics and Rules of Thumb
 =========================
 
-# Always use round brackets for numeric comparisons.  With square brackets you have to use -eq instead of == ascii comparison
+* Always use round brackets for numeric comparisons.  With square brackets you have to use -eq instead of == ascii comparison
 
 
 Variable Handing
