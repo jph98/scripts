@@ -1,5 +1,24 @@
 ##Python Snippets
 
+###Class Skeleton
+
+	class ExtensionMapper(object):
+
+#####Private method
+
+	"""[private] Serialize the status as JSON"""
+	def __serialize_status():
+
+###Conversions and Types
+
+#####Handling Doubles
+
+	percent_failed = (Decimal(num_failed) / Decimal(total_num)) * 100
+
+#####Strings and Formatting
+
+	return "{0} Complete ({1}% Failed) of {2}".format(complete, failed, total)
+
 ###Variable Handing
 
 ####Main Method
@@ -47,6 +66,10 @@
 
 ###File/Directory Handling
 
+#####Existence of a file
+
+	if os.path.exists(specificfile):
+	
 #####Concatenate file/directory
 
      namepart + os.sep + "DESCRIPTION"
@@ -78,6 +101,12 @@ Other file/directory operations are available in shutil - http://docs.python.org
 
     re.search(r"/([0-9.]+)/", o).group(1)
 
+#####Matching a specific pattern
+
+	modpat = re.compile(r".*(cat_.*.txt)")
+	name = modpat.match(p)
+	if name:
+
 ###Operating System Level
 
 ####Ensuring a user is root 
@@ -101,3 +130,7 @@ Other file/directory operations are available in shutil - http://docs.python.org
 	# Wait for each daemonized job to finish up
 	for job in jobs:
 		job.join()
+
+#####Sleep
+
+	time.sleep(interval)
