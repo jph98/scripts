@@ -134,7 +134,11 @@ Listing files matching a pattern in a given directory:
 	File.delete(filename)
 	FileUtils.rm_rf("dirname")
 	FileUtils.mkdir("dirname")
-    
+
+######Checking if a file exists
+
+	File.exist?
+	
 ###Utilities
 
 #####Zipping a set of files
