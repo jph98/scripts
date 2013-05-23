@@ -84,13 +84,17 @@ Then import with:
       print j
     done
 
-###Text Parsing
+###Text Handling
 
 #####Changing Case
 
-  text.downcase()
-  text.upcase()
-  text.capitalize()
+    text.downcase()
+    text.upcase()
+    text.capitalize()
+    
+#####Checking empty string
+
+    text.empty?
 
 ###Collections
 
