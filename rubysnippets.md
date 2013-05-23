@@ -182,9 +182,11 @@ Listing files matching a pattern in a given directory:
 
 #####Creating a thread
 
-	  threads << Thread.new(page) { |myPage|
-	  	# Do stuff
-	  end
+	t1 = Thread.new(page) do |myPage|
+	    # Do stuff
+	end
+	t1.join
+	t2.join
 
 
 ###Networking
