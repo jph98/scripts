@@ -180,6 +180,12 @@ Listing files matching a pattern in a given directory:
 		b.resume
 	end
 
+#####Creating a thread
+
+	  threads << Thread.new(page) { |myPage|
+	  	# Do stuff
+	  end
+
 
 ###Networking
 
