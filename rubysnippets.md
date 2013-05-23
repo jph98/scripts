@@ -10,7 +10,33 @@
     	end
     end
     j = JenkinsPoller.new("myurl")
+
+#####RSpec Skeleton
+
+spec_helper.rb
+
+    endrequire_relative "../classundertest"
+    require "yaml"
+    require 'spec_helper'
+
+classundertest_spec.rb
+
+    describe ClasSUnderTest do
     
+        # before
+    	before :each do
+    		binary = "../jmeter-2.6/bin/jmeter -n -t "
+    		scripts = "jmeterscripts/*.jmx"
+        	@runner = JMeterRunner.new binary, scripts
+    	end 
+    
+    	describe "#new" do
+    		it "takes two parameters and returns a JMeterRunner object" do
+    			@runner.should be_an_instance_of JMeterRunner
+    		end
+    	end	
+    end
+
 ######Getters and Setters
 
 Accessors and getters can be defined automatically
