@@ -129,6 +129,12 @@ Listing files matching a pattern in a given directory:
         puts f
     end
     
+######Removing a file
+
+	File.delete(filename)
+	FileUtils.rm_rf("dirname")
+	FileUtils.mkdir("dirname")
+    
 ###Utilities
 
 #####Zipping a set of files
