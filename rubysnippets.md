@@ -148,6 +148,38 @@ Listing files matching a pattern in a given directory:
 			    zipfile.add(f, f)
 			  end
 	end
+	
+#####Timing Code
+
+	start = now.milliseconds
+	end = now.milliseconds
+	puts "Time taken " + end - start
+
+###Concurrency
+
+#####Fibers Example
+
+	require("fiber") 
+
+	a = Fiber.new do    
+	    loop do
+	    	puts "First Thread"
+	    	Fiber.yield
+		end
+	end
+	
+	b = Fiber.new do    
+	    loop do
+	    	puts "Second Thread"
+	    	Fiber.yield
+		end
+	end
+	
+	loop do 
+		a.resume
+		b.resume
+	end
+
 
 ###Networking
 
