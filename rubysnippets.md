@@ -129,6 +129,16 @@ Listing files matching a pattern in a given directory:
         puts f
     end
     
+###Utilities
+
+#####Zipping a set of files
+
+    Zip::ZipFile.open(name, Zip::ZipFile::CREATE) do |zipfile|
+    		collectscripts.each do |f|
+			    zipfile.add(f, f)
+			  end
+	end
+
 ###Networking
 
 #####HTTP Request
