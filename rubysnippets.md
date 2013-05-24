@@ -83,6 +83,12 @@ Then import with:
         puts "Writing status for: #{project} [Success]"
       end 
     end
+    
+#####Infinite Loop
+
+	loop do 
+		puts "to infinity and beyond"
+	end
 
 #####Each Statement
 
@@ -160,6 +166,12 @@ Listing files matching a pattern in a given directory:
 	start = now.milliseconds
 	end = now.milliseconds
 	puts "Time taken " + end - start
+	
+#####Sleep
+
+Sleep for 5 seconds
+
+	sleep 5	
 
 ###Concurrency
 
