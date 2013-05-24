@@ -150,7 +150,15 @@ Listing files matching a pattern in a given directory:
 ######Checking if a file exists
 
 	File.exist?
-	
+
+###Regular Expressions
+
+#####Matching a simple string (first group)
+
+Take  "metrics-blah.rb":
+
+	name.match(/(.*)\.rb/)[1]
+
 ###Utilities
 
 #####Zipping a set of files
