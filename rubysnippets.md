@@ -37,6 +37,12 @@ classundertest_spec.rb
     	end	
     end
 
+###Methods
+
+! indicates that the object will be modified as a result of the call
+
+    foo.downcase! 
+    
 ######Getters and Setters
 
 Accessors and getters can be defined automatically
@@ -147,7 +153,7 @@ Listing files matching a pattern in a given directory:
     		collectscripts.each do |f|
 			    zipfile.add(f, f)
 			  end
-	end
+    end
 	
 #####Timing Code
 
