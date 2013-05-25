@@ -1,5 +1,7 @@
 ##Ruby Snippets
 
+Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
+
 ###Classes
 
 ######Skeleton
