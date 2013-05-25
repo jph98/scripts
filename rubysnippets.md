@@ -154,7 +154,6 @@ Cheap:
 
 	"%.2f" % 9.5
 
-	
 ###Text Handling
 
 #####Changing Case
@@ -225,7 +224,7 @@ or the traditional way:
 
 	name.match(/(.*)\.rb/)[1]
 
-###Execeptions
+###Exceptions
 
 Basic pattern is (n.b. the begin is optional):
 
@@ -237,6 +236,9 @@ Basic pattern is (n.b. the begin is optional):
 	
 The exception.backtrace gives you a lot more
 
+You can also use rescue to define a default value when something fails
+
+	some_hash[:name].downcase rescue "No name"
 
 ###Utilities
 
