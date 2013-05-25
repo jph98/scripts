@@ -24,6 +24,32 @@
     end
     j = JenkinsPoller.new("myurl")
 
+#####Singleton example
+
+	class << self
+	    def method
+		puts "My method"
+	    end
+  	end
+  
+###Modules
+
+Modules just provide a way of grouping classes, methods together
+
+	module Blah
+		def one
+		end
+		
+		def two
+		end
+	end
+
+and we can include the behaviour as a mixin
+
+	class Example
+		include Blah
+	end
+
 #####RSpec Skeleton
 
 spec_helper.rb
