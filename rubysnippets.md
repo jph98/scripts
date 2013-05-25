@@ -191,12 +191,15 @@ Print name of sccript
 
 	puts "Usage: #{$0} <start|stop>, arguments: #{$1}"
 	
+###Text Handling
+
+#####Printing Formatted Date and Time
+
+	Time.now.strftime("%d/%m/%Y %H:%M")
 
 #####Formatting a Decimal
 
 	"%.2f" % 9.5
-
-###Text Handling
 
 #####Changing Case
 
