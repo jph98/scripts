@@ -1,6 +1,7 @@
 ##Ruby Snippets
 
-Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
+* Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
+* 21 tricks - http://www.rubyinside.com/21-ruby-tricks-902.html
 
 ###Classes
 
