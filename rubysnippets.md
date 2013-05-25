@@ -40,6 +40,20 @@ classundertest_spec.rb
     	end	
     end
 
+###Comments
+
+Simple comment
+	
+	# This is a comment
+	
+Multiline comment
+
+	=
+	This is a 
+	multiline 
+	comment
+	=
+
 ###Methods
 
 ! indicates that the object will be modified as a result of the call
@@ -72,6 +86,18 @@ Then import with:
       # Content
     end
 
+#####Requires
+
+	require "some_gem"
+	require_relative "../another.rb"
+	%w{rubygems daemons eventmachine}.each { |x| require x }
+	
+###Conditionals
+
+Make use of "and", "or" for single one liners to eliminate if/else statements
+
+	list << item and puts "Added item" unless item.length < 2
+
 ###Looping
 
 #####When Loop
@@ -103,7 +129,13 @@ Types of variable:
 	@instance_variable
 	@@class_variable
 	$global_variable
-	
+
+#####Ruby Symbols
+
+It's an object with an integer and string representation:
+
+	:mysymbol
+
 #####Guarding against nil
 
 	unless @controller.nil
@@ -118,6 +150,9 @@ Cheap:
 		puts "Argument: #{a}"
 	end
 
+#####Formatting a Decimal
+
+	"%.2f" % 9.5
 
 	
 ###Text Handling
@@ -144,7 +179,10 @@ Simple array:
     array.pop()
     array.delete()
     array.length()
-    
+
+You can also create an array of strings quickly with
+
+	%w(words in my array)
 
 Simple hash definition and iteration:
 
@@ -179,9 +217,26 @@ Listing files matching a pattern in a given directory:
 
 #####Matching a simple string (first group)
 
-Take  "metrics-blah.rb":
+Convenience method
+
+	name[/(.*)\.rb/]
+	
+or the traditional way:
 
 	name.match(/(.*)\.rb/)[1]
+
+###Execeptions
+
+Basic pattern is (n.b. the begin is optional):
+
+	begin
+		do_division_by_zero
+	rescue => exception
+		puts exception.backtrace
+	end
+	
+The exception.backtrace gives you a lot more
+
 
 ###Utilities
 
