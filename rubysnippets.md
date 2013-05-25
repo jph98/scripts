@@ -69,10 +69,6 @@ Then import with:
       # Content
     end
 
-###Variable Handing
-
-#####Die unless arguments are correct
-
 ###Looping
 
 #####When Loop
@@ -95,13 +91,32 @@ Then import with:
     jobs.each do |j|
       print j
     done
-    
+
+###Variables
+
+Types of variable:
+
+	CONSTANT = "ralph"
+	@instance_variable
+	@@class_variable
+	$global_variable
+	
 #####Guarding against nil
 
 	unless @controller.nil
 		@controller.stop()
 	end
 
+#####Command Line Arguments Handling
+
+Cheap:
+
+	ARGV.each do|a|
+		puts "Argument: #{a}"
+	end
+
+
+	
 ###Text Handling
 
 #####Changing Case
