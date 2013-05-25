@@ -95,6 +95,12 @@ Then import with:
     jobs.each do |j|
       print j
     done
+    
+#####Guarding against nil
+
+	unless @controller.nil
+		@controller.stop()
+	end
 
 ###Text Handling
 
