@@ -114,9 +114,10 @@ Make use of "and", "or" for single one liners to eliminate if/else statements
 
     case colours
 
-      when "blue"
+      when "blue", "red"
         puts "Writing status for: #{project} [Success]"
-      end 
+      end
+      
     end
     
 #####Infinite Loop
@@ -159,6 +160,11 @@ Cheap:
 	ARGV.each do|a|
 		puts "Argument: #{a}"
 	end
+	
+Print name of sccript
+
+	puts "Usage: $0 <start|stop, you provided arguments: $1"
+	
 
 #####Formatting a Decimal
 
