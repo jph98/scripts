@@ -163,7 +163,7 @@ Cheap:
 	
 Print name of sccript
 
-	puts "Usage: $0 <start|stop, you provided arguments: $1"
+	puts "Usage: #{$0} <start|stop>, arguments: #{$1}"
 	
 
 #####Formatting a Decimal
