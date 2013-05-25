@@ -3,6 +3,16 @@
 * Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
 * 21 tricks - http://www.rubyinside.com/21-ruby-tricks-902.html
 
+###irb
+
+.irbc allows you to setup default options
+
+	require 'rubygems'
+	require 'wirble'
+	Wirble.init
+	Wirble.colorize
+
+
 ###Classes
 
 ######Skeleton
@@ -262,6 +272,10 @@ Sleep for 5 seconds
 
 	sleep 5	
 
+###MetaProgramming
+
+See http://skilldrick.co.uk/2011/02/really-really-simple-ruby-metaprogramming/
+
 ###Concurrency
 
 #####Fibers Example
@@ -294,7 +308,6 @@ Sleep for 5 seconds
 	end
 	t1.join
 	t2.join
-
 
 ###Networking
 
