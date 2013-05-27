@@ -12,6 +12,9 @@
 	Wirble.init
 	Wirble.colorize
 
+Exit a script with:
+
+	abort("Message")
 
 ###Classes
 
