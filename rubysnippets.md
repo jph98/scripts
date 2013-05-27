@@ -166,6 +166,10 @@ Types of variable:
 	@instance_variable
 	@@class_variable
 	$global_variable
+	
+Refer to a constant with:
+
+	ClassName::CONSTANT
 
 #####Ruby Symbols
 
