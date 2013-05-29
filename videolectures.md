@@ -25,4 +25,13 @@ Refactoring
 
 1. Aloha Ruby - http://www.youtube.com/watch?v=DC-pQPq0acs
 * Don't ask, Tell - send a message to a class to do something.  Don't ask for internal state and perform some task
+* Low Coupling - A and B depend on each other.  If we change B we don't break A.  Makes change easier.
+* Grouping behaviour with the data it operates on
+* Null Object Pattern
+* Depend Upon Abstraction (ActiveRecord instead of SQL).  Abstractions are leaky.
+* Shotgun Surgery - opening up 30 files and changing things.  We want to be able to open up one thing and change things
+ 
+Therapeutic Refactoring
+-----------------------
 
+http://www.youtube.com/watch?v=J4dlF0kcThQ
