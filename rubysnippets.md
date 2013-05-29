@@ -58,6 +58,14 @@ Symbols are a way to reuse words over and over again - they exist in memory only
 
 & turns a block into a proc (which can then be called)
 
+######Null Object Pattern
+
+Encapsulating default values in a null object class to reduce conditionals 
+
+	@contact = contact || NullContact.new
+
+Replace conditional with polymorphism
+
 ###Modules
 
 Modules just provide a way of grouping classes, methods together
@@ -101,6 +109,11 @@ classundertest_spec.rb
     		end
     	end	
     end
+    
+#####Stubbing and Mocking Methods
+
+Use RSpec Mocks - https://www.relishapp.com/rspec/rspec-mocks/v/2-3/docs/method-stubs
+
 
 ###Comments
 
