@@ -192,6 +192,12 @@ Map allows you to pass an element in an array to an expression:
 
 Is also called reduce or fold in other languages.  See: http://blog.jayfields.com/2008/03/ruby-inject.html
 
+	orders.map(&:amount).inject(0) { |sum, amount| amount + sum }
+
+Ruby 1.9 hack:
+
+	orders.map(&:amount).inject(0, :+)
+
 #####Find All
 
 Find all elements matching the expression:
@@ -276,6 +282,18 @@ Print name of sccript
 #####Checking empty string
 
     text.empty?
+
+#####Checking a range
+
+You can define arange as follows:
+
+	(start...end)
+	
+and can check between those values (without instantiating all the objects inbetween) with:
+
+	def empty?
+		@arr.empty? # Implicitly returned.
+	end
 
 ###Collections
 
