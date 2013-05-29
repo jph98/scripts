@@ -135,7 +135,13 @@ Accessors and getters can be defined automatically
 Then import with:
 
     require './match'
-    
+
+Boolean methods can be defined as follows (with ? as part of the method name):
+
+	def empty?
+		@arr.empty? # Implicitly returned.
+	end
+  
 #####Main Method
 
     if __FILE__ == $0
