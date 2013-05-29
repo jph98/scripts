@@ -34,7 +34,30 @@ Exit a script with:
 		puts "My method"
 	    end
   	end
-  
+  	
+#####Struct Example
+
+See: http://blog.steveklabnik.com/posts/2012-09-01-random-ruby-tricks--struct-new
+
+Provides a way to create simple classes on the fly with attributes (albeit up-front):
+
+	class Point < Struct.new(:x, :y)
+	end
+	
+We also have OStructs as well, on which you can arbritrarily create attributes:
+
+	record = OpenStruct.new(:name=>'jay')
+
+#####Symbols
+
+Symbols are a way to reuse words over and over again - they exist in memory only once
+
+	patient = {:ruby => "red"}
+
+#####Blocks and Procs
+
+& turns a block into a proc (which can then be called)
+
 ###Modules
 
 Modules just provide a way of grouping classes, methods together
@@ -137,16 +160,46 @@ Make use of "and", "or" for single one liners to eliminate if/else statements
 
 	list << item and puts "Added item" unless item.length < 2
 
+###Enumerables
+
+######Select
+
+You can filter an array given the select keywords
+
+	@filtered_orders = @orders.select { |order|
+		order.placed <= end_date
+	}
+	
+#####Map
+
+Map allows you to pass an element in an array to an expression:
+
+	items = [2,4,6,8]
+	items.map { |item|
+		item*2
+	}
+	
+	=> [4, 8, 12, 16]
+
+
+#####Inject
+
+Is also called reduce or fold in other languages.  See: http://blog.jayfields.com/2008/03/ruby-inject.html
+
+#####Find All
+
+Find all elements matching the expression:
+
+	items.find_all{ |item| item % 4 == 0 }
+
 ###Looping
 
 #####When Loop
 
     case colours
-
       when "blue", "red"
         puts "Writing status for: #{project} [Success]"
-      end
-      
+      end      
     end
     
 #####Infinite Loop
