@@ -48,6 +48,19 @@ We also have OStructs as well, on which you can arbritrarily create attributes:
 
 	record = OpenStruct.new(:name=>'jay')
 
+#####Reflection
+
+You can automatically create variables with by defining a headers array full of symolbs and calling instance_Variable_set.  In this case we use arrays:
+
+	HEADERS.each do |name| 
+		instance_variable_set("@#{name}", [])		
+	end
+	
+then later on if you want to access a specific variable and add a value you to it you can use:
+
+	ivar = holder.instance_variable_get("@#{item}")
+	ivar.push(vals[idx])
+
 #####Symbols
 
 Symbols are a way to reuse words over and over again - they exist in memory only once
@@ -235,10 +248,18 @@ Find all elements matching the expression:
 
 #####Each Statement
 
+Simple each statement here:
+
     jobs.each do |j|
       print j
     done
 
+You can also access the index with the each_with_index helpr:
+
+	jobs.each_with_index do |job, idx|
+	end
+	
+	
 ###Variables
 
 Types of variable:
