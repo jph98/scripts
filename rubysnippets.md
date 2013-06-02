@@ -307,6 +307,11 @@ Print name of sccript
 
 	"%.2f" % 9.5
 
+#####Calculating a Formatted Percentage
+
+	@rate = (@success_tot.to_f / @success.length.to_f) * 100
+	formatted_rate = "%.2f" % @rate
+	
 #####Changing Case
 
     text.downcase()
