@@ -192,6 +192,15 @@ Make use of "and", "or" for single one liners to eliminate if/else statements
 
 	list << item and puts "Added item" unless item.length < 2
 
+Standard if/else blocks with elsif
+
+	if item == :success
+    			holder.push_success(values[idx])
+	    	elsif item == :latency
+    			holder.push_latency(values[idx])
+    		else
+    			ivar.push(values[idx])
+    		end
 ###Enumerables
 
 ######Select
@@ -258,7 +267,6 @@ You can also access the index with the each_with_index helpr:
 
 	jobs.each_with_index do |job, idx|
 	end
-	
 	
 ###Variables
 
