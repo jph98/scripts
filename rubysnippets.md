@@ -372,12 +372,18 @@ Simple hash definition and iteration:
 
 ###Files and Directories
 
+######Processing a file line by line
+
+	File.open(@jtlfilename, "r").each do |line|
+  		puts line
+	end
+
 Listing files matching a pattern in a given directory:
 
     Dir.glob('*.rb').each do|f|
         puts f
     end
-    
+		
 ######Removing a file
 
 	File.delete(filename)
