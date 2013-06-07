@@ -369,6 +369,18 @@ Simple hash definition and iteration:
     hash.each_pair do |k,v|
         puts k + ":" + v
     end
+    
+Check that a key is present
+
+	labelhash.has_key?(label)
+	
+Insert a key and value:
+
+	labelhash[label] = stats_list
+	
+Retrieve a value:
+
+	puts labelhash[label]
 
 ###Files and Directories
 
