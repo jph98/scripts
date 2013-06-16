@@ -168,10 +168,6 @@ Boolean methods can be defined as follows (with ? as part of the method name):
 		@arr.empty? # Implicitly returned.
 	end
   
-#####Main Method
-
-    if __FILE__ == $0
-
 #####Private Method
 
     # Private method comment
@@ -292,6 +288,10 @@ It's an object with an integer and string representation:
 	unless @controller.nil
 		@controller.stop()
 	end
+
+#####Main Method
+
+    if __FILE__ == $0
 
 #####Command Line Arguments Handling
 
