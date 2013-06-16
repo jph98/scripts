@@ -69,6 +69,8 @@ Symbols are a way to reuse words over and over again - they exist in memory only
 
 #####Blocks and Procs
 
+See this for a practical example: http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/
+
 & turns a block into a proc (which can then be called)
 
 ######Null Object Pattern
