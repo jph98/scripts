@@ -48,6 +48,7 @@ We also have OStructs as well, on which you can arbritrarily create attributes:
 
 	record = OpenStruct.new(:name=>'jay')
 
+    
 #####Reflection
 
 You can automatically create variables with by defining a headers array full of symolbs and calling instance_Variable_set.  In this case we use arrays:
@@ -81,6 +82,24 @@ Encapsulating default values in a null object class to reduce conditionals
 
 Replace conditional with polymorphism
 
+###Methods
+
+! indicates that the object will be modified as a result of the call
+
+    foo.downcase! 
+
+? indicates that this is a predicate method:
+
+	foo.isVerb?
+	
+You can also specify setter methods using syntactic sugar:
+
+	def name=(nm)  
+		@name = nm  
+	end  
+	
+	object.name = "Fred"
+	
 ###Modules
 
 Modules just provide a way of grouping classes, methods together
@@ -143,12 +162,6 @@ Multiline comment
 	multiline 
 	comment
 	=
-
-###Methods
-
-! indicates that the object will be modified as a result of the call
-
-    foo.downcase! 
     
 ######Getters and Setters
 
