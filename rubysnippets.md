@@ -27,6 +27,14 @@ Exit a script with:
     end
     j = JenkinsPoller.new("myurl")
 
+#####Constructors
+
+	def initialize(init)
+	    init.each_pair do |key, val|
+	      instance_variable_set('@' + key.to_s, val)
+	    end
+	end
+  
 #####Singleton example
 
 	class << self
@@ -34,7 +42,7 @@ Exit a script with:
 		puts "My method"
 	    end
   	end
-  	
+  	  	
 #####Struct Example
 
 See: http://blog.steveklabnik.com/posts/2012-09-01-random-ruby-tricks--struct-new
@@ -47,7 +55,6 @@ Provides a way to create simple classes on the fly with attributes (albeit up-fr
 We also have OStructs as well, on which you can arbritrarily create attributes:
 
 	record = OpenStruct.new(:name=>'jay')
-
     
 #####Reflection
 
