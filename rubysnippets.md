@@ -252,6 +252,12 @@ Standard if/else blocks with elsif
     		end
 ###Enumerables
 
+######Find
+
+Find an item in a collection of objects easily with:
+
+	metrics.find { |m| m.scriptname.include?(scriptname) }
+	
 ######Select
 
 You can filter an array given the select keywords
@@ -382,6 +388,10 @@ Print name of sccript
 #####Checking empty string
 
     text.empty?
+    
+#####Checking for a substring
+
+	string.include?(substring)
 
 #####Checking a range
 
