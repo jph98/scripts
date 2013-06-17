@@ -99,7 +99,38 @@ You can also specify setter methods using syntactic sugar:
 	end  
 	
 	object.name = "Fred"
+
+#####Equals Overrriding
+
+You can override object equality with ==
+
+	def ==(another_sock)
+    		self.size == another_sock.size
+  	end
+  
+The following checks whether objects have the same type as well as value
+
+	foo.eql?(bar)
 	
+the following just checks value
+
+	foo == bar
+	
+You can also use Comparable to define custom functionality via a mixin:
+
+	include Comparable
+	
+	def <=>(another_sock)
+	    if self.size < another_sock.size
+	      -1
+	    elsif self.size > another_sock.size
+	      1
+	    else
+	      0
+	    end
+	end
+
+
 ###Modules
 
 Modules just provide a way of grouping classes, methods together
