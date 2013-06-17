@@ -3,6 +3,21 @@
 * Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
 * 21 tricks - http://www.rubyinside.com/21-ruby-tricks-902.html
 
+Sigil - e.g. @ and $
+
+###Syntax Analysis
+
+Check that a Ruby source is syntactically correct
+
+	ruby -c my.rb
+	
+Ruby 1.9 provides ripper for doing syntax analysis.  Show the syntax tree as an sexpression
+
+	require "ripper"
+	require "ap"
+	
+	ap Ripper.sexp("puts {}.class")
+
 ###irb
 
 .irbc allows you to setup default options
@@ -75,12 +90,6 @@ Symbols are a way to reuse words over and over again - they exist in memory only
 
 	patient = {:ruby => "red"}
 
-#####Blocks and Procs
-
-See this for a practical example: http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/
-
-& turns a block into a proc (which can then be called)
-
 ######Null Object Pattern
 
 Encapsulating default values in a null object class to reduce conditionals 
@@ -88,6 +97,15 @@ Encapsulating default values in a null object class to reduce conditionals
 	@contact = contact || NullContact.new
 
 Replace conditional with polymorphism
+
+#####Blocks and Procs
+
+This is a good example of procs, lambdas and closures - http://www.youtube.com/watch?v=VBC-G6hahWA
+
+See this for a practical example: http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/
+
+& turns a block into a proc (which can then be called)
+
 
 ###Methods
 
@@ -155,6 +173,8 @@ and we can include the behaviour as a mixin
 	class Example
 		include Blah
 	end
+	
+This is great for helper utilities consisting of "normally static" methods
 
 #####RSpec Skeleton
 
@@ -185,7 +205,6 @@ classundertest_spec.rb
 #####Stubbing and Mocking Methods
 
 Use RSpec Mocks - https://www.relishapp.com/rspec/rspec-mocks/v/2-3/docs/method-stubs
-
 
 ###Comments
 
@@ -250,6 +269,28 @@ Standard if/else blocks with elsif
     		else
     			ivar.push(values[idx])
     		end
+
+#####Chaining ifs
+
+	puts "this is my text" if i == 2
+
+#####Skipping a loop
+
+	0.upto(20) do |i|
+	        next if i % 2 == 0
+	        puts i
+	end
+
+######Zipping things
+
+Produce an array of the names and ages (ok):
+
+	p names.zip(ages)
+	
+Produce a hash of the names and ages (awesome):
+
+	p Hash[names.zip(ages)]
+	
 ###Enumerables
 
 ######Find
@@ -366,6 +407,16 @@ Print name of sccript
 	
 ###Text Handling
 
+#####Including text via interpolation
+
+Normally done with
+
+	puts "This is my string #{anothervar}"
+	
+but shortcutted with:
+
+	puts "This is my string #@anothervar"
+
 #####Printing Formatted Date and Time
 
 	Time.now.strftime("%d/%m/%Y %H:%M")
@@ -392,6 +443,10 @@ Print name of sccript
 #####Checking for a substring
 
 	string.include?(substring)
+	
+Can also use this as a shortcut:
+
+	string[anotherstring]
 
 #####Checking a range
 
@@ -577,3 +632,6 @@ See http://skilldrick.co.uk/2011/02/really-really-simple-ruby-metaprogramming/
       @match.link = match.at_xpath("a")[:href]
     end
     
+###Calling Native Code
+
+Use Function - http://www.ruby-doc.org/stdlib-2.0/libdoc/fiddle/rdoc/Fiddle.html
