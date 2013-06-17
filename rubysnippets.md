@@ -31,6 +31,14 @@ Exit a script with:
 
 	abort("Message")
 
+Can refer to the last returned value in rib with:
+
+	_
+	
+e.g.
+
+	_ * _
+
 ###Classes
 
 ######Skeleton
@@ -90,6 +98,16 @@ Symbols are a way to reuse words over and over again - they exist in memory only
 
 	patient = {:ruby => "red"}
 
+#####Ruby Source Files Have Data as Well
+	
+	puts "hello world"
+	
+	DATA.rewind
+	puts DATA.read	
+	
+	__END__
+	puts "do we ever get here"
+
 ######Null Object Pattern
 
 Encapsulating default values in a null object class to reduce conditionals 
@@ -105,7 +123,6 @@ This is a good example of procs, lambdas and closures - http://www.youtube.com/w
 See this for a practical example: http://blog.codahale.com/2005/11/24/a-ruby-howto-writing-a-method-that-uses-code-blocks/
 
 & turns a block into a proc (which can then be called)
-
 
 ###Methods
 
@@ -155,6 +172,10 @@ You can also use Comparable to define custom functionality via a mixin:
 	    end
 	end
 
+Default method parameters with an optional parameter at the end
+
+	def some_method(a, b = 10, *c)
+	end
 
 ###Modules
 
@@ -317,7 +338,6 @@ Map allows you to pass an element in an array to an expression:
 	}
 	
 	=> [4, 8, 12, 16]
-
 
 #####Inject
 
@@ -500,6 +520,13 @@ Retrieve a value:
 
 	puts labelhash[label]
 
+#####Getting things into an array
+
+Getting things into an array:
+
+	[*10..20]
+	[*"a".."z"]
+
 ###Files and Directories
 
 ######Processing a file line by line
@@ -536,6 +563,18 @@ or the traditional way:
 
 	name.match(/(.*)\.rb/)[1]
 
+another way grabbing the second match, name then a and b respectively as well:
+
+	name[/(?<a>\w+) (?<b>\w+)/, 2]
+	
+You can also specify the label as well:
+
+	name[/(?<a>\w+) (?<b>\w+)/, :b]
+
+Return the position in the stirng where the match occured with:
+
+	"abcde" =~ /bcd/
+	
 ###Exceptions
 
 Basic pattern is (n.b. the begin is optional):
@@ -577,6 +616,16 @@ Sleep for 5 seconds
 ###MetaProgramming
 
 See http://skilldrick.co.uk/2011/02/really-really-simple-ruby-metaprogramming/
+
+Printing out current method and callee:
+
+	p __method__
+	p __callee__
+	
+Print ou the location in the source
+
+	a = ->{ }
+	p a.source_location
 
 ###Concurrency
 
@@ -628,10 +677,25 @@ See http://skilldrick.co.uk/2011/02/really-really-simple-ruby-metaprogramming/
 
     doc = Nokogiri::HTML(open(parse_url))
     matches="//div/ol[contains(@class,'competitions unstyled')"
-    details = doc.search(matches).map do |match|
+    details = doc.search(matches).map do |match|
       @match.link = match.at_xpath("a")[:href]
     end
     
+###Working with JSON
+
+	require "json"
+
+Print out hash:
+
+	p h
+
+Print out json:
+
+	j h
+
+Pretty print json:
+	j j
+
 ###Calling Native Code
 
 Use Function - http://www.ruby-doc.org/stdlib-2.0/libdoc/fiddle/rdoc/Fiddle.html
