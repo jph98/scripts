@@ -699,3 +699,7 @@ Pretty print json:
 ###Calling Native Code
 
 Use Function - http://www.ruby-doc.org/stdlib-2.0/libdoc/fiddle/rdoc/Fiddle.html
+
+###Sinatra Skeleton and Example
+
+See: https://github.com/adamwiggins/scanty-redis/blob/master/main.rb
