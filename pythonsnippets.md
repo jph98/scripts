@@ -241,7 +241,9 @@ and metaprogramming here - http://www.onlamp.com/lpt/a/3388
 ###Descriptors
 
 See: http://nbviewer.ipython.org/urls/gist.github.com/ChrisBeaumont/5758381/raw/descriptor_writeup.ipynb
-	
+
+and: http://www.outofwhatbox.com/blog/2010/07/python-decorating-with-class/
+
 ###Generators
 
 Examples here - http://linuxgazette.net/100/pramode.html
