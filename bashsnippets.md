@@ -77,4 +77,6 @@ See: http://www.linuxjournal.com/content/return-values-bash-functions
     function clean {
     } 
 
+#####Redirect output/error to dev null
 
+    command > /dev/null 2>&1 &
