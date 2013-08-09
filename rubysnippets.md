@@ -5,6 +5,12 @@
 
 Sigil - e.g. @ and $
 
+###Gem Overview
+
+	gem env | grep INSTALLATION
+	gem server - run a ruby gem server on http://localhost:8088
+
+
 ###Syntax Analysis
 
 Check that a Ruby source is syntactically correct
