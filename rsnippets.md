@@ -193,7 +193,21 @@ will give us a 3x2 mtrix
 
 Apply names to the matrix with dimnames
 
+Can slice and dice matrices using various tricks
 
+By row
+
+    matr[1,]
+    
+By column
+
+    matr[,1]
+
+This drops the matrix format though and return a vector.
+
+You can specify to NOT drop the matrix format with the following:
+
+    matr[,1, drop = F]
 
 #####Sequences
 
