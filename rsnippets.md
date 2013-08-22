@@ -239,6 +239,35 @@ Lists are containers for other objects.  We can store a vector, matrix in a list
 
     mylist < - list(vec = myVec, mat = myMat)
 
+#####Dataframes
+
+A dataframe is a list of same sized vectors where each element has a name.
+
+    data.frame(time = cdata[,c(2)], mempagein = cdata[,c(41)] / 1000)
+    mydf <- data.frame(X=1:10, Y=letters[1:10])
+
+Dataset provided by the datasets package:
+
+    iris
+    head(iris)
+    tail(iris, n = 10)
+    
+Extract an attribute with:
+
+    iris$petals
+
+######Factors
+
+Categorical variables:
+
+    x <- letters[1:4]
+    factor(x)
+    
+This is an efficient way of storing strings.  This is very much like Ruby Symbols.
+
+Look at the factors help file.
+
+Useful with graphs when you want to play about with the order of variables.
 
 #####Sequences
 
@@ -254,6 +283,13 @@ You can mix this up, but the types get coerced
     LOGICAL > NUMERIC > CHARACTER
     
 Truthiness!
+
+#####Converting Variables
+
+    as.numeric(x)
+    
+    mylog <- c(T,F,T,T)
+    as.numeric(mylog)
     
 ###Text Handling
 
@@ -264,7 +300,54 @@ Truthiness!
 #####Concatenating Text
 
     print(paste("Wrote ", name))
-    
-###Dataframes
 
-    data.frame(time = cdata[,c(2)], mempagein = cdata[,c(41)] / 1000)
+###Functions
+
+Find out the arguments to a function:
+
+    args(runif)
+    args(mean)
+    args(rnorm)
+
+Can supply named arguments to functions.
+
+If looking at a dataset like airquality there's NA specified in the middle.
+
+Asking for the mean of this will return NA, unless you specify the na.rm argument
+
+    min(airquality$Ozone, na.rm = TRUE)
+    
+#####Statistical Functions Built In
+
+    sum(airquality$Ozone)
+    quantile(airquality$Ozone)
+    median(airquality$Ozone, na.rm=T)
+    quantile(airquality$Wind, c(.05, .95))
+
+There's also functions for poisson, binomial, weibull, and various distributions (uniform, logistic, geometric etc...)
+
+Return a random sample:
+
+    sample(1:10, 5)
+    
+Return the basic stats for the dataset:
+
+    summary(airquality$Ozone)
+    summary(airquality)
+
+And query the dataset using various statements..
+
+    table(airquality$Wind > 20)
+    
+Check whether values are missing:
+
+    is.na(airquality$Ozone)
+    
+Invert with:
+
+    !is.na(airquality$Ozone)
+    
+Table builds a contingency table of the counts of a various combination of factor levels.
+
+    table(is.na(airquality$Ozone))
+    
