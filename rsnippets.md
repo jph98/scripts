@@ -421,3 +421,8 @@ Can check the argument is of a SPECIFIC type.  But, you have to be careful
     is.vector(5) is true because it's a vector with a single value
     is.vector("Hello") is also true because it's a vector of characters
     
+Can also check that the user has provided a value for something
+
+    checkfun < - function(x,y) {
+        if (missing(y)) stop("Must provide a value for y")
+    }
