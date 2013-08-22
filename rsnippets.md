@@ -426,3 +426,9 @@ Can also check that the user has provided a value for something
     checkfun < - function(x,y) {
         if (missing(y)) stop("Must provide a value for y")
     }
+
+There's no function overloading specifically with R, functions are masked instead.
+
+Resolving variables or types from strings:
+
+    
