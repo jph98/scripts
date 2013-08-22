@@ -208,6 +208,37 @@ This drops the matrix format though and return a vector.
 You can specify to NOT drop the matrix format with the following:
 
     matr[,1, drop = F]
+    
+#####Arrays
+
+    myarr < - array(1:18, c(3,3,2))
+
+gives us:
+
+    , , 1
+
+    [,1] [,2] [,3]
+    [1,]    1    4    7
+    [2,]    2    5    8
+    [3,]    3    6    9
+    
+    , , 2
+    
+         [,1] [,2] [,3]
+    [1,]   10   13   16
+    [2,]   11   14   17
+    [3,]   12   15   18
+
+Query this by row then column then depth:
+
+    myarr[1, 2, 1]
+    
+#####Lists
+
+Lists are containers for other objects.  We can store a vector, matrix in a list for example:
+
+    mylist < - list(vec = myVec, mat = myMat)
+
 
 #####Sequences
 
