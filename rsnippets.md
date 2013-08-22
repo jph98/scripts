@@ -11,6 +11,10 @@ Display the package search pths
 Display all objects in a package:
 
     objects("package:datasets")
+    
+Display all functions matching a name
+
+    apropos("^is.")
 
 #####Installing an R package
 
@@ -350,4 +354,68 @@ Invert with:
 Table builds a contingency table of the counts of a various combination of factor levels.
 
     table(is.na(airquality$Ozone))
+    
+Omit na values with:
+
+    na.omit(airquality$Ozone)
+    
+    replace(airquality$Ozone, is.na(airquality$Ozone), "GOPIGS")
+    
+#####Working with Character Data
+
+    h <- "Hello World"
+    substring(h, 1 ,5)
+    gsub("Hello", "Hola", h)
+    grep("World", h)
+    grep1("World", h)
+    paste(h, "Pigs")
+    
+###Writing Functions
+
+    myfun <- function(x) {
+        x + 2
+    }
+    
+#####Variable Arguments
+
+You can create a function to handle variable arguments.  Good example is the histrogram function, the remaining arguments refer to ones passed to the histogram function to specify display options:
+
+    histfun <- function(n) {
+        hist(rnorm(n))
+    }
+
+n.b. Print is automatically called here.  this does happen if you assign as the last line.
+
+Create a function that takes a number of arguments and does something with it:
+
+    sumfun <- function(...) {
+        mylist <- sum(...)
+    }
+    
+Invisible Returning, if i've assigned this then return it, otherwise don't bother
+
+    addfun <- function(x, y) {
+        w <- x + y
+        invisible(w)
+    }
+    
+#####Error Handling with Functions
+
+    myfun <- function(x, y) {
+  
+        
+        if (any(x) < 0 | length(y) > 5) stop("Length of variables should be < 5")
+        if (length(x) > 5 | length(y) > 5) stop("Length of variables should be < 5")
+        if (length(y) != length(x)) warn("Variables provided are NOT the same length")
+        if (length(y) == length(x)) warn("Variables provided ARE same length")
+      
+      sum(log(x) + y) 
+    }
+    
+You can use sprintf to format a string with a variable.
+
+Can check the argument is of a SPECIFIC type.  But, you have to be careful
+
+    is.vector(5) is true because it's a vector with a single value
+    is.vector("Hello") is also true because it's a vector of characters
     
