@@ -103,7 +103,7 @@ Missing Value, always use NA
 
     NA
     
-#####Vector, c function, 
+#####Vectors - c function, 
 
     vec <- c(1,2,3)
     
@@ -167,6 +167,34 @@ applied like this:
     month [ year == 1963 ]
     month [ amount > 1.5 & year == 1963 ]
     
+#####Matrices - cbind
+
+Create a simple matrix with column bind:
+
+    cbind(1:3, c(6,3,4))
+    
+and row bind:
+
+    rbind(1:3,4:6,7:9)
+
+Creating specific vectors (page 3-12):
+
+    cbind(-1:1, 1, -1:1)
+    cbind(LETTERS[1:6], rep(letters[1:3], 2))
+    matrix(rep(1:3, 4), ncol = 3)
+    matrix(rep(LETTERS[1:3], 4), nrow = 3, byrow=T)
+    
+Request the dimension of the matrix:
+
+    matr <- cbind(1:3, 1:3)
+    dim(matr)
+
+will give us a 3x2 mtrix
+
+Apply names to the matrix with dimnames
+
+
+
 #####Sequences
 
     seq(from = 1, to = 4)
