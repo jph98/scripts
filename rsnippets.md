@@ -1,4 +1,4 @@
-###R Language Notes and Snippets
+# R Language Notes and Snippets
 
 ###Packages
 
