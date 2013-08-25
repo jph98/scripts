@@ -32,53 +32,53 @@ Writing a simple webserver with http
 
 ###Object Orientation makes use of Structs
 
-  type Coordinate struct {
-    x, y int
-  }
-  
-  var c *Coordinate = new(Coordinate)
-  // or var c *Coordinate = Coordinate(3,4)
-  c.x = 1
-  c.y = 2
+      type Coordinate struct {
+        x, y int
+      }
+      
+      var c *Coordinate = new(Coordinate)
+      // or var c *Coordinate = Coordinate(3,4)
+      c.x = 1
+      c.y = 2
 
 ###Variable Handing
 
 ###Loops
 
-  for i:= 0; i < 10; i++ { // do stuff }
+    for i:= 0; i < 10; i++ { // do stuff }
 
 or...
 
-  for i, num := range nums { // do stuff }
+    for i, num := range nums { // do stuff }
 
 ###Functions
 
 Write a function that takes two integers and returns two integers:
 
-  func add(a, b int) (int, int) {
-    return a, b
-  }
+      func add(a, b int) (int, int) {
+        return a, b
+      }
 
 Functions that can fail can also return a boolean to indicate success:
 
-  if result, ok := functionThatCanFail(); ok {
-    // do something on success
-  }
+      if result, ok := functionThatCanFail(); ok {
+        // do something on success
+      }
   
 ###Data Structures
 
 #####Arrays
 
-  var a [5]int 
-  b := [5]int{1, 2, 3, 4, 5}
+    var a [5]int 
+    b := [5]int{1, 2, 3, 4, 5}
 
 
 #####Slices
 
-  s := make([]string, 3)
-  s.append("a")
+    s := make([]string, 3)
+    s.append("a")
   
 #####Maps
 
-  mymap := make(map[string]int)
-  mymap["key" = 1
+    mymap := make(map[string]int)
+    mymap["key" = 1
