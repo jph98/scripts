@@ -2,7 +2,8 @@
 
 * Go by example is great - https://gobyexample.com/
 * Effective Go - http://golang.org/doc/effective_go.html
-
+* Writing Web Applications - http://golang.org/doc/articles/wiki/
+* 
 ###Simple Program
 
 Note that most methods start with an uppercase letter
