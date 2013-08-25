@@ -7,28 +7,28 @@
 
 Note that most methods start with an uppercase letter
 
-  package main
-  import "fmt"
-  
-  func main() {
-    fmt.Println("Hello World")
-  }
+    package main
+    import "fmt"
+    
+    func main() {
+      fmt.Println("Hello World")
+    }
 
 Writing a simple webserver with http
 
-  import ("fmt"
-    "net/http"
-  )
-  
-  func main() {
-    http.HandleFunc("/",
-          func(w http.ResponseWriter, req *http.Request) {
-              fmt.Fprintln(w, "Hello World!")
-          })
-      if err := http.ListenAndServe(":8080", nil); err != nil {
-          fmt.Println(err)
-      }
-  }
+    import ("fmt"
+      "net/http"
+    )
+    
+    func main() {
+      http.HandleFunc("/",
+            func(w http.ResponseWriter, req *http.Request) {
+                fmt.Fprintln(w, "Hello World!")
+            })
+        if err := http.ListenAndServe(":8080", nil); err != nil {
+            fmt.Println(err)
+        }
+    }
 
 ###Object Orientation makes use of Structs
 
