@@ -37,10 +37,57 @@ Writing a simple webserver with http
         x, y int
       }
       
+which you can add a method to by using the pointer:
+
+      func (c Coordinate) pretty {
+        fmt.Println("My pretty coordinate " + x + " " + y);
+      }
+
+then construct with the folowing:
+      
       var c *Coordinate = new(Coordinate)
       // or var c *Coordinate = Coordinate(3,4)
       c.x = 1
       c.y = 2
+      
+You can also pass pointers:
+
+     cp = &p
+     fmt.Println(cp)
+
+#####Interfaces
+
+Interfaces provide a simple way to group methods declarations:
+
+     type Animal interface {
+         Speak() string
+     }
+
+to be used in terms of composition:
+
+     func (d Dog) Speak() string {
+         return "Woof!"
+     }
+
+###Errors
+
+There are no exceptions.  Explicit separate return value.
+
+###Concurrency with Goroutines
+
+    package main
+    import "fmt"
+    
+    func main() {
+    
+        go func(msg string) {
+            fmt.Println(msg)
+        }("going, press enter to exit")
+        
+        var input string
+        fmt.Scanln(&input)
+        fmt.Println("done")
+    }
 
 ###Variable Handing
 
@@ -65,6 +112,8 @@ Functions that can fail can also return a boolean to indicate success:
       if result, ok := functionThatCanFail(); ok {
         // do something on success
       }
+      
+Functions can also be variadic
   
 ###Data Structures
 
