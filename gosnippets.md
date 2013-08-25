@@ -88,6 +88,14 @@ There are no exceptions.  Explicit separate return value.
         fmt.Scanln(&input)
         fmt.Println("done")
     }
+    
+#####Channels
+
+Channels provide a way to connect concurrent goroutines into a pipeline
+
+A good example of using channels and workers is to define a worker pool for processing jobs and outputting results
+
+    https://gobyexample.com/worker-pools
 
 ###Variable Handing
 
