@@ -51,6 +51,16 @@ Take the output from a variable and store this:
 #####Subshell
 
     for cmd in $(ls metrics*.rb)
+    
+#####Find files and execute them
+
+    #!/bin/bash
+
+    for i in $(find . -name *.ctl); do	
+    	directory=`dirname $i`
+        filename=`basename $i`
+    	`cd $directory; execute $filename >> output.txt`
+    done
 
 ###Working With Arrays
 
