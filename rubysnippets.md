@@ -555,7 +555,7 @@ Listing files matching a pattern in a given directory:
 
 ######Checking if a file exists
 
-	File.exist?
+	File.exist?(filename)
 
 ###Regular Expressions
 
