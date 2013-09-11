@@ -446,6 +446,10 @@ but shortcutted with:
 #####Printing Formatted Date and Time
 
 	Time.now.strftime("%d/%m/%Y %H:%M")
+	
+n.b. That the standard way of converting a timestamp to a formatted date (Time.at) uses SECONDS not milliseconds
+
+	Time.at(labelt.to_f / 1000)
 
 #####Formatting a Decimal
 
