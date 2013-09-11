@@ -41,11 +41,29 @@ Generate a hex dump from a binary file
 
     xxd blah.bin
 
+###Loops
+
+    for FILE in $(ls); do [COMMAND]; done
+
+###Files
+
+Find all large files
+
+    find . -type f -exec ls -s {} \; | sort -n -r | head -5
+
 ###Text Processing
 
-#####Search and replace text in multiple files
+Search and replace with sed in a specific file
+
+     sed -i "s/\${hadoop.version}/$HADOOP_VERSION/" pom.xml
+
+Search and replace text in multiple files
 
     perl -pi -w -e 's/SEARCH/REPLACE/g;' *.txt
+    
+Print column one in a colon delimited record set
+
+    awk -F: { printf $1 }
     
 ###Processes
 
@@ -70,10 +88,21 @@ What is my IP address
 Calculate MD5Sum for a Phrase
 
      echo -n hello | md5sum
+     
+Resumable file download
+
+    rsync –partial –progress –rsh=ssh $file_source $user@$host:$destination_file
+    
+Scan for open ports
+
+    nmap -v localhost
+    
+Display application running on a specific port
+
+    lsof -wni tcp:9997
 
 ##OSX Command Snippets
 
 ##### Finding files correctly
 
     mdfind -name homebrew
-    
