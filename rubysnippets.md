@@ -7,7 +7,7 @@ See:
 * http://globaldev.co.uk/2013/09/ruby-tips-part-1/
 * http://globaldev.co.uk/2013/09/ruby-tips-part-2/
 
-Sigil - e.g. @ and $
+Sigil - e.g. @ and $e
 
 ###Gem Overview
 
@@ -599,11 +599,29 @@ Basic pattern is (n.b. the begin is optional):
 		puts exception.backtrace
 	end
 	
+or any exception with:
+
+	begin
+	rescue
+		puts "Handled"
+	end
+	
 The exception.backtrace gives you a lot more
 
 You can also use rescue to define a default value when something fails
 
 	some_hash[:name].downcase rescue "No name"
+
+Raising an exception:
+
+	raise TypeError, 'You must give me truth' if value == false
+	
+Defining your own exception:
+
+	class MyCrazyException < StandardError
+	end
+	
+Note that Exception catches ALL errors.  StandardError deals with application errors only.
 
 ###Utilities
 
