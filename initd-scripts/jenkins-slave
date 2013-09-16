@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# jenkins-slave:        Launch a Jenkins BuildSlave instance on this node
+#
+# chkconfig:    - 99 01
+# description:  Enable this node to fulfill build jobs
+#
+
+#set -x 
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+die() { echo "$@" 1>&2 ; exit 1; }
+
+[ -f /etc/sysconfig/jenkins-slave ] && . /etc/sysconfig/jenkins-slave
+
+[ -n "$JENKINS_URL" ] || die "JENKINS_URL not specified"
+[ -n "$JENKINS_WORKDIR" ] || die "JENKINS_WORKDIR not specified"
+[ -n "$JENKINS_USER" ] || die "JENKINS_USER not specified"
+[ -n "$JENKINS_NODENAME" ] || die "JENKINS_NODENAME not specified"
+
+download_jar()
+{
+        echo "Downloading slave.jar from $JENKINS_URL"
+        su - $JENKINS_USER sh -c "curl -R -s -o slave.jar $JENKINS_URL/jnlpJars/slave.jar" || exit 0
+}
+
+start()
+{
+        cd $JENKINS_WORKDIR
+        download_jar
+
+        echo -ne $" \n Starting Jenkins Slave ... \n workdir: $JENKINS_WORKDIR, \n nodename: $JENKINS_NODENAME \n master URL $JENKINS_URL \n user: $JENKINS_USER \n"
+        su - $JENKINS_USER sh -c "\
+          java -Xmx1024m -XX:MaxPermSize=256m -jar slave.jar \
+             -jnlpUrl $JENKINS_URL/computer/$JENKINS_NODENAME/slave-agent.jnlp \
+             >slave.log 2>&1 &"
+
+        echo -ne " Started Jenkins Slave \n\n"
+}
+
+stop()
+{
+        echo -ne " \n Shutting down Jenkins Slave ... \n"
+        killall -u $JENKINS_USER java
+}
+
+# See how we were called.
+case "$1" in
+  start)
+        start
+        ;;
+  stop)
+        stop
+        ;;
+  restart|reload)
+        stop
+        start
+        ;;
+  status)
+        status java
+        ;;
+  *)
+        echo $"Usage: $0 {start|stop|restart|reload}"
+        exit 1
+esac
+
+exit 0
+
+#set +x
