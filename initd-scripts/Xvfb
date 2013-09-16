@@ -1,8 +1,7 @@
 #
 # Specify run levels 3 and 5 with correct priorities
 # chkconfig: 35 90 12
-# description: Mango Xvfb script
-# author jholloway@mango-solutions.com
+# description: Xvfb script
 #
 # Start the service
 EXEC_CMD="/usr/X11/bin/Xvfb"
