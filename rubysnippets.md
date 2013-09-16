@@ -3,6 +3,10 @@
 * Hidden Features - http://stackoverflow.com/questions/63998/hidden-features-of-ruby
 * 21 tricks - http://www.rubyinside.com/21-ruby-tricks-902.html
 
+See:
+* http://globaldev.co.uk/2013/09/ruby-tips-part-1/
+* http://globaldev.co.uk/2013/09/ruby-tips-part-2/
+
 Sigil - e.g. @ and $
 
 ###Gem Overview
