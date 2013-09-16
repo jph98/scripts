@@ -606,7 +606,10 @@ or any exception with:
 		puts "Handled"
 	end
 	
-The exception.backtrace gives you a lot more
+The following prints out an exception report
+
+	p e.message
+	p e.backtrace
 
 You can also use rescue to define a default value when something fails
 
