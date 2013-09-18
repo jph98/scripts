@@ -446,6 +446,10 @@ Normally done with
 but shortcutted with:
 
 	puts "This is my string #@anothervar"
+	
+Another way of rpinting
+
+p "text"
 
 #####Printing Formatted Date and Time
 
