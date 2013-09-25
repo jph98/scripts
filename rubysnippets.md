@@ -305,6 +305,14 @@ Standard if/else blocks with elsif
 
 	puts "this is my text" if i == 2
 
+#####Ternarys
+
+	status = @overall_test_failure == true ? Run::SUCCESS : Run::FAILURE
+	
+#####Actions with Conditionals
+
+	puts "failed" if errors.size() == 0
+	
 #####Skipping a loop
 
 	0.upto(20) do |i|
