@@ -75,6 +75,37 @@ Alternatively, use a subshell using $()
         filename=`basename $i`
     	`cd $directory; execute $filename >> output.txt`
     done
+    
+#####Finding a process by name, shutting it down and forcefully terminating just in case
+
+	#!/bin/bash
+
+	function restartservice() {
+	
+	        service $1 stop;
+	
+	        RETRY_LIMIT=3
+	        PID="$(ps -ef | grep $1 | grep java | awk ' { print $2 } ')"
+	
+	        counter=1
+	        while kill -0 $PID >/dev/null 2>&1
+	        do
+	                echo "Waiting for tomcat to die, $counter"
+	                sleep 3
+	
+	                if (( $counter == $RETRY_LIMIT )); then
+	                        kill -9 $PID > /dev/null 2>&1
+	                else
+	                        counter=$((counter+1))
+	                fi
+	
+	        done
+	
+	        service $1 start; 
+	}
+
+	restartservice tomcat7
+
 
 ###Working With Arrays
 
