@@ -30,8 +30,20 @@
     SERVER=$1
     shift
 
-###Looping Constructs
+####Increment variable
 
+    counter=$((counter+1))
+    
+###Looping and Conditional Constructs
+
+
+#####Simple if
+
+    if (( $counter == 3 )); then    		
+		kill -9 $PID
+	else
+		counter=$((counter+1))
+	fi
 
 #####Simple for loop
 
@@ -47,6 +59,8 @@
 Take the output from a variable and store this:
 
     numscripts=`ls -l metrics*.rb 2> /dev/null | wc -l`
+]
+Alternatively, use a subshell using $()
 
 #####Subshell
 
@@ -85,7 +99,13 @@ See: http://www.linuxjournal.com/content/return-values-bash-functions
 #####Basic
 
     function clean {
+        echo "Parameter is $1"
     } 
+    
+Pass variables with
+
+    clean tomcatlogdir
+
 
 #####Redirect output/error to dev null
 
