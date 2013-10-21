@@ -103,6 +103,43 @@
         	descfile = get_description_name(filename)
     		content = tar.extractfile(descfile).read()
     		return content
+    		
+#####Text replacement within a context
+
+Replacing chars within a file (within a quote context) and writing those to a new file
+
+	def replace_chars_in_quotes(line):
+		outline = ""
+		in_quotes = False
+		for char in line:
+			if char == "`":
+				outline += char
+				in_quotes = True					
+			elif char == "`" and in_quotes:
+				outline += char
+				in_quotes = False
+			elif in_quotes:
+				if char.islower():
+					outline += char.upper()
+				else:
+					outline += char
+			else:
+				outline += char
+		return outline
+	
+	def process_file():
+		with open(outfile, "wt") as fout:
+		with open(infile, "rt") as fin:
+			for line in fin:
+				if "`" in line:				
+					fout.write(replace_chars_in_quotes(line))
+				else:
+					fout.write(line)
+	
+	infile = "blah.sql"
+	outfile = "blah.sql.out"
+	print "Processed " + infile + " and wrote " + outfile
+	
             
 #####Moving a file
 
