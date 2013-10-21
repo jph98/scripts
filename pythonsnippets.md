@@ -111,8 +111,7 @@ Replacing chars within a file (within a quote context) and writing those to a ne
 	def replace_chars_in_quotes(line):
 		outline = ""
 		in_quotes = False
-		for char in line:
-			print in_quotes		
+		for char in line:		
 			if char == quotechar and in_quotes == True:
 				outline += char
 				in_quotes = False
@@ -125,8 +124,7 @@ Replacing chars within a file (within a quote context) and writing those to a ne
 				else:
 					outline += char
 			else:
-				outline += char
-		print outline
+				outline += char	
 		return outline
 	
 	def process_file(quotechar, outfile, infile):
