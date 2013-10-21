@@ -112,12 +112,13 @@ Replacing chars within a file (within a quote context) and writing those to a ne
 		outline = ""
 		in_quotes = False
 		for char in line:
-			if char == "`":
-				outline += char
-				in_quotes = True					
-			elif char == "`" and in_quotes:
+			print in_quotes		
+			if char == quotechar and in_quotes == True:
 				outline += char
 				in_quotes = False
+			elif char == quotechar:
+				outline += char
+				in_quotes = True					
 			elif in_quotes:
 				if char.islower():
 					outline += char.upper()
@@ -125,20 +126,23 @@ Replacing chars within a file (within a quote context) and writing those to a ne
 					outline += char
 			else:
 				outline += char
+		print outline
 		return outline
 	
-	def process_file():
+	def process_file(quotechar, outfile, infile):
 		with open(outfile, "wt") as fout:
-		with open(infile, "rt") as fin:
-			for line in fin:
-				if "`" in line:				
-					fout.write(replace_chars_in_quotes(line))
-				else:
-					fout.write(line)
+			with open(infile, "rt") as fin:
+				for line in fin:
+					if quotechar in line:				
+						fout.write(replace_chars_in_quotes(line))
+					else:
+						fout.write(line)
 	
-	infile = "blah.sql"
-	outfile = "blah.sql.out"
+	infile = "noael.sql"
+	outfile = "noael.sql.out"
+	quotechar="|"
 	print "Processed " + infile + " and wrote " + outfile
+	process_file(quotechar, outfile, infile)
 	
             
 #####Moving a file
