@@ -90,6 +90,13 @@
 
     with closing(open(file, "rb")) as f:
 
+#####Processing a file line by line matching on character found
+
+	with open("my.sql", "rb") as f:
+		for line in f.readlines():			
+			if "`" in line :
+				print "Found " + line
+			
 #####Processing a gzip file
 
     with closing(tarfile.open(filename, "r:gz")) as tar:
