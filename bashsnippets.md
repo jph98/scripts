@@ -1,5 +1,6 @@
 ##Bash Snippets
 
+See - http://bash.cumulonim.biz/BashPitfalls.html
 
 ###Basics and Rules of Thumb
 
