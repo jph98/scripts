@@ -1,5 +1,5 @@
-h3. Shortcuts
-=============
+Shortcuts
+=========
 
 See - http://www.jetbrains.com/idea/documentation/
 
