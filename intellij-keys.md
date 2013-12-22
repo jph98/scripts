@@ -5,6 +5,6 @@ See - http://www.jetbrains.com/idea/documentation/
 
 Use tab with these
 
-sout - sysout
-psvm - main method
+* sout - sysout
+* psvm - main method
 
