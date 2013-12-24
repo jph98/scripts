@@ -37,6 +37,7 @@ http://confluence.jetbrains.com/display/IntelliJIDEA/Code+Completion
 
 * CTRL + Space - basic completion
 * CTRL + Shift + Space - smart completion
+* ALT + Insert - generate code
 * CTRL + P - show parameters
 * CTRL + .
 * SHIFT + !
