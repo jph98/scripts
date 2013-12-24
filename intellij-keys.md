@@ -14,6 +14,7 @@ Shortcuts
 * CTRL + ALT + F7 - find ALL usages
 * ALT + ENTER - Quick Fix
 * Reformat Code - CTRL + ALT + L
+* Shift + F6 - Rename
 
 http://confluence.jetbrains.com/display/IntelliJIDEA/Code+Style+and+Formatting
 
@@ -44,6 +45,9 @@ http://confluence.jetbrains.com/display/IntelliJIDEA/Code+Completion
 * Intentions (replace if/else with ternary, String format)
  
 http://confluence.jetbrains.com/display/IntelliJIDEA/Intentions
+
+Code Generation
+=========
 
 
 Use tab with these
