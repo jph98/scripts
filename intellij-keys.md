@@ -28,6 +28,7 @@ http://confluence.jetbrains.com/display/IntelliJIDEA/Navigation
 * CTRL + N - open class (use shift for any file)
 * CTRL + arrows - move between methods
 * CTRL + G - goto line
+* CTRL + F4 - close window
 
 Code Completion
 =========
