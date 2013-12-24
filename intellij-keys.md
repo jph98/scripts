@@ -18,6 +18,9 @@ See - http://www.jetbrains.com/idea/documentation/
 
 * CTRL + Space - basic completion
 * CTRL + Shift + Space - smart completion
+* CTRL + P - show parameters
+* CTRL + .
+* SHIFT + !
 
 Use tab with these
 
