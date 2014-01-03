@@ -16,11 +16,11 @@ Alternatively you can create a Scala Application then compile and run it.  You h
 
 hello.scala
 
-   object GreeterApp {
-      def main(args: Array[String]) {
-        println("Hello World")
-      }
-   }
+       object GreeterApp {
+          def main(args: Array[String]) {
+            println("Hello World")
+          }
+       }
 
 compile with:
     scalac hello.scala
@@ -36,6 +36,8 @@ Types
     
 Console Output
 ------
+
+Simples:
 
     println("Hello World")
 
@@ -75,14 +77,12 @@ same with HashMap
 
     val boats = new HashMap[String, String]
     boats += "toy" -> "My first boat"
-    
     val boats = Map("toy" -> "My first boat")
 
 Loops
 ------
 
     args.foreach(arg => println(arg))
-    
     for (arg <- args)
       println(args)
       
@@ -112,7 +112,6 @@ and is called like a static method here in this class definition:
         println(greeting)
       }
     }
-    
     val b = new Boat()
     b.other("earthling")
 
@@ -150,13 +149,13 @@ Traits can contain method definitions which can be extended and overridden:
     
 You cannot instantiate a trait (since it's abstract), but you can do this:
 
-  val d = new Dog()
-  val a: Animal = new Dog()
+    val d = new Dog()
+    val a: Animal = new Dog()
   
 You can also mixin behaviour at instantiation time allowing to override methods like injection and create a synthetic type which can be invoked:
 
-  trait Woofer extends Animal {
-    override def greet() = "Woof"
-  }
-  val a: Animal = new Dog with Woofer
+      trait Woofer extends Animal {
+        override def greet() = "Woof"
+      }
+      val a: Animal = new Dog with Woofer
 
