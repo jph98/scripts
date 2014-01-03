@@ -7,7 +7,7 @@ This takes you through the Scala basics and what is required for programming wit
 
     http://ampcamp.berkeley.edu/3/exercises/
 
-Intro
+Intro and Tools
 ------
 
 Console can be started with Scala, you can import a script defined using:
@@ -36,6 +36,10 @@ compile with:
 
 run with:
     scala hello
+    
+You can also use fsc (Fast Scala Compiler) or sbt (Scala Build Tool).
+
+
 
 Types
 ------
