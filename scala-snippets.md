@@ -47,9 +47,17 @@ Functions
 You don't need to specify the parenthesis for the method
 
     def greet() = println("Hello World")
-    
     def max(x: Int, y: Int) = if (x < y) println("y> " + y) else println("x> " + x)
     
+Apply the map function with the following:
+
+    val numbers = List(2,4,6)
+    numbers.map(x => x * x)
+
+or replace the expression with a function call, in this case square:
+
+    numbers.map(square)
+
 Collections
 ------
 
@@ -159,3 +167,12 @@ You can also mixin behaviour at instantiation time allowing to override methods 
       }
       val a: Animal = new Dog with Woofer
 
+Input and Output
+----------------
+
+Read lines from a file into an array with:
+
+    import scala.io.Source
+    val lines = Source.fromFile("/root/mesos/README").getLines.toArray
+    
+    
