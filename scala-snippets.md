@@ -1,3 +1,12 @@
+Resources
+---------
+
+Number of good resources online.
+
+This takes you through the Scala basics and what is required for programming with Spark:
+
+    http://ampcamp.berkeley.edu/3/exercises/
+
 Intro
 ------
 
