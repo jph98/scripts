@@ -1,3 +1,1 @@
-###Scripts, Command Line Utils and Snippets
-
-Command Line utilities for desktop install.
+###Scripts, Command Line Utils and Language Snippets
