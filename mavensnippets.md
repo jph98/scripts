@@ -45,6 +45,8 @@ Maven Shade JAR
 
 Binds to package
 
+n.b. This doesn't include system dependencies declared, it omits them.
+
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
