@@ -1,5 +1,5 @@
-Maven Exec Plugin - Executing a Class With Arguments
-----------------------------------------------------
+Maven Exec Plugin
+-----------------
 
 Binds to mvn exec:exec
 
@@ -19,7 +19,7 @@ Binds to mvn exec:exec
             </configuration>
     </plugin>
 
-Maven Executable JAR
+Maven Assembly JAR
 --------------------
 
 Binds to assembly
