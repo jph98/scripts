@@ -5,3 +5,4 @@ Intro and Tools
 
 and use that to install Gradle, Grails etc...
 
+* IDE - http://grails.org/products/ggts
