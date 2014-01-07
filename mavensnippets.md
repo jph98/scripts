@@ -1,6 +1,8 @@
 Maven Exec Plugin - Executing a Class With Arguments
 ----------------------------------------------------
 
+Binds to mvn exec:exec
+
     <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
