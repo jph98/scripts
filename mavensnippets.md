@@ -1,3 +1,5 @@
+Maven Plugin Cookbook  - http://maven.apache.org/plugin-developers/cookbook/
+
 Maven Exec Plugin
 -----------------
 
