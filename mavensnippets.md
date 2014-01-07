@@ -1,9 +1,26 @@
 Maven Exec Plugin - Executing a Class With Arguments
 ----------------------------------------------------
 
+    <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>1.2.1</version>                                
+            <configuration>
+                    <executable>java</executable>                                        
+                    <arguments>
+                            <argument>-Djava.library.path=${project.build.directory}/lib</argument>
+                <argument>-classpath</argument>
+                            <classpath />
+                            <argument>akka.Main</argument>
+                            <argument>com.froyo.MyActor</argument>
+                    </arguments>
+            </configuration>
+    </plugin>
+
 Maven Executable JAR
 --------------------
 
+Binds to assembly
 
   			<plugin>
   				<groupId>org.apache.maven.plugins</groupId>
@@ -23,6 +40,8 @@ Maven Executable JAR
 
 Maven Shade JAR
 ---------------
+
+Binds to package
 
     <plugin>
         <groupId>org.apache.maven.plugins</groupId>
