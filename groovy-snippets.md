@@ -19,3 +19,8 @@ Sample build.gradle
         testCompile group: 'junit', name: 'junit', version: '4.+'
     }
   
+Compile with:
+
+    gradle build
+    gradle tasks
+    
