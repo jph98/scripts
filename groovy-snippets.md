@@ -6,6 +6,8 @@ Resources
 
 * Cheatsheets - http://geek.starbean.net/?page_id=202
 * Devops in the cloud - http://www.slideshare.net/aestasit/groovy-dev-ops-in-the-cloud
+* Groovy JavaOne - http://www.slideshare.net/jimdriscoll/groovy-dsls-javaone-presentation
+* Going to Mars - http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages
 
 Tools
 -----
@@ -134,4 +136,11 @@ Read a file line by line:
     new File("test.txt").eachLine { 
         println it 
     }
+
+Strings and Pattern Matching
+----------------------------
+
+~ - pattern
+~= - find
+==~
 
