@@ -1,8 +1,14 @@
 Intro and Tools
 ===============
 
-Cheatsheets:
-* http://geek.starbean.net/?page_id=202
+Resources
+---------
+
+* Cheatsheets - http://geek.starbean.net/?page_id=202
+* Devops in the cloud - http://www.slideshare.net/aestasit/groovy-dev-ops-in-the-cloud
+
+Tools
+-----
 
 * Install gvm - Groovy Environment Manager (http://gvmtool.net/)
 
