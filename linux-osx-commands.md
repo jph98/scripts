@@ -101,6 +101,21 @@ Display application running on a specific port
 
     lsof -wni tcp:9997
 
+###Performance
+
+* fio - monitors NFS performance - http://freecode.com/projects/fio
+* iotop - monitor io in the applications
+* htop - monitor CPU, load average (average system load over a period of time) etc...
+* vmstat
+* sar
+* mpstat - look at CPU activity across
+
+    mpstat -P ALL
+    
+* pmap - allows us to look at memory mapped to disk, e.g. mapped: 933712K    writeable/private: 4304K    shared: 768000K
+
+    pmap -d PID
+
 ##OSX Command Snippets
 
 ##### Finding files correctly
