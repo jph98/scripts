@@ -1,6 +1,9 @@
 Intro and Tools
 ===============
 
+Cheatsheets:
+* http://geek.starbean.net/?page_id=202
+
 * Install gvm - Groovy Environment Manager (http://gvmtool.net/)
 
 and use that to install Gradle, Grails etc...
