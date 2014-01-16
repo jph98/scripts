@@ -561,3 +561,256 @@ PyGame - http://www.pygame.org/news.html
 * Werkzeug - http://werkzeug.pocoo.org/
 * Boost.Python - enables interoperability between C++ and Pythonic - http://www.boost.org/doc/libs/1_39_0/libs/python/doc/index.html
 * Stackless Python In Eve - http://www.slideshare.net/Arbow/stackless-python-in-eve
+
+
+
+
+=====
+
+Overview
+
+Based off - http://jfine-python-classes.readthedocs.org/en/latest/
+
+Python Metaclasses by Example - http://eli.thegreenplace.net/2011/08/14/python-metaclasses-by-example/
+
+Double quote and single quote...
+
+Using the shell
+
+Chalk and talk ?
+
+Exception hierarchy with Python
+Simple Class
+
+class A
+	att = 3
+
+Duck Typing
+
+You don't have to have the right type, just behaviour.
+Type
+
+Type takes three arguments:
+
+A = type("A", (), {})
+
+This represents:
+
+    type ('name', bases, dict)
+
+__ - name mangling
+
+>>> type(A)
+<type 'type'>
+
+>>> A.__dict__
+dict_proxy({'__dict__': <attribute '__dict__' of 'A' objects>, '__module__': '__main__', '__weakref__': <attribute '__weakref__' of 'A' objects>, '__doc__': None})
+
+Lets put an attribute (aaa) into the class:
+
+A = type("A", (), {"aaa": 5})
+
+Tuple with one elemtens needs a comma
+
+(int,)
+
+Subclass int with (subclassing builtins):
+
+A = type("A", (int,), {"aaa": 5})
+
+and create an instance with:
+
+A()
+
+And the following gives you Python 3 type behaviour on classes (read more):
+
+__metaclass__ = type
+
+Methods - functions that belong to the class.  We can get hold of them by asking for the dict.
+
+    Not bound
+    Static
+
+class A:
+	def hi(name):
+		print(name)
+	def bye(name):
+		print("so long")
+
+You can look at the dictionary by assigning.
+
+d["hi"]
+d["hi"]("class")
+
+Bound and Unbound Functions
+
+>>> class A:
+...     def f(self, x):
+...             return self, x
+...
+>>> A.f
+<unbound method A.f>
+>>> A.__dict__['f']
+<function f at 0x10048eed8>
+>>> a = A()
+>>> type(a)
+<type 'instance'>
+>>> a.f
+<bound method A.f of <__main__.A instance at 0x1004a6878>>
+
+Address where the object is stored as a decimal:
+
+id(a.f)
+
+And:
+
+>>> f = A.__dict__["f"]
+>>> f(1,2)
+(1, 2)
+
+Alias the function call to the list:
+
+a = []
+app = a.append
+app(3)
+
+What we have above is a first class object.
+
+Javascript does not have bound methods, it's prototypical...  pseudo bound methods.
+Properties
+
+Decorator with:
+
+class A:
+	@property
+	def size(self):
+		return "My own business"
+A
+
+If we call size on A:
+
+# Property object
+A.size
+<property object at 0x100497788>
+
+and the instance returns the actual result of the method call:
+
+a.size
+"My own business"
+
+Property is a way of controlling what a.size() does in relation to the request:
+
+There are a number of built in decorators...
+
+Why properties?
+
+They use the attribute interface.
+
+Put a function behind the a.b interface.
+
+Example: Objects stored in a database, all you're given is the key.  It has a:
+
+    Color
+    Address
+
+etc...
+
+By using the property 
+
+def address(self):
+	record = self.get_record()
+	return record['address']
+ 
+# Alternative to the @property syntax
+address = property(address)
+
+Example: Dictionary where all the keys are lowercased before use.
+
+__getitem__ and __setitem__ are magic methods.
+
+class A:
+	def __getitem__(self, key):
+		return "you asked for %s" % key
+a = A()
+a["3"]
+
+Another example:
+
+class A:
+	def __init__(self):
+		# Make sure data is not part of the API
+		self._data = dict()
+	def __getitem__(self, key):
+		return self._data[key.lower()]
+	def __setitem__(self, key, value):
+		self._data[key.lower()] = value	
+
+Dispatch Table
+
+Sequence of codes with data.  Want to handle these.
+
+Have a dictionary of functions that can be called by name.
+
+for key, value in d:
+	dispatch[key](value)
+
+Access Modifiers
+
+Not like Java where you have private, default, protected and public.
+
+You can make things private using the single underscore symbol.
+
+But the Python way is to have everything open.  The _ is more of a stylistic mechanism to say you really don't want to call this.
+Subclassing Immutable Types
+
+If you are subclassing immutable classes you must use __new__ instead of __init__.
+Metaclasses
+
+Don't use them unless you really need to in general.
+
+class A:
+	pass
+ 
+a = A()
+type(a)
+
+There are other ways of doing this as well...
+
+mytype = type("B", (), {});
+
+class C:
+	__metaclass__ = mytype
+
+Give mytype a getitem method using a lambda (shorthand for writing a function):
+
+mytype.__getitem__ = lambda self, key: (self, key)	
+
+Symbolic Logic - computer science in the 1930's.  Turing/Church.
+Simple Class with Extension Example
+
+Define a simple class which extends another and overrides the method with:
+
+ #!/usr/bin/env python
+class Name:
+	def say(self):
+		"""Say function"""
+		print "Hello World "
+class SayName(Name):
+	
+	def __init__(self, name):
+		"""Simple Constructor"""
+		self.name = name
+	def say(self):
+		"""Say function"""
+		print "Hello World %s " % self.name
+if  __name__ =='__main__':
+	
+	n = Name()
+	print "ClassName: %s " % n.__class__.__name__
+	n.say()
+	n = SayName("Jon")
+	print "ClassName: %s " % n.__class__.__name__
+	n.say()
+
+
+
