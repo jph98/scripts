@@ -814,3 +814,324 @@ if  __name__ =='__main__':
 
 
 
+
+======
+
+
+Todo
+
+    Learn Python Generators
+    Look at an example using list comprehension
+    Look at an example using Python decorators
+    Look at Python map with a function
+    Lambda expressions
+    Strongly but dynamically (defined at runtime) typed language
+    Python has a global interpretor lock (GIL) for multi threaded applications - http://www.dabeaz.com/blog/2010/01/python-gil-visualized.html
+    Style Guide - http://www.python.org/dev/peps/pep-0008/
+    Everything is an object
+    Python is good at text processing because of list comprehension and manipulation
+
+I thought the process of Python mastery went something like:
+
+1. Discover [list comprehensions][1]
+
+2. Discover [generators][2]
+
+3. Incorporate [map, reduce, filter, iter, range, xrange][3] often into your code
+
+4. Discover [Decorators][4]
+
+5. Write recursive functions, a lot
+
+6. Discover [itertools][5] and [functools][6]
+
+7. Read [Real World Haskell][7]
+
+8. Rewrite all your old Python code with tons of higher order functions, recursion, and whatnot.
+
+10. Annoy your cubicle mates every time they present you with a Python class. Claim it could be "better" implemented as a dictionary plus some functions. Embrace functional programming.
+
+11. Rediscover the [Strategy][8] pattern and then [all those things][9] from imperative code you tried so hard to forget after Haskell.
+
+12. Find a balance.
+
+  [1]: http://en.wikipedia.org/wiki/List_comprehension#Python
+  [2]: http://en.wikipedia.org/wiki/Python_syntax_and_semantics#Generators
+  [3]: http://docs.python.org/library/functions.html
+  [4]: http://wiki.python.org/moin/PythonDecorators
+  [5]: http://docs.python.org/library/itertools.html
+  [6]: http://docs.python.org/library/functools.html
+  [7]: http://www.amazon.com/Real-World-Haskell-Bryan-OSullivan/dp/0596514980/ref=wl_it_dp_o?ie=UTF8&coliid=I17I0KVG1JBW7X&colid=3O60XYEAF3V3K
+  [8]: http://en.wikipedia.org/wiki/Strategy_pattern#Python
+  [9]: http://www.amazon.com/First-Design-Patterns-Elisabeth-Freeman/dp/0596007124/ref=sr_1_3?ie=UTF8&s=books&qid=1270423017&sr=1-3
+
+Type System
+Notable Constructs
+Variables
+
+    Local and global variables exist
+    Can assign consecutive values using the range(n) function
+
+Data Structures
+
+    Standard Data Types - http://docs.python.org/library/stdtypes.html
+
+Functions
+
+    Functions have attributes, e.g. __doc__ exists for the docstring of most things
+    No explicit begin or end, you indent
+    Default arguments are evaluated once
+    Definition - def fib(x,y):
+    No end of line statement signal other than return
+    Can assign default values to arguments, which then make them optional
+    Can return multiple parameters from a function
+    type(obj) - gives the type of the particular variable
+    str(obj) - gives the string representation of the variable
+    dir(obj) - returns a list of the attributes and methods of any object
+    callable(obj) - returns true if the object can be called
+    getattr(li, "pop") - returns an object reference at runtime. Can use it as a dispatcher.
+    getattr(statsout, "output_ format, statsout.output_text)
+
+Class Method:
+class hotel:
+ def getweekly(self):
+  return 7 * self.nightly
+[$[Get Code]]
+
+Function:
+
+ def seventimes(amount):
+  return 7 * amount
+
+    A method is a function that “belongs to” an object.
+
+Conditionals
+
+    if:
+    elseif
+    else:
+
+Packages/Modules
+
+    Import modules with: import odbchelper
+    from <package> import <things> - imports and create references to the objects in that package in the current namespace
+    looks in sys.path by default, you can take a look at this
+    Python looks at this for the module you are trying to import, most modules are specified in .py files
+    You can add a directory to pythons search path at runtime, then python will look there
+    __builtin__ is imported automatically, it provides a number of built in "things"
+
+Object Orientation
+
+    Define classes with:
+
+ class FileInfo(UserDict):
+
+    Can define an empty class with the keyword pass - to indicate move along
+    Ancestor - class FileInfo(UserDict):
+    Python supports multiple inheritance
+
+__init__ methods:
+
+    Are optional
+    __init__ is called immediately after an instance of the class is created
+    self - a reference to the current instance of the class. You do not specify it when calling the method - Python will add it for you automatically.
+    When you call a method of an ancestor class from within your class, you must include the self argument
+    You must always explicitly call the appropriate method in the ancestor class - including the constructor
+    Python has a __class__ attribute associated with each class
+    Python supports data attributes/instance variables. These are referenced with self
+
+ def clear(self): self.data.clear() 
+
+Working with classes:
+
+ isinstance (object, class) 
+ issubclass (class1, class2) 
+
+Class Methods. Defining a method with:
+
+    blah - public
+    _blah - weak "internal use" indicator
+    __blah - private class attribute. Invokes name mangling. inside class FooBar, __boo becomes _FooBar__boo
+
+Garbage Collection
+
+Automatic garbage collection
+
+    gc.collect()
+    gc.get_count()
+
+Special Methods
+
+Special methods - called by Python for you.
+
+    map non-method-calling syntax into method calls.
+    __getitem__ is converted via f["a"]
+    __setitem__ is converted via f["a"] = "b"
+    Example of overriding, use self.__parse and then calling ancestor and walking the tree
+    __repr__ returns a string representation of a function
+    __cmp__ comparison and equality ==
+    __len__ length()
+    __delitem__ delete an item
+
+Object Identity and Equality
+
+    Java: str1 == str2, Python: str1 is str2 (IDENTITY)
+    Java: str1.equals(str2), Python str1 == str2 (EQUALITY)
+
+Rich Comparison Operators:
+
+    http://docs.python.org/reference/datamodel.html
+    __eq__, __lt__, __gt__
+
+Other special methods - http://www.python.org/doc/current/ref/specialnames.html
+Class Attributes
+
+    Class attributes (like static variables)
+    Defined immediately after the class declaration
+    __class__ is a built-in attribute
+
+Private Functions
+
+    Private functions cannot be accessed outside a MODULE
+    Private attributes and class methods cannot be accessed outside a CLASS
+    Will get this if you try to call: AttributeError: 'MP3FileInfo' instance has no attribute '__parse'
+    There is no protected, only private and public
+
+Documentation
+
+    comment (#)
+    Triple quotes signify a multi-typed string. It also appears in the doc string """
+
+Strings and Things
+
+    Join items in the list separating with a ; - return ";".join(["s" % (k, v) for k, v in params.items()])
+    Can also split on items as well - split()
+    String Formatting - print "s" % (pwd, uid)
+    http://www.python.org/doc/current/lib/typesseq-strings.html
+    Most string methods are deprecated
+
+Collections
+
+Dictionary is a simple hashtable that accepts various datatypes
+
+    Definition of dictionary - mydi = {"srv":"mpilgrim", "db":"master"}
+    Display Key - mydi["db"]
+    Modify - mydi["db"] = "slave"
+    Case sensitive, unique
+    keys() - display keys
+    values() - display values
+
+Lists:
+
+    A list is defined as li["1","2","3"]
+    Negative List Indices - count backwards
+    Slicing a List - li[1:3] or li[:3] creates a sublist
+    Insert - insert at index
+    Append - adds to list
+    Extend - concatenates the list, maintains a single flat structure. Can use the + operator as well
+    [1,2] * 3 - creates three lists and concatenates them into one
+
+Searching Lists:
+
+    in - returns true if in list
+    index - finds first occurence of a value
+    n.b. empty list, tuple, dictionary is false, 0 is false, empty string is false
+
+Removing From Lists:
+
+    remove - removes the element from the list
+    pop - returns and removes the element
+
+Tuples:
+
+    A tuple is an immutable list. Defined as li("1", "2", "3")
+    Has no methods (can't use getattr). Very quick.
+
+Sequence Types:
+
+    string 'asd'
+    unicode string - u'abc'
+    list
+    tuple
+    buffer - created by buffer()
+    xrange - created using xrange()
+
+List Comprehension and Filtering
+
+    Can apply various functions to list elements
+    [v for k, v in params.items()] - displays the values for each of the keys found in the params list
+    Python list comprehension - http://www.secnetix.de/olli/Python/list_comprehensions.hawk
+
+List Filtering is an extension of the list comprehensions.
+
+ [elem for elem in li if len(elem) > 1] 
+
+    Filters out elements into a new list that match the expression
+    Doesn't eliminate duplicates
+
+ [method for method in dir(object) if callable(getattr(object, method))]
+
+Lambda Functions
+
+ processFunc = collapse and (lambda s: " ".join(s.split())) or (lambda s: s)
+
+    Borrowed from Lisp. Simply an inline function.
+    Returns the value of a single expression
+    http://www.faqts.com/knowledge_base/view.phtml/aid/6081/fid/241
+
+Database
+
+odbchelper
+File Handling
+
+    PyInotify - monitor folders
+
+Introspection
+
+    http://diveintopython.org/power_of_introspection/index.html
+
+Exceptions
+
+    http://diveintopython.org/file_handling/index.html
+
+Testing
+
+    Can retrieve a variables name with the __name__ attribute
+    Python-Nose - http://code.google.com/p/python-nose/
+
+Assertions
+
+assert response != "", "Failed, is empty"
+Regular Expressions
+
+    import re
+    re.findall() and re.finditer() - returns a list, latter is more efficient
+    re.match() - matches
+    re.sub - search and replace
+    re.group() - return matching text
+    re.start() and re.end() gives the
+    re.split() returns a list of strings
+    re.compile() -
+
+http://www.regular-expressions.info/python.html
+Threads and Processes
+
+    Subprocesses - http://docs.python.org/library/subprocess.html
+
+Generators
+
+    Specified by using the yield keyword (instead of return)
+    Suspends processing (freezes local variables) so that a subsequent call on a variable is treated like an iterator
+    Can be used to implement lazy evaluation of collections (instead of returning them all at once)
+    http://linuxgazette.net/100/pramode.html
+    Simplifies state machines and simulates a coroutine - http://www.ibm.com/developerworks/library/l-pygen.html
+
+Common Tools and Utilities
+
+These help with making Python a little easier to use through Commons like helper methods:
+
+    http://assorted.sourceforge.net/python-commons/
+
+Decorators
+
+Python Decorators
