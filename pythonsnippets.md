@@ -297,3 +297,267 @@ and: http://www.outofwhatbox.com/blog/2010/07/python-decorating-with-class/
 ###Generators
 
 Examples here - http://linuxgazette.net/100/pramode.html
+
+
+
+Ecosystem Overview
+Web Application Development
+
+Flask
+
+Django
+Desktop Development
+
+    PyGTK - http://www.pygtk.org/
+    WxPtyhon - http://wxpython.org/
+    Tkinter - http://wiki.python.org/moin/TkInter
+    PyQt - http://wiki.python.org/moin/PyQt
+
+Testing
+
+Lettuce
+Messaging
+
+Celery - distributed task queue (http://www.celeryproject.org/), relies on Redis, RabbitMQ as a broker.
+Infrastructure
+
+Salt
+
+http://www.youtube.com/results?search_query=google+python+class&aq=f
+
+Python 3.0 is not backwards compatible with earlier versions of Python.
+
+Python and Vim - http://dancingpenguinsoflight.com/2009/02/python-and-vim-make-your-own-ide/
+
+Pleac Python Cookbook - http://pleac.sourceforge.net/pleac_python/
+Python Language Notes and Books
+
+Advanced Python:
+
+    http://www.rexx.com/~dkuhlman/python_201/python_201.html
+    http://gael-varoquaux.info/computers/python_advanced/index.html
+    Python Grimoire - http://the.taoofmac.com/media/Python/Grimoire/tiddlygrimoire.html
+    Python For Fun - http://www.openbookproject.net/py4fun/
+
+Python Cookbook
+
+    http://code.activestate.com/recipes/langs/python/
+    Effbot - http://effbot.org/librarybook/
+
+Additional Python Books:
+
+    Text Processing With Python
+    High Performance Python
+    Python for Unix and Linux System Administration
+    Grey Hat Python (Hardcore C Stuff)
+
+Can be embedded within C - http://docs.python.org/c-api/
+
+Can be embedded with IPython - http://ipython.scipy.org/doc/manual/html/interactive/reference.html#embedding-ipython
+
+Used at Google quite a bit. Also supported by Google App Engine.
+
+    http://www.python.org/dev/peps/pep-0008/
+    http://panela.blog-city.com/python_at_google_greg_stein__sdforum.htm
+
+Python Distributions
+
+* Pypy - http://codespeak.net/pypy/dist/pypy/doc/
+* Jython - Python for Java
+* IronPython - Python for .NET
+* Unladen Swallow (Google Improvements) - http://code.google.com/p/unladen-swallow/
+* Activestate ActivePython - http://docs.activestate.com/activepython/2.6/pypm.html
+Frameworks
+
+Stackless Python - http://en.wikipedia.org/wiki/Stackless_Python
+
+    Provides a micro threading framework for lightweight threading
+    Twisted Event Driven Networking Engine - http://twistedmatrix.com/trac/
+    Scapy (Networking) - http://www.secdev.org/projects/scapy/
+    Spring Python - http://springpython.webfactional.com/
+    Data Processing - http://pyprocessing.berlios.de/
+    PSI - Access to system information - http://psychofx.com/psi/
+
+Documentation
+
+Generates API docs from the various docstring comments in the code.
+
+    Epydoc
+    Sphinx - http://sphinx.pocoo.org/
+
+Python Tools and Utilities
+
+    Eclipse Plugin - http://pydev.sourceforge.net/download.html
+    Python-setuptools. This is part of the Python Enterprise Application Kit: http://peak.telecommunity.com/ This provides easy_install - http://peak.telecommunity.com/DevCenter/EasyInstall
+    PIP is a replacement for easy_install
+    Setup python-paramiko. This provides SSH connectivity.
+    Fabric Deployment - [[Fabric Notes]]
+    Werkzeug (Useful Tools and Utilities for Writing Frameworks) - http://werkzeug.pocoo.org/
+
+Easy_install
+
+    Python easy_install works on the basis of eggs. These can be installed via: easy_install blah.
+    You can also install from source normally using: python setup.py install
+
+Pip works from source, it cannot work from eggs.
+
+Python Package Index - http://pypi.python.org/pypi
+
+Monitor File system Changes Pyinotify - http://trac.dbzteam.org/pyinotify
+Extension Modules
+
+Can write extension modules in Python using a number of wrappers:
+* Pyrex - http://wiki.python.org/moin/Pyrex
+* SWIG - http://www.swig.org/Doc1.3/Python.html
+Build and Release Tools
+
+    Distutils (upload to Pypi) - http://docs.python.org/library/distutils.html
+    Fabric
+    zc.buildout - http://www.buildout.org/install.html
+    Can package up a Python application and dependencies using Freeze - http://wiki.python.org/moin/Freeze
+    VirtualEnv - http://pypi.python.org/pypi/virtualenv - looks to be best
+    PyApp 
+    Paver - http://www.blueskyonmars.com/projects/paver/
+    Scon - http://www.scons.org/
+
+[+Database Tools+]
+
+* psycopg - Postgres Driver and Library http://www.devx.com/opensource/Article/29071
+* MySQLdb - http://sourceforge.net/projects/mysql-python/
+
+[+ORM Tools+]
+
+* SQLAlchemy
+* SQLObject
+* Django has own ORM
+
+[+XML Libraries+]
+
+* Amara 2 XML Toolkit - seems like a good choice, http://xml3k.org/Amara2 . Differences between 1.x and 2.x are fairly substantial.
+* ElementTree - xpath support is poor, http://effbot.org/zone/element-index.htm
+* Pulldom - for parsing less complex documents
+* Working with XML - http://codespeak.net/lxml/
+
+[+Web Services+]
+
+* SOAPlib - http://trac.optio.webfactional.com/
+* SUDS - https://fedorahosted.org/suds/
+
+Python Web Services http://pywebsvcs.sourceforge.net/
+* Provides SOAPpy, Zolera (ZSI-2.0) and wstools
+
+SOAPpy is quite old and may not work, tread with care, also with Zolera.
+
+[+HTTP and HTML Libraries+]
+
+* HttpClient - http://code.google.com/p/httplib2/
+* urllib, urrlib2. Also have httplib
+* HTML Parsing with - http://www.crummy.com/software/BeautifulSoup/
+
+* Paste - http://pythonpaste.org/
+* Webob (Low Level HTTP Testing Request/Response) - http://pythonpaste.org/webob/
+
+* High Level Web Browser - http://wwwsearch.sourceforge.net/mechanize/
+
+[+Operating System Internals and Scripting+]
+
+* PExpect - http://pexpect.sourceforge.net/pexpect.html
+* Performance-Co-Pilot Monitoring - http://oss.sgi.com/projects/pcp/
+
+[+Templating+]
+
+* http://wiki.python.org/moin/Templating
+* http://stackoverflow.com/questions/612788/best-python-templating-library-to-facilitate-code-generation
+* Jinja - http://jinja.pocoo.org/
+
+[+Testing+]
+
+* Assertions Effectively - http://wiki.python.org/moin/UsingAssertionsEffectively
+* Desktop Functional Test Tool - https://fedorahosted.org/dogtail/
+* Test Automation Framework - http://sourceforge.net/projects/staf/
+* Nose (extends unittest) - http://somethingaboutorange.com/mrl/projects/nose/0.11.1/
+* http://www.diveintopython.org/unit_testing/index.html
+
+[+Encryption/Decryption+]
+
+* NCrypt - Wrapper for OpenSSL built with Pyrex - http://tachyon.in/ncrypt/
+
+http://vermeulen.ca/python-cryptography.html
+
+* YawPyCrypto - http://yawpycrypto.sourceforge.net/
+* EzPyCrypto (Easy API on top of PyCrypto v.basic) - http://www.freenet.org.nz/ezPyCrypto/
+* PyCrypto - http://www.amk.ca/python/code/crypto.html
+* RSA - http://stuvel.eu/rsa
+* Chillkat (Commercial) - http://www.chilkatsoft.com/rsa-python.asp
+* MeTooCrypto (OpenSSL Wrapper) - http://chandlerproject.org/bin/view/Projects/MeTooCrypto
+
+[+Servers and Web Frameworks+]
+
+* TurboGears - http://turbogears.org/
+* [[Django Notes]] - http://www.djangoproject.com/
+* Pylons - http://pylonshq.com/
+* CherryPy
+* Paste
+* Spawning
+* Twisted.web
+
+Modules For Existing Servers:
+* mod_wsgi or isapi_wsgi
+
+[+Games+]
+
+PyGame - http://www.pygame.org/news.html
+
+[+Long Running Tasks+]
+
+* Django Queue - http://code.google.com/p/django-queue-service/
+* Could also put it on a JMS queue using ActiveMQ and pyactivemq - http://code.google.com/p/pyactivemq/
+
+[+Search+]
+
+* solrpy client - http://code.google.com/p/solrpy/
+* pylucene - http://lucene.apache.org/pylucene/
+
+[+Design Patterns+]
+
+* Google Design Patterns - http://www.youtube.com/watch?v=0vJJlVBVTFg
+* Painless Python - http://www.youtube.com/watch?v=bDgD9whDfEY
+
+[+GUI+]
+
+* Curses with Python http://docs.python.org/library/curses.html
+
+[+Python Web Services+]
+
+* GData - http://code.google.com/p/gdata-python-client/
+* Python Twitter - http://code.google.com/p/python-twitter/
+* libgmail - http://libgmail.sourceforge.net/
+* Search - http://www.catonmat.net/blog/python-library-for-google-search/ or http://pygoogle.sourceforge.net/
+
+[+Generating Graphs+]
+
+* Graphy - http://code.google.com/p/graphy/
+
+[+Misc+]
+
+* PyCuda - http://documen.tician.de/pycuda/
+* Emphasis on readability
+* OO, imperative and functionality
+* Metaprogramming
+* MAgic Methods
+* pyDBC - Design By Contract
+* Dynamic typing. Duck typing.
+* Strongly typed however, can't add int to string
+* Reference Counting
+* cycle detecting garbage collector
+* Psyco - JIT compiler
+* Pythonic - means it uses Python idioms well
+* Allows for metaprogramming and reflection
+* Pyp - self hosting implementation of Python written in Python
+* Cython and Pyrex can be used to compile to C
+* Python Enhancement Proposals (PEP's)
+* CPython, Stackless Python (not based on C stack), Jython and Pypy
+* mod_wsgi - defines a simple and universal interface between web servers/web applications in Pythonic
+* Werkzeug - http://werkzeug.pocoo.org/
+* Boost.Python - enables interoperability between C++ and Pythonic - http://www.boost.org/doc/libs/1_39_0/libs/python/doc/index.html
+* Stackless Python In Eve - http://www.slideshare.net/Arbow/stackless-python-in-eve
