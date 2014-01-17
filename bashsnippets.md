@@ -1,5 +1,7 @@
 ##Bash Snippets
 
+Best Bash Guide Ever (apparently) - http://tldp.org/LDP/abs/html/
+
 See - http://bash.cumulonim.biz/BashPitfalls.html
 
 ###Basics and Rules of Thumb
