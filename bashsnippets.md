@@ -68,7 +68,25 @@ Alternatively, use a subshell using $()
 #####Subshell
 
     for cmd in $(ls metrics*.rb)
-    
+
+#####Parsing output of a command to check whether something is present
+
+In this case an R package
+
+	#!/usr/bin/env bash
+
+	function checkpackage() {
+		output=""
+		output=`Rscript -e 'installed.packages(lib.loc = "/opt/mango/navigator/rlibs")' | grep "$1.*\"$1\""`
+		
+		if [ -n "$output" ]; then
+			echo "$1: PASS"
+		else
+			echo "$1: FAIL"		
+		fi
+	}
+
+checkpackage "RNMImport"
 #####Find files and execute them
 
     #!/bin/bash
