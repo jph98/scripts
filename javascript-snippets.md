@@ -1,5 +1,5 @@
-Javascript Snippets
--------------------
+Introduction
+------------
 
 * Re-introduction to Javascript - https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript
 * Airbnb Javascript Guide - https://github.com/airbnb/javascript
@@ -17,26 +17,45 @@ Javascript Snippets
 * Node Beginner - http://www.nodebeginner.org/
 * LimeJS Game - http://www.limejs.com/0-getting-started
 
-Finish off the presentation for the developers meeting
+Debugging
+---------
+
+* Inspect Element
+* Console
+
+Testing web-services:
+* Advanced REST Client - chrome extension 
+* Postman - chrome extension
+* Poster - firefox extension
+
+Response From Web-Services
+--------------------------
+
+Better to return JSON rather than HTML really.
+
+Manipulating the JSON - 
+
+Constructors
+------------
 
 Two ways of creating objects:
 
 Constructor style for creating objects
 
- // constructor version
-function Person(name) {
-	this.name = name;
-}
+ 	// constructor version
+	function Person(name) {
+		this.name = name;
+	}
 
- Object literal style for creating objects
+Object literal style for creating objects
 
-var person = {
-    name: 'Jon', 
-	details: function(){
-        console.log('Name: ' + this.name + '.')
-    }
-}
-
-Applications of Javascript
+	var person = {
+	    name: 'Jon', 
+		details: function(){
+	        console.log('Name: ' + this.name + '.')
+	    }
+	}
 
 Javascript Game Programming
+---------------------------
+
