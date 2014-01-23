@@ -33,7 +33,10 @@ Response From Web-Services
 
 Better to return JSON rather than HTML really.
 
-Manipulating the JSON - 
+Manipulating the JSON - use Underscore templates
+
+	<script type="x-underscore/template" id="employee-template">
+	</script>
 
 Constructors
 ------------
