@@ -33,11 +33,6 @@ Response From Web-Services
 
 Better to return JSON rather than HTML really.
 
-Manipulating the JSON - use Underscore templates
-
-	<script type="x-underscore/template" id="employee-template">
-	</script>
-
 Constructors
 ------------
 
@@ -62,3 +57,12 @@ Object literal style for creating objects
 Javascript Game Programming
 ---------------------------
 
+Templating
+----------
+
+Manipulating the JSON - use Underscore templates
+
+	<script type="x-underscore/template" id="employee-template">
+	</script>
+	
+Can use JQuery UI as well for templating.
