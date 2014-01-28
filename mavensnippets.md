@@ -1,5 +1,48 @@
 Maven Plugin Cookbook  - http://maven.apache.org/plugin-developers/cookbook/
 
+Useful Commands
+---------------
+
+Dependencies:
+
+	mvn dependency:tree
+	
+Skip Tests:
+
+	mvn package -DskipTests=true
+
+Display updates required:
+
+	mvn versions:display-plugin-updates
+	mvn versions:display-dependency-updates
+
+Build only required projects:
+
+	mvn -pl ejb,ear package
+	
+Resume build from last test
+
+	mvn -rf myproject-commons clean install
+	
+Offline compile:
+
+	    mvn -o compile  
+
+Run one test:
+
+	    mvn test –Dtest=org.shankh.mavenTest  
+	    
+Archetypes
+----------
+
+Create a web app:
+
+	    mvn archetype:generate  
+            -DarchetypeGroupId=org.apache.maven.archetypes  
+            -DarchetypeArtifactId=maven-archetype-webapp  
+            -DgroupId=com.mycompany  
+            -DartifactId=my-app  
+
 Download Sources and Javadoc
 ----------------------------
 
