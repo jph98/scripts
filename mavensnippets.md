@@ -184,7 +184,7 @@ This specifies a JAR with specific directories:
       
     </assembly>
     
-This specifies a WAR file@
+This specifies a WAR file:
 
         <assembly
         	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
