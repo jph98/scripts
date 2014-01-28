@@ -227,7 +227,9 @@ This specifies a JAR with specific directories:
       
     </assembly>
     
-This specifies a WAR file:
+This specifies a WAR file (along with specifying packaging as war in your root pom.xml):
+
+Need to work out how to create an assembly from scratch for a war and publish that instead of using the war plugin
 
         <assembly
         	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
