@@ -1,5 +1,17 @@
 Maven Plugin Cookbook  - http://maven.apache.org/plugin-developers/cookbook/
 
+Download Sources and Javadoc
+----------------------------
+
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-eclipse-plugin</artifactId>
+		<configuration>
+			<downloadSources>true</downloadSources>
+			<downloadJavadocs>true</downloadJavadocs>
+		</configuration>
+	</plugin>
+			
 Maven Exec Plugin
 -----------------
 
@@ -71,3 +83,137 @@ n.b. This doesn't include system dependencies declared, it omits them.
                 </execution>
         </executions>
     </plugin>
+
+Embedded Tomcat
+---------------
+
+<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+
+				<!-- Configuration - http://tomcat.apache.org/maven-plugin-2.0/tomcat7-maven-plugin/run-war-mojo.html#tomcatLoggingFile -->
+				<configuration>
+
+					<tomcatLoggingFile>${basedir}/log.txt</tomcatLoggingFile>
+					<tomcatUsers>${basedir}/src/main/resources/tomcat-users.xml</tomcatUsers>
+					<warDirectory>${project.build.directory}</warDirectory>
+					<port>${tomcat.port}</port>
+
+					<extraDependencies>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>slf4j-api</artifactId>
+							<version>1.7.2</version>
+						</dependency>
+						<dependency>
+							<groupId>org.slf4j</groupId>
+							<artifactId>jul-to-slf4j</artifactId>
+							<version>1.7.2</version>
+						</dependency>
+						<dependency>
+							<groupId>ch.qos.logback</groupId>
+							<artifactId>logback-classic</artifactId>
+							<version>1.0.7</version>
+						</dependency>
+						<dependency>
+							<groupId>ch.qos.logback</groupId>
+							<artifactId>logback-core</artifactId>
+							<version>1.0.7</version>
+						</dependency>
+					</extraDependencies>
+				</configuration>
+		<	/plugin>
+		
+Creating Multiple Artifacts
+---------------------------
+
+Use the assembly plugin:
+
+        <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>create-client-jar</id>
+						<phase>package</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+						<configuration>							
+							<descriptors>
+								<descriptor>src/main/assembly/api-jar-assembly.xml</descriptor>
+								<descriptor>src/main/assembly/service-war-assembly.xml</descriptor>
+							</descriptors>
+							<archive>								
+								<manifestEntries>
+									<Built-Date>${maven.build.timestamp}</Built-Date>
+									<Build-OS>${os.name}-${os.version}</Build-OS>									
+								</manifestEntries>
+							</archive>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>            
+
+and specify each assembly descriptor.  
+
+This specifies a JAR with specific directories:
+
+    <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0" 
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+      
+      <id>client</id>
+      
+      <formats>
+        <format>jar</format>
+      </formats>
+      
+      <includeBaseDirectory>false</includeBaseDirectory>
+      
+      <fileSets>
+        <fileSet>      
+          <outputDirectory>/</outputDirectory>
+          <includes>
+            <include>**/api/**</include>
+            <include>**/client/**</include>
+          </includes>
+        </fileSet>
+      </fileSets>
+      
+    </assembly>
+    
+This specifies a WAR file@
+
+        <assembly
+        	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+        	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+        
+        	<id>service</id>
+        	<formats>
+        		<format>war</format>
+        		<format>dir</format>
+        	</formats>
+        	<includeBaseDirectory>false</includeBaseDirectory>
+        	<dependencySets>
+        		<dependencySet>
+        			<includes>
+        				<include>${project.groupId}:*:war:${project.version}</include>
+        			</includes>
+        			<useProjectArtifact>true</useProjectArtifact>
+        			<outputDirectory>webapp</outputDirectory>
+        			<unpack>false</unpack>
+        		</dependencySet>
+        		<dependencySet>
+        			<excludes>
+        				<exclude>${project.groupId}:*:war:${project.version}</exclude>
+        			</excludes>
+        			<useProjectArtifact>true</useProjectArtifact>
+        			<outputDirectory>lib</outputDirectory>
+        			<unpack>false</unpack>
+        		</dependencySet>
+        	</dependencySets>
+        
+        </assembly>
