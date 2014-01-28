@@ -1,10 +1,11 @@
 CheatSheet - http://claymore.engineer.gvsu.edu/~steriana/226/C.CheatSheet.pdf
 
 * libcURL
-* libGlib
+* libGlib - cross platform utility library - http://en.wikipedia.org/wiki/GLib
 * libGSL
 * libSQLite3
 * libXML2
+* Apophenia - https://github.com/b-k/Apophenia
 
 Windows - use  MinGW (./configure --host=ming32)
 Linux - 
@@ -68,7 +69,10 @@ or if compiling add the following to the Makefile:
 
     LDADD=-Llibpath -Wl,-Rlibpath
     
-Makefile
+Makefiles
+---------
+
+Shell grammar is based on the Bash/C shell syntax
 
     P=program_name
     OBJECTS=
@@ -77,3 +81,58 @@ Makefile
     CC=c99
     $(P): $(OBJECTS)
     
+Define a variable (can also override on the command line):
+
+    make CFLAGS="-g -Wall"
+    
+Built in variables:
+* $@ - target filename
+* $* - target file without extension
+
+Example:
+
+    all: html doc publish
+
+    doc:
+        pdflatex $(f).tex
+    
+    html:
+        latex -interaction batchmode $(f)
+        latex2html $(f).tex
+    
+    publish:
+        scp $(f).pdf $(Blogserver)
+        
+Compiling an object from a c source file:
+
+    $(CC) $(CFLAGS) $(LDFLAGS) -o $@ $*c.
+    
+Default Make rules:
+
+    make -p > default_rules
+    
+Setting CFLAGS:
+
+    CFLAGS=`pkg-config --cflags apophenia glib-2.0` -g -Wall -std=gnu11 -O3
+    LDLIBS=`pkg-config --libs apophenia glib-2.0`
+
+Headers
+-------
+
+As well as including headers are the top of your C program, with GCC you can include the headers:
+
+    gcc -include stdio.h
+
+Here documents 
+--------------
+
+Here docs are a standard POSIX feature.  They allow you to define a program using stdin on the command line like so:
+
+    python - <<"XXXX"
+    lines=2
+    print "\nThis script is %i lines long.\n" %(lines,)
+    XXXX
+    
+Debug, Test
+-----------
+
