@@ -6,6 +6,14 @@
 
 See: http://nathany.com/good/
 
+###Language Overview
+
+Packages are downloaded according to the GOPATH variable you have set up.  This consists of a pkg and src folder.
+
+Install a package with:
+
+    go get github.com/ant0ine/go-json-rest
+
 ###Simple Program
 
 Note that most methods start with an uppercase letter
