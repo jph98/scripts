@@ -152,3 +152,8 @@ Functions can also be variadic
 
     mymap := make(map[string]int)
     mymap["key" = 1
+
+###Interfaces
+
+* There are no classes in Go
+* You can define methods on Structs
