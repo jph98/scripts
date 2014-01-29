@@ -111,6 +111,8 @@ A good example of using channels and workers is to define a worker pool for proc
 
 ###Loops
 
+There are only for loops in Go
+
     for i:= 0; i < 10; i++ { // do stuff }
 
 or...
