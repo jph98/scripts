@@ -9,6 +9,8 @@ See:
 
 Sigil - e.g. @ and $e
 
+Ruby Draft Specification - http://www.ipa.go.jp/osc/english/ruby/
+
 ###Gem Overview
 
 	gem env | grep INSTALLATION
@@ -159,6 +161,10 @@ You can override object equality with ==
 	def ==(another_sock)
     		self.size == another_sock.size
   	end
+  	
+######Pipe pipe equals ||=
+
+	https://www.ruby-forum.com/topic/151660/
   
 The following checks whether objects have the same type as well as value
 
