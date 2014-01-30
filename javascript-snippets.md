@@ -18,6 +18,9 @@ Introduction
 * Node Beginner - http://www.nodebeginner.org/
 * LimeJS Game - http://www.limejs.com/0-getting-started
 
+* Interview - http://blog.sourcing.io/interview-questions
+* Front End Developer Interview Questions - https://github.com/darcyclarke/Front-end-Developer-Interview-Questions
+
 Debugging
 ---------
 
@@ -67,3 +70,10 @@ Manipulating the JSON - use Underscore templates
 	</script>
 	
 Can use JQuery UI as well for templating.
+
+Function Prototypes
+
+Function expression and function declaration
+
+Javascript context and this
+
