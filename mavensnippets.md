@@ -356,4 +356,25 @@ Creating an executable Tomcat web application JAR
 					</execution>
 				</executions>
 
+Deleting additional resources with clean 
+----------------------------------------
+
 			</plugin>
+
+			<plugin>
+			    <artifactId>maven-clean-plugin</artifactId>
+			    <version>2.5</version>
+			    <configuration>
+			      <filesets>
+			        <fileset>
+			          <directory>${basedir}</directory>
+			          <includes>
+			            <include>tomcat**/**</include>
+			            <include>work</include>
+			            <include>target</include>
+			          </includes>
+			          <followSymlinks>false</followSymlinks>
+			        </fileset>
+			      </filesets>
+			    </configuration>
+			  </plugin>
