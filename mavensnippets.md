@@ -262,3 +262,66 @@ Need to work out how to create an assembly from scratch for a war and publish th
         	</dependencySets>
         
         </assembly>
+
+Running tests AFTER the packaging phase
+---------------------------------------
+
+	
+		<plugin>
+	            <groupId>org.apache.maven.plugins</groupId>
+	            <artifactId>maven-surefire-plugin</artifactId>
+	            <configuration>
+	                <skip>true</skip>
+	            </configuration>
+	            <executions>
+	                <execution>
+	                    <id>unittests</id>
+	                    <phase>package</phase>
+	                    <goals>
+	                        <goal>test</goal>
+	                    </goals>
+	                    <configuration>
+	                        <skip>false</skip>
+	                        <includes>
+	                            <include>**/**/**/*Test.java</include>
+	                        </includes>
+	                    </configuration>
+	                </execution>
+	            </executions>
+	        </plugin>
+
+Filtering a Resource
+--------------------
+
+	
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target</outputDirectory>
+							<resources>
+							
+								<!-- Installation scripts and properties files -->
+								<resource>
+									<filtering>true</filtering>
+									<directory>src/main/java/install</directory>
+									<includes>
+										<include>**/*.properties</include>
+										<include>**/*.sh</include>
+									</includes>
+								</resource>															
+								
+							</resources>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
