@@ -325,3 +325,35 @@ Filtering a Resource
 					</execution>
 				</executions>
 			</plugin>
+
+Creating an executable Tomcat web application JAR
+-------------------------------------------------
+
+	<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.0</version>
+
+				<!-- Executable JAR -->
+				<executions>
+
+					<execution>
+						<id>tomcat-run</id>
+						<goals>
+							<goal>exec-war-only</goal>
+						</goals>
+						<phase>package</phase>
+						<configuration>
+							<path>/</path>
+							<enableNaming>false</enableNaming>
+							<httpPort>9001</httpPort>
+							<port>9001</port>
+							<finalName>rexecutionservice-executable.jar</finalName>
+							<charset>utf-8</charset>
+							<attachArtifactClassifier>executable</attachArtifactClassifier>
+							<attachArtifactClassifierType>jar</attachArtifactClassifierType>
+						</configuration>
+					</execution>
+				</executions>
+
+			</plugin>
