@@ -31,7 +31,8 @@ Sample build.gradle
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.+'
     }
-  
+
+REPL - groovysh  
 Compile with:
 
     gradle build
@@ -164,3 +165,8 @@ MarkupBuilder provides a way to output XML/HTML:
         		}
         	}
         }
+
+Closures
+========
+
+        def printsum = { a,b -> print a + b}
