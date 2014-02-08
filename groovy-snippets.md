@@ -12,6 +12,8 @@ Resources
 Tools
 -----
 
+* Grape - dependency management - http://groovy.codehaus.org/Grape
+* 
 * Install gvm - Groovy Environment Manager (http://gvmtool.net/)
 
 and use that to install Gradle, Grails etc...
