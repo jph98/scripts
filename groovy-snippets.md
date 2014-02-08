@@ -9,11 +9,19 @@ Resources
 * Groovy JavaOne - http://www.slideshare.net/jimdriscoll/groovy-dsls-javaone-presentation
 * Going to Mars - http://www.slideshare.net/glaforge/going-to-mars-with-groovy-domainspecific-languages
 
-Tools
------
+Libraries
+---------
+
+* Groovy Rules - http://www.slideshare.net/paulk_asert/groovy-rules
+* Concurreny (GPars) - http://www.slideshare.net/paulk_asert/concurrency-gpars
+* Popper (Junit Theories) - http://groovy.codehaus.org/Using+Popper+with+Groovy
+* Instinct (BDD) - http://groovy.codehaus.org/Using+Instinct+with+Groovy
+* Choco (Constraint Programming) - http://groovy.codehaus.org/Constraint+Programming
+* 
+Build Tools
+-----------
 
 * Grape - dependency management - http://groovy.codehaus.org/Grape
-* 
 * Install gvm - Groovy Environment Manager (http://gvmtool.net/)
 
 and use that to install Gradle, Grails etc...
@@ -148,7 +156,7 @@ Strings and Pattern Matching
 ==~
 
 MarkupBuilder
-=============
+-------------
 
 MarkupBuilder provides a way to output XML/HTML:
 
@@ -167,6 +175,56 @@ MarkupBuilder provides a way to output XML/HTML:
         }
 
 Closures
-========
+--------
+
+See - http://groovy.codehaus.org/Closures
 
         def printsum = { a,b -> print a + b}
+
+You can define a free variable (variable not listed in the parameter list) also with a closure:
+
+        def amount = 5
+        def incAmount = { num -> num + amount }
+        incAmount(10)
+        
+Single argument, you can omit the parameter
+
+        def incAmount = { num -> num + amount }
+
+this, owner, delegate
+
+        TODO 
+        
+Can define a method as having a closure as the last thing with:
+
+        def clos = { it.toUpperCase() }
+        list.collect( newlist, clos )
+
+shorthand, this is much cleaner though, although implicit:
+
+        list.collect( newlist ) {
+            it.toUpperCase()
+        }
+        
+Annotations
+-----------
+
+Processing annotations - http://groovy.codehaus.org/Annotations+with+Groovy
+
+There are a number of ways of doing AST's as well with the following examples:
+
+    @Immutable class Person {
+        String firstname, surname
+    }
+    
+    @Singleton
+    @Lazy - mark a field so that any complex computation can be done as late as possible
+    @Delegate - (awesome).  Specify that a object inherit methods from another class - @Delegate Date when
+    @Newify - new way of constructing new objects
+    @Category - specify an operation, then use @Mixin to include your categories
+    @PackageScope - 
+    
+Category and Mixin Transformations
+----------------------------------
+
+http://groovy.codehaus.org/Category+and+Mixin+transformations
