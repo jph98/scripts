@@ -30,6 +30,7 @@ http://confluence.jetbrains.com/display/IntelliJIDEA/Navigation
 * CTRL + arrows - move between methods
 * CTRL + G - goto line
 * CTRL + F4 - close window
+* CTRL + H - show type hierarchy
 
 Code Completion
 =========
