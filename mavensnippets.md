@@ -378,3 +378,27 @@ Deleting additional resources with clean
 			      </filesets>
 			    </configuration>
 			  </plugin>
+
+Running a Bash Script From Maven
+--------------------------------
+
+		 <plugin>
+                        <groupId>com.atlassian.maven.plugins</groupId>
+                        <artifactId>bash-maven-plugin</artifactId>
+                        <version>1.0</version>
+                        <executions>
+                            <execution>
+                                <id>Deploy service to dev</id>
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <script>
+                                echo "Hello World"
+                            </script>
+                        </configuration>
+                    </plugin>
+
