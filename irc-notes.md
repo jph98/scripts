@@ -8,13 +8,22 @@ Languages
 * python-forum
 * ruby
 
-Technology
+Java Technology
 ----------
 
 * java
+* idea-users
 * groovy
 * jruby
 * jetty
+* reddit-java
+
+Games
+-----
+
+* lwgjl
+* bbg
+* reddit-gamedev
 
 Java Groups
 -----------
