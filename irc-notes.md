@@ -21,9 +21,15 @@ Java Groups
 
 * virtualJUG
 * idea-users
+ 
+Web
+---
 
 * nodejs
 * jquery
+
+Local
+-----
 
 * bristolhackspace
 
