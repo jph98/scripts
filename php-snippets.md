@@ -1,12 +1,6 @@
 PHP
 ===
 
-// or # can be used as a single line comment
-/* as a multiline comment
-
-Language
---------
-
 * PHP Docs - http://www.php.net/manual/en/
 * PHP Best Practices - http://www.phptherightway.com/
 * PHP Certification - http://shop.zend.com/eu/zend-php5-certification-voucher.html
@@ -62,6 +56,9 @@ Zend Framework - web application framework
 * Tutorial - http://akrabat.com/wp-content/uploads/Getting-Started-with-Zend-Framework.pdf
 
 Overview of the php.ini file    
+
+// or # can be used as a single line comment
+/* as a multiline comment
 
 Frameworks and Libraries
 ------------------------
