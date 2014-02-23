@@ -1,8 +1,12 @@
-######Best Programming IRC Channels
+######Programming IRC Channels
 
-  #java
-  #scala
-
+* java
+* jruby
+* python
+* python-forum
+* groovy
+* bristolhackspace
+* ruby
 
 #####Registering a new nickname:
   
