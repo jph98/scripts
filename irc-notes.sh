@@ -1,14 +1,39 @@
-######Programming IRC Channels
+Programming IRC Channels
+========================
 
-* java
-* jruby
+Languages
+---------
+
 * python
 * python-forum
-* groovy
-* bristolhackspace
 * ruby
 
-#####Registering a new nickname:
+Technology
+----------
+
+* java
+* groovy
+* jruby
+* jetty
+
+Java Groups
+-----------
+
+* virtualJUG
+* idea-users
+
+* nodejs
+* jquery
+
+* bristolhackspace
+
+Working With
+============
+
+Registering a new nickname:
   
   /msg NickServ register PASSWORD_GOES_HERE EMAIL_ADDRESS_GOES_HERE
 
+Change nick:
+  
+  /nick 
