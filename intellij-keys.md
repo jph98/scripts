@@ -1,20 +1,35 @@
 Shortcuts
 =========
 
+Commonly Used
+
 * Lookup a Command - CTRL + SHIFT + A
 * All usages of a class/method - ALT + F7
+* Show error at caret - CTRL + F1
+* Open file by name - CTRL + Shift + N - 
+* Move between methods - ALT
+* Insert Template - CTRL + J
+* Extract Method - CTRL + ALT + M
+* Quick Fix - ALT + ENTER
+* Code Completion - CTRL + Space
+* Rename - Shift + F6
+* Run Specific Configuration - ALT + Shift + F10
+* Show usages (in class) - CTRL + Shift + F7
+* 
 * Build - CTRL + F9
 * Select - CTRL + W
-* Scroll window - ALT
+* Close Window - CTRL + F4
+* Search Structurally - CTRL + Shift + S
+* Quickfix - ALT + Enter
+* Minimise/maximise the tool window - CTRL + Shift + F12
+* Bookmarks - F11 (create), Shift F11
 * Move the line up/down - ALT + SHIFT + arrow
 * Remove line - CTRL + Y
 * Optimize Imports - CTRL + O
 * Comment - CTRL + /
 * Show docs - CTRL + Q
-* CTRL + ALT + F7 - find ALL usages
-* ALT + ENTER - Quick Fix
+
 * Reformat Code - CTRL + ALT + L
-* Shift + F6 - Rename
 
 http://confluence.jetbrains.com/display/IntelliJIDEA/Code+Style+and+Formatting
 
