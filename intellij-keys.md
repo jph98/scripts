@@ -3,6 +3,7 @@ Shortcuts
 
 Commonly Used
 
+* Create new constructor - ALT + Ins
 * Lookup a Command - CTRL + SHIFT + A
 * All usages of a class/method - ALT + F7
 * Show error at caret - CTRL + F1
@@ -10,12 +11,12 @@ Commonly Used
 * Move between methods - ALT
 * Insert Template - CTRL + J
 * Extract Method - CTRL + ALT + M
+* 
 * Quick Fix - ALT + ENTER
 * Code Completion - CTRL + Space
 * Rename - Shift + F6
 * Run Specific Configuration - ALT + Shift + F10
 * Show usages (in class) - CTRL + Shift + F7
-* 
 * Build - CTRL + F9
 * Select - CTRL + W
 * Close Window - CTRL + F4
