@@ -1,7 +1,12 @@
 Shortcuts
 =========
 
+* Class Name Template
+* Darcula
+* Eclipse Code Templates - SO
+
 Commonly Used
+-------------
 
 * Create new constructor - ALT + Ins
 * Lookup a Command - CTRL + SHIFT + A
