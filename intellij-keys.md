@@ -1,9 +1,8 @@
 Shortcuts
 =========
 
-* Class Name Template
-* Darcula
 * Eclipse Code Templates - SO
+* Live Templates - http://java.dzone.com/articles/what%E2%80%99s-cool-intellijidea-part-0
 
 Commonly Used
 -------------
