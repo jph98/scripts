@@ -1,3 +1,8 @@
+Config
+------
+
+    git config --global color.ui true
+    
 Branches and Merging
 --------------------
 
@@ -17,7 +22,26 @@ Now, let's merge our fix back into master
 and delete the branch (we no longer need it since it's merged in)
 
     git deletebranch -d issue-3498
+
+List all branches
+
+    git branch -a
     
+List remote branches
+
+    git branch -r
+
+Switch to a branch
+
+    git checkout -b feature-x
+
 Dealing With Conflicts
 ----------------------
 
+Pull changes and merge conflicts
+
+    git pull
+
+Pull changes (no merge)
+
+    git fetch
