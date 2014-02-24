@@ -11,13 +11,16 @@ Commonly Used
 * Move between methods - ALT
 * Insert Template - CTRL + J
 * Extract Method - CTRL + ALT + M
-* 
+ 
 * Quick Fix - ALT + ENTER
 * Code Completion - CTRL + Space
 * Rename - Shift + F6
 * Run Specific Configuration - ALT + Shift + F10
 * Show usages (in class) - CTRL + Shift + F7
+
 * Build - CTRL + F9
+* Run - CTRL + Shift + F10
+
 * Select - CTRL + W
 * Close Window - CTRL + F4
 * Search Structurally - CTRL + Shift + S
@@ -26,6 +29,7 @@ Commonly Used
 * Bookmarks - F11 (create), Shift F11
 * Move the line up/down - ALT + SHIFT + arrow
 * Remove line - CTRL + Y
+* Cleanup Formatting - 
 * Optimize Imports - CTRL + O
 * Comment - CTRL + /
 * Show docs - CTRL + Q
