@@ -35,6 +35,10 @@ Switch to a branch
 
     git checkout -b feature-x
 
+Compare changes on branch with master:
+
+    git diff --name-status master
+
 Dealing With Conflicts
 ----------------------
 
