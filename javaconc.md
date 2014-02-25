@@ -7,6 +7,7 @@ Java Concurrency Notes
 ExecutorService
 * submit (returns a future) will bind the exception to the future
 * execute (void) will invoke the uncaughtexceptionhandler in the case of an exception
+* invokeall - takes a timeout for the tasks
 
 CopyOnWriteArrayList
 
