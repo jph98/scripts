@@ -1,6 +1,13 @@
 Java Concurrency Notes
 ----------------------
 
+* Future - a promise effectively, interface
+* FutureTask - implementation of the Future interface with a cancel and start
+
+ExecutorService
+* submit (returns a future) will bind the exception to the future
+* execute (void) will invoke the uncaughtexceptionhandler in the case of an exception
+
 CopyOnWriteArrayList
 
 Commons Lang
