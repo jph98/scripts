@@ -6,6 +6,7 @@ Config
 Display the remote repository information:
 
     git config --get remote.origin.url
+    git remote show origin
     
 Branches and Merging
 --------------------
