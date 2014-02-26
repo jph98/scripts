@@ -1,13 +1,36 @@
 Config
 ------
 
+.gitconfig
+
+    blah:~$ cat .gitconfig 
+    [user]
+    	name = Jonathan Holloway
+    	email = jon.holloway@brightpearl.com
+    [color]
+    	ui = true
+    [status]
+    	relativePaths = true
+	
     git config --global color.ui true
     
 Display the remote repository information:
 
     git config --get remote.origin.url
     git remote show origin
-    
+
+Display paths relative to non-root
+
+    git config --global status.relativePaths true
+
+Diffs
+-----
+
+Show a plain status:
+
+     git status --porcelain
+
+     
 Branches and Merging
 --------------------
 
