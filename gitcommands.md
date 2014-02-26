@@ -3,6 +3,10 @@ Config
 
     git config --global color.ui true
     
+Display the remote repository information:
+
+    git config --get remote.origin.url
+    
 Branches and Merging
 --------------------
 
