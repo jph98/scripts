@@ -30,6 +30,15 @@ Show a plain status:
 
      git status --porcelain
 
+Committing
+----------
+
+Add all modified files
+
+	git add -A
+
+Commit the files:
+	git commit -m "Message"
      
 Branches and Merging
 --------------------
