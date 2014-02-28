@@ -7,6 +7,7 @@ Shortcuts
 Commonly Used
 -------------
 
+* Surround with (trycatch, conditionals etc...) - CTRL + ALT + T (After selection)
 * Create new constructor - ALT + Ins
 * Lookup a Command - CTRL + SHIFT + A
 * All usages of a class/method - ALT + F7
