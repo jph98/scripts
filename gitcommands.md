@@ -30,6 +30,22 @@ Show a plain status:
 
      git status --porcelain
 
+Stashing
+--------
+
+Store a stash
+	
+	git stash
+	
+List stashes
+
+	git stash list
+	
+Apply a stash
+
+	git stash apply stash@{0}
+
+
 Committing
 ----------
 
