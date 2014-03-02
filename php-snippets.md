@@ -40,6 +40,10 @@ Look up docs with(n.b. double dash):
 
     php --rf
     
+Starting the built in web-server:
+
+    php -S localhost:4000 server.php
+
 PHP Internals (Hackers Guide) - http://www.php.net/manual/en/internals2.php
 
 Zend 1.0 - Core Engine
