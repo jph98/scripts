@@ -65,8 +65,9 @@ Frameworks and Libraries
 
 * Various web frameworks - CodeIgnitor, Laravel, CakePHP, Yii
 * PHP REPL - http://phpepl.cloudcontrolled.com/
-* PHP Package Archivist - https://packagist.org/
+* PHP Package Archivist - https://packagist.org/* 
 * PHAR - PHP Archives
+* Composer - dependency management
 * GTK bindings with PHP-GTK - http://gtk.php.net/
 * Dispatch Micro Framework - http://noodlehaus.github.io/dispatch/
 * ORM (idiorm)  - https://github.com/j4mie/idiorm/
