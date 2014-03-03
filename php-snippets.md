@@ -71,8 +71,8 @@ Discover a channel (to add more packages) with:
 
          sudo pear channel-discover pear.kotowicz.net
         
-Infrastructure
---------------
+Command Line
+------------
 
 Checking the version:
 
@@ -117,6 +117,13 @@ Overview of the php.ini file
 
 // or # can be used as a single line comment
 /* as a multiline comment
+
+Testing PHP
+-----------
+
+Use PHPFiddle - http://phpfiddle.org/
+
+Boris is also handy (if compiled with pcntl as an extension to PHP.
 
 Variables
 ---------
@@ -228,22 +235,88 @@ Print outputs only one thing and returns true
 
     print $name
 
-Objects
--------
+Object Oriented PHP
+-------------------
+
+Classes (and methods) can be final.
 
 Simple class can be created with:
 
-    class Person {
+        class Person {
         
-        var $name;
-        
-        function Person($name="bob") {
-          $this->name = $name;
+            var $name='Bob';
+        	
+            function Person($name="bob") {
+                $this->name = $name;
+            }
+                
+            function get_name() {
+                return $this>name;
+            }
         }
         
-        function get_name() {
-          return $this>name;
+        
+        $person = new Person('bill');
+        echo 'Person name ' . $person->name . '.';
+
+Constructors exist and destructors with:
+
+        __construct
+        __destruct
+        
+$self is used to reference methods in the same class.
+
+$this is used for variables.  
+
+Access modifiers for public, protected and private exist.
+
+Fields are called properties in PHP.
+
+Constants, static properties are accessed using :: instead of ->
+
+        self::$property
+        
+Constants can be declared using const btw...
+
+Static variables can be declared as follows:
+
+        public static $default_name = 'default';
+        
+Calling a superclass method, use parent:
+
+        parent.get_name();
+
+Abstract classes can be declared along with abstract protected function methods to use.
+
+Object interfaces are available which define methods a class must implement but not their behaviour.
+
+        interface iTemplate
+        {
+            public function setVariable($name, $var);
+            public function getHtml($template);
         }
-    }
-  
-    
+        
+Traits are available in PHP which allows you to introduce groups of methods in a class.
+
+
+        trait Address {
+            function getPostcode() { /*1*/ }
+            function getStreetName() { /*2*/ }
+        }
+        
+        class Person {
+                use Address. HelperFuncs ;
+                ...
+        }
+
+See - http://www.php.net/manual/en/language.oop5.traits.php
+
+Implement Iterator to allow foreach over objects... (implement rewind, current, key, next)
+
+Magic Methods - http://www.php.net/manual/en/language.oop5.magic.php
+
+Type Hinting - http://www.php.net/manual/en/language.oop5.typehinting.php
+
+Late Static Binding - http://www.php.net/manual/en/language.oop5.late-static-bindings.php
+
+Objects and References - http://www.php.net/manual/en/language.oop5.references.php
