@@ -14,7 +14,7 @@ Simple CMS:
 * http://www.codeforest.net/laravel4-simple-website-with-backend-1
 * http://www.codeforest.net/laravel-4-tutorial-part-2
 
-Dependecnies
+Dependencies
 ------------
 
 * sentry - user authentication/authz
@@ -60,8 +60,25 @@ Serving an Application
 Database Migration
 ------------------
 
-    php artisan migrate:make create_users_table
+Using Senty:
+
+    php artisan migrate --package=cartalyst/sentry
+    
+Creating a table
+
+	php artisan migrate:make create_articles_table --table=articles --create
+	
+Running the migrations:
+
     php artisan migrate
+
+Resetting the migrations:
+
+    php artisan migrate:reset
+		
+Clearing out all migrations (shouldn't have to do this):
+
+    composer dump-autoload
     
 Routes
 ------
