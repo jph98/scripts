@@ -68,4 +68,26 @@ Filters
 
 Provide a way of restricting access to a route (so can be used for roles etc...)
     {name?}
-    
+
+Eloquent ORM
+------------
+
+http://laravel.com/docs/eloquent
+
+Queuing
+-------
+
+Abstractions for many different providers - Amazon SQS, Redis, Beanstalkd etc...
+
+http://laravel.com/docs/queues
+
+IoC Containers
+--------------
+
+http://laravel.com/docs/ioc
+
+Unit Testing
+------------
+
+http://laravel.com/docs/testing
+
