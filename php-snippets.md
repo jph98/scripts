@@ -83,6 +83,15 @@ Frameworks and Libraries
 * Filesystam Abstraction (Gaufrette) - https://github.com/KnpLabs/Gaufrette
 * File Uploads (Upload) - https://github.com/codeguy/Upload
 * Shell Commands (ShellWrap) - https://github.com/MrRio/shellwrap
+* Whoops (Exception Handling) - http://filp.github.io/whoops/
+* PHP Parser turns some PHP into an abstract syntax tree - https://github.com/nikic/PHP-Parser
+* Monolog proper logging - https://github.com/Seldaek/monolog
+* Carbon DateTime - https://github.com/briannesbitt/Carbon
+* PHPseclib (SSH, SFTP, RSA) - http://phpseclib.sourceforge.net/
+* Stack Builder - https://github.com/stackphp/builder
+* SwiftMailer - http://swiftmailer.org/
+* BrowserKit simulates a browser - https://github.com/symfony/BrowserKit
+* Patchwork handles UTF-8 - https://github.com/nicolas-grekas/Patchwork-UTF8
 
 Variables
 ---------
