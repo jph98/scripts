@@ -10,6 +10,7 @@ Tutorials
 ---------
 
 Simple CMS:
+* Source - https://github.com/bstrahija/l4-site-tutorial/tree/master/
 * http://www.codeforest.net/laravel4-simple-website-with-backend-1
 * http://www.codeforest.net/laravel-4-tutorial-part-2
 
