@@ -1,5 +1,5 @@
 Laravel Overview
-----------------
+================
 
 Makes use of the following:
 * composer - for dependency management
@@ -79,7 +79,11 @@ Resetting the migrations:
 Clearing out all migrations (shouldn't have to do this):
 
     composer dump-autoload
-    
+
+Seeding the database (provided you've created Seeder classes):
+
+    php artisan db:seed
+ 
 Routes
 ------
 
