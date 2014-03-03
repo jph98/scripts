@@ -6,6 +6,17 @@ Makes use of the following:
 * eloquent - for ORM Work
 * blade - for templating
 
+Tutorials
+---------
+
+* Simple CMS - http://www.codeforest.net/laravel4-simple-website-with-backend-1
+
+Dependecnies
+------------
+
+* sentry - user authentication/authz
+* imagine - image manipulation - https://imagine.readthedocs.org/en/latest/
+
 Configuration
 -------------
 
