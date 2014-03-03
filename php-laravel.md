@@ -9,7 +9,9 @@ Makes use of the following:
 Tutorials
 ---------
 
-* Simple CMS - http://www.codeforest.net/laravel4-simple-website-with-backend-1
+Simple CMS:
+* http://www.codeforest.net/laravel4-simple-website-with-backend-1
+* http://www.codeforest.net/laravel-4-tutorial-part-2
 
 Dependecnies
 ------------
