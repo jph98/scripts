@@ -11,6 +11,8 @@ Sigil - e.g. @ and $e
 
 Ruby Draft Specification - http://www.ipa.go.jp/osc/english/ruby/
 
+Pry for debugging - https://github.com/pry/pry
+
 ###Gem Overview
 
 	gem env | grep INSTALLATION
@@ -91,6 +93,13 @@ We also have OStructs as well, on which you can arbritrarily create attributes:
 
 	record = OpenStruct.new(:name=>'jay')
     
+#####Variables
+
+Access a class variable or refer to something within a module:
+
+	::
+
+
 #####Reflection
 
 You can automatically create variables with by defining a headers array full of symolbs and calling instance_Variable_set.  In this case we use arrays:
@@ -153,6 +162,8 @@ You can also specify setter methods using syntactic sugar:
 	end  
 	
 	object.name = "Fred"
+
+! - specifies that the method will modify the object passed to it, rather than returning a modified object.
 
 #####Equals Overrriding
 
