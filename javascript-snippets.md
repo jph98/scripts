@@ -144,7 +144,7 @@ JQuery Best Practices
 
 http://gregfranko.com/jquery-best-practices/#/1
 
-Deferreds/Promises
+Deferreds/Promises. See - http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics
 
 Cache your selectors in variables
 
