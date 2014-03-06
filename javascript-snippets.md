@@ -53,10 +53,30 @@ Object literal style for creating objects
 
 	var person = {
 	    name: 'Jon', 
-		details: function(){
+	    details: function() {
 	        console.log('Name: ' + this.name + '.')
 	    }
 	}
+
+Javascript Prototypical Inheritance
+-----------------------------------
+
+Assign methods to the prototype object rather than overwrite the prototype with a new object (makes inheritance impossible).
+
+Don't use:
+
+	object.prototype = {};
+
+Use this instead:
+
+	object.prototype.method = function() {};
+	
+Use method chaining by returning this.
+
+Call and Apply
+--------------
+
+Difference in terms of parameter passing
 
 Javascript Game Programming
 ---------------------------
@@ -76,4 +96,59 @@ Function Prototypes
 Function expression and function declaration
 
 Javascript context and this
+
+Functions
+---------
+
+Number of different function expressions:
+* Anonymous - function() {}
+* Named - function named() {}
+* Immediately invoked - (function() {}());
+
+Hoisting
+--------
+
+TODO
+
+Equality
+--------
+
+Always use === and !==
+
+Type Casting
+------------
+
+Perform type coercian at the beginning - '' + this.score
+
+Naming
+------
+
+Use camel case
+
+Events
+------
+
+When attaching data payloads to events, pass a hash instead of a raw value (for future extension)...
+
+	$this().on('updated', function(e, data) {});
+	
+Modules
+-------
+
+See: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+
+Always use strict.
+
+JQuery Best Practices
+=====================
+
+http://gregfranko.com/jquery-best-practices/#/1
+
+Deferreds/Promises
+
+Cache your selectors in variables
+
+DRY when processing events (.on)
+
+Defer success in AJAX calls (don't inline it as part of the AJAX function call)
 
