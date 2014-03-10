@@ -4,3 +4,6 @@ List install modules:
 
     npm list
 
+Install an app globally:
+
+    npm install uglify-js -g 
