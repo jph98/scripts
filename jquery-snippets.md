@@ -47,6 +47,9 @@ Modifying elements:
     .appendTo()
     .detach()
 
+Find siblings for an element
+
+    .siblings()
     
 Snippets
 --------
