@@ -24,6 +24,8 @@ Introduction
 Debugging
 ---------
 
+JSFiddle - http://jsfiddle.net/
+
 * Inspect Element
 * Console
 
