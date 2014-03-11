@@ -21,6 +21,8 @@ Introduction
 * Interview - http://blog.sourcing.io/interview-questions
 * Front End Developer Interview Questions - https://github.com/darcyclarke/Front-end-Developer-Interview-Questions
 
+* Crockford Videos - http://yuiblog.com/crockford/
+
 Debugging
 ---------
 
