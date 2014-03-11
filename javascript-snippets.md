@@ -133,6 +133,20 @@ but if we call it within the context of a person object... we also need to assig
 
 TODO: Inspect a Javascript object
 
+Functions
+---------
+
+Number of different function expressions:
+* Anonymous - function() {}
+* Named - function named() {}
+* Immediately invoked - (function() {}());
+
+Function arguments can be variadic, etc...
+
+We can list all the arguments for a function in the following way:
+
+	TODO
+	
 Javascript Prototypical Inheritance
 -----------------------------------
 
@@ -171,14 +185,6 @@ Function Prototypes
 Function expression and function declaration
 
 Javascript context and this
-
-Functions
----------
-
-Number of different function expressions:
-* Anonymous - function() {}
-* Named - function named() {}
-* Immediately invoked - (function() {}());
 
 Hoisting
 --------
