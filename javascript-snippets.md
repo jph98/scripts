@@ -110,6 +110,15 @@ Hoisting
 
 TODO
 
+Loops
+-----
+
+	for (var i = 0; i < 10; i++) // for
+	for (child in children(rows)) // for in
+
+ECMAScript 5 also provides a .forEach() method
+
+
 Equality
 --------
 
