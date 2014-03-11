@@ -44,16 +44,46 @@ Better to return JSON rather than HTML really.
 Constructors
 ------------
 
-Two ways of creating objects:
+Two ways of creating objects (there are no classes in Javascript - just prototypes).
 
-Constructor style for creating objects
+Can create a simple object and assign properties with:
+
+	var person = new Object();
+	person.name = "Bob";
+	person['age'] = 30;
+	
+The prototype is an in-built property of every object in Javascript accessed with:
+
+	person.__proto__;
+
+This is the same as above (n.b. this is set on Person not person):
+
+	Person.prototype.name = "Bob";
+
+1. Constructor style for defining an object (this is ALWAYS AN anonymous function):
 
  	// constructor version
 	function Person(name) {
-		this.name = name;
+	    this.name = name;
 	}
+	
+You can assign this as well (n.b. this is always set on Person, not person):
 
-Object literal style for creating objects
+	var Person = function Person(name) {
+	    this.name = name;
+	}
+	
+then instantiating it with:
+
+	person = new Person("Bob");
+
+We can further add functions to this using the prototype as the basis for it:
+
+	Person.prototype.getDecoratedName = function() {
+	    return "-" + this.name + "-";
+	};
+
+2. Object literal style allows you to create singletons:
 
 	var person = {
 	    name: 'Jon', 
@@ -61,6 +91,17 @@ Object literal style for creating objects
 	        console.log('Name: ' + this.name + '.')
 	    }
 	}
+	
+3. Another way to create a singleton is to use the following:
+
+	var person = new function() {
+	    name: 'Jon', 
+	    details: function() {
+	        console.log('Name: ' + this.name + '.')
+	    }	
+	}
+	
+
 
 Javascript Prototypical Inheritance
 -----------------------------------
