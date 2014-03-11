@@ -101,7 +101,37 @@ We can further add functions to this using the prototype as the basis for it:
 	    }	
 	}
 	
+Scope
+-----
 
+Scope with Javascript can be in one of the following:
+
+* Window/Tab Global Scope
+* 
+
+If we define a simple function:
+
+	var say = function() {
+		    return "Hello, I'm " + this.name;
+	}
+	
+and call this with:
+
+	say(); // will result in an error because it uses global scope(we don't have name there)
+
+but if we call it within the context of a person object... we also need to assign a new property to the standalone say() function.
+
+	var Person = function Person(name) {
+		this.name = name;
+	}
+	
+	person = new Person("Bob");
+	
+	person.doSomething = say;
+	
+	alert(person.doSomething());
+
+TODO: Inspect a Javascript object
 
 Javascript Prototypical Inheritance
 -----------------------------------
