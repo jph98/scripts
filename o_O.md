@@ -8,12 +8,12 @@ Various data-bind options based on values, events and :
 
 Can perform a foreach for the:
 
-  <select data-bind="value: {$value}; foreach: {$collection}; {$disabledBinding}">
+    <select data-bind="value: {$value}; foreach: {$collection}; {$disabledBinding}">
   
 or...
 
-  <select data-bind="value: selected; foreach: categories">
-    <option data-bind="attr: {value: id()}; text: name(); selected: isSelected()" selected="selected">
-    </option>
-  </select>
+    <select data-bind="value: selected; foreach: categories">
+      <option data-bind="attr: {value: id()}; text: name(); selected: isSelected()" selected="selected">
+      </option>
+    </select>
   
