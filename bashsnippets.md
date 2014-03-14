@@ -47,6 +47,32 @@ See - http://bash.cumulonim.biz/BashPitfalls.html
 	else
 		counter=$((counter+1))
 	fi
+	
+
+    [[ -f file ]] 
+    [[ -d dir ]]
+    [[ -r entry ]]
+    [[ -w entry ]]
+    [[ -x entry ]]
+    
+    [[ -n var ]]  // non zero
+    [[ -z var ]] // zero length
+   
+#####Maths
+
+	let
+	(( j > 0 ))
+	typeset -i k=$1
+
+#####Exit Status
+
+Set exit status with exit n
+
+Previous exit status with $?
+Previous pid with $!
+
+   
+    
 
 #####Simple for loop
 
@@ -147,6 +173,9 @@ checkpackage "RNMImport"
 ###Functions
 
 See: http://www.linuxjournal.com/content/return-values-bash-functions
+
+local sets a local variable
+
 
 #####Basic
 
