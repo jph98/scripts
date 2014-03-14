@@ -3,6 +3,7 @@
 Best Practices:
  - https://django.2scoops.org/
  - http://google-styleguide.googlecode.com/svn/trunk/pyguide.html
+ - http://sahandsaba.com/thirty-python-language-features-and-tricks-you-may-not-know.html
 
 ###Class Skeleton
 
