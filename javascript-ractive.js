@@ -23,3 +23,7 @@ Can use contexts to refer to propeties within a specific namespace, e.g:
     {{/country}}
     
 refers to the nested object country.name.
+
+Can also set the property in a nested manner:
+
+    ractive.set( 'country.climate.rainfall', 'very high' );
