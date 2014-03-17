@@ -15,3 +15,11 @@ Properties (very basic) - {{ name }}
     });
 
 Nested Properties - http://learn.ractivejs.org/nested-properties/1/
+
+Can use contexts to refer to propeties within a specific namespace, e.g:
+
+    {{#country}}
+        {{ name }}
+    {{/country}}
+    
+refers to the nested object country.name.
