@@ -200,6 +200,15 @@ Loops
 	for (var i = 0; i < rows.size(); i++) {
 		console.log(rows[i]);
 	}
+
+Loop through the properties in the Javascript object.  Note, we filter out the internal properties with hasOwnProperty.
+
+	for (var key in p) {
+	  if (p.hasOwnProperty(key)) {
+	    alert(key + " -> " + p[key]);
+	  }
+	}
+
 ECMAScript 5 also provides a .forEach() method
 
 
