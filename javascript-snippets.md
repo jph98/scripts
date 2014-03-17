@@ -197,6 +197,9 @@ Loops
 	for (var i = 0; i < 10; i++) // for
 	for (child in children(rows)) // for in
 
+	for (var i = 0; i < rows.size(); i++) {
+		console.log(rows[i]);
+	}
 ECMAScript 5 also provides a .forEach() method
 
 
