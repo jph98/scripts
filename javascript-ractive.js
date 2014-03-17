@@ -6,6 +6,9 @@ Makes use of:
 * Includes Ractive.js 
 * Script for doing the application of content to the template.
 
+Properties
+----------
+
 Properties (very basic) - {{ name }}
 
     var ractive = new Ractive({
@@ -27,3 +30,8 @@ refers to the nested object country.name.
 Can also set the property in a nested manner:
 
     ractive.set( 'country.climate.rainfall', 'very high' );
+
+Expressions
+-----------
+
+http://learn.ractivejs.org/expressions/1/
