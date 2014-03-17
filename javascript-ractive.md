@@ -85,3 +85,20 @@ Can also use observe:
       app.user.name = newValue; // or whatever
     });
     
+Partials
+--------
+
+Split complex templates into smaller files.
+
+Animation
+---------
+
+    ractive.animate()
+    
+SVG
+---
+
+TODO
+
+Transitions
+-----------
