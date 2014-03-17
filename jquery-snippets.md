@@ -26,6 +26,10 @@ delegate
 * https://api.jquery.com/delegate/
 * jQuery 1.7, .delegate() has been superseded by the .on()
 
+extend
+* http://api.jquery.com/jquery.extend/
+* Merge the contents of two objects together
+
 addClass/RemoveClass
 
 Get and set HTML for a given element:
