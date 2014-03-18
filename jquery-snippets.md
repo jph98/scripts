@@ -54,6 +54,14 @@ Modifying elements:
 Find siblings for an element
 
     .siblings()
+
+You can loop through the elements for a selector with each.  You can refer to the current element in the loop with $this().
+
+    $("input").each(function() {
+        console.log($this());
+    });
+    
+    
     
 Snippets
 --------
@@ -85,3 +93,10 @@ Display a tag name, when debugging
       console.log(this.tagName)
     }
 
+Select all rows (with a checkbox), then find all SIBLINGS in that row and display their name (via attr):
+
+    $("input:checkbox.itemcheckbox").each(function() {
+        $(this).parent().siblings("input:hidden").each(function() {
+            console.log("Name " + $(this).attr("name"));
+        });
+    });
