@@ -3,9 +3,8 @@ JQuery
 
 * JQuery Learning Centre - https://learn.jquery.com/
 * Selectors Lab - http://codylindley.com/jqueryselectors/
-
 * JQote Templating - http://aefxx.com/jquery-plugins/jqote/
-* 
+
 Best Practices
 --------------
 
