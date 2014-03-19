@@ -6,6 +6,10 @@ JQuery
 * JQote Templating - http://aefxx.com/jquery-plugins/jqote/
 
 bind vs live vs delegate vs on - http://www.elijahmanor.com/differences-between-jquery-bind-vs-live-vs-delegate-vs-on/
+* bind - attached to every anchor (for example), wasteful and performance intensive.  Avoid.
+* live - attached to the ROOT level document, event is bubbled up from the children.  Performance hit in terms of the event bubbling (especially if there's a deep hierarchy).  Deprecated as of 1.7
+* delegate - same as live, but you choose where this is anchored
+* on - 1.7 preferred method that makes use of the above.
 
 Best Practices
 --------------
