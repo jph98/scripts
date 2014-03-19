@@ -5,6 +5,8 @@ JQuery
 * Selectors Lab - http://codylindley.com/jqueryselectors/
 * JQote Templating - http://aefxx.com/jquery-plugins/jqote/
 
+bind vs live vs delegate vs on - http://www.elijahmanor.com/differences-between-jquery-bind-vs-live-vs-delegate-vs-on/
+
 Best Practices
 --------------
 
