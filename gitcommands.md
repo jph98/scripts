@@ -102,3 +102,15 @@ Pull changes and merge conflicts
 Pull changes (no merge)
 
     git fetch
+
+Abandon Local Changes
+---------------------
+
+Replace with HEAD and abandon all local changes:
+
+	git reset --hard HEAD
+	
+Remove untracked files that have been added locally
+
+	git clean -f 
+	
