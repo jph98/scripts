@@ -1,7 +1,9 @@
 Clojure
 =======
 
-Project Management - use http://leiningen.org/
+Cheatsheet - http://clojure.org/cheatsheet
+
+Build and task automation - use http://leiningen.org/
 
 Noir - a web framework based on Clojure - http://www.chris-granger.com/projects/noir/
 
