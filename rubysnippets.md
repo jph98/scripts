@@ -18,6 +18,14 @@ Pry for debugging - https://github.com/pry/pry
 	gem env | grep INSTALLATION
 	gem server - run a ruby gem server on http://localhost:8088
 
+###Install a Gem from source
+
+This makes use of Bundler:
+
+	gem build GEMNAME.gemspec
+	gem install gemname-version.gem
+	
+A sample Gemfile can be found here: http://ruby.about.com/od/bundler/ss/Getting-Started-With-Bundler.htm
 
 ###Syntax Analysis
 
