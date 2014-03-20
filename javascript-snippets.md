@@ -209,8 +209,13 @@ Loop through the properties in the Javascript object.  Note, we filter out the i
 	  }
 	}
 
-ECMAScript 5 also provides a .forEach() method
+You can also do the following instead of if/else:
 
+	while(true) {
+		case (y < 20)
+	}
+	
+ECMAScript 5 also provides a .forEach() method
 
 Equality
 --------
