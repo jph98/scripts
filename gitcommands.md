@@ -23,8 +23,12 @@ Display paths relative to non-root
 
     git config --global status.relativePaths true
 
-Diffs
------
+Logs and Diffs
+--------------
+
+Show the log for a set of commits:
+
+	git log --max-count=2
 
 Show a plain status:
 
