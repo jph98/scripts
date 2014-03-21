@@ -125,6 +125,17 @@ Use PHPFiddle - http://phpfiddle.org/
 
 Boris is also handy (if compiled with pcntl as an extension to PHP.
 
+Typing
+------
+
+Type Juggling - http://www.php.net/manual/en/language.types.type-juggling.php
+
+Types are automatically converted.
+
+Can cast variables in the normal way.
+
+Type comparison - http://www.php.net/manual/en/types.comparisons.php
+
 Variables
 ---------
 
