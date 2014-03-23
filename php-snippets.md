@@ -71,6 +71,31 @@ Discover a channel (to add more packages) with:
 
          sudo pear channel-discover pear.kotowicz.net
         
+Composer
+--------
+
+Search for a library:
+
+        composer search slim
+
+Composer.json example
+
+        {
+            "require": {
+                "slim/slim": "1.0.*"
+            }
+        }
+
+Begin a project interactively with:
+
+        composer init
+        
+Install packges with:
+
+        composer install
+
+
+        
 Command Line
 ------------
 
