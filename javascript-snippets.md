@@ -242,7 +242,32 @@ When attaching data payloads to events, pass a hash instead of a raw value (for 
 Modules
 -------
 
-See: http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+See:
+* http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html
+* http://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+* http://designpepper.com/blog/drips/understanding-the-module-pattern-in-javascript.html
+
+Allows us to store private/public variables and state inside a closure:
+* Variables within the closure are private (e.g. counter)
+* Variables returned in the returning object are public (incrementCounter, resetCounter).
+
+	var testModule = (function () {
+ 
+	  var counter = 0;
+	 
+	  return {
+	 
+	    incrementCounter: function () {
+	      return counter++;
+	    },
+	 
+	    resetCounter: function () {
+	      console.log( "counter value prior to reset: " + counter );
+	      counter = 0;
+	    }
+	  };
+	 
+	})();
 
 Always use strict.
 
@@ -259,3 +284,7 @@ DRY when processing events (.on)
 
 Defer success in AJAX calls (don't inline it as part of the AJAX function call)
 
+Design Patterns
+===============
+
+http://addyosmani.com/resources/essentialjsdesignpatterns/book
