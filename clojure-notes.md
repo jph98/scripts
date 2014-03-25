@@ -8,6 +8,17 @@ Read the joy of clojure
 4Clojure - take a look at:
 * https://www.4clojure.com/problem/22#prob-title
 
+Projects
+--------
+
+* Om/web dev
+* Quil
+* Overtone
+* Prismatic Schemas for Maps - https://github.com/prismatic/schema
+
+Overview
+--------
+
 conj - adds an item to the front
 
 List
