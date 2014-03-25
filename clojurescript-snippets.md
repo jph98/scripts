@@ -45,7 +45,7 @@ Constant:
 
 Let works inside a function.
 
-Lists, vectors and hashmaps.
+Lists, vectors, hashmaps.
 
 Don't recall have loops, have to use recursion instead.  Doesn't have tail first recursion.  
 
