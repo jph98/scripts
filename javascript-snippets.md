@@ -35,6 +35,13 @@ Testing web-services:
 * Advanced REST Client - chrome extension 
 * Postman - chrome extension
 * Poster - firefox extension
+ 
+Static Analysis
+---------------
+
+JSHint - http://www.jshint.com/docs/
+* Make use of the airbnb guidelines for this
+* Also there's a Sublime Text linter also
 
 Response From Web-Services
 --------------------------
