@@ -11,9 +11,9 @@ Read the joy of clojure
 Projects
 --------
 
-* Om/web dev
-* Quil
-* Overtone
+* Om/web dev - http://zaiste.net/2014/02/web_applications_in_clojure_all_the_way_with_compojure_and_om/
+* Quill - http://r4vi.tumblr.com/post/28482467571/berlin-hackntell-13-quill-a-processing-wrapper-in
+* Overtone - http://overtone.github.io/
 * Prismatic Schemas for Maps - https://github.com/prismatic/schema
 
 Overview
