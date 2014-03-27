@@ -35,7 +35,12 @@ Testing web-services:
 * Advanced REST Client - chrome extension 
 * Postman - chrome extension
 * Poster - firefox extension
- 
+
+Minification
+------------
+
+	uglifyjs -o <input> <output>
+	
 Static Analysis
 ---------------
 
