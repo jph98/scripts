@@ -1,6 +1,7 @@
 PHP
 ===
 
+* PHP - The Right Way - http://www.phptherightway.com/
 * PHP Docs - http://www.php.net/manual/en/
 * PHP Best Practices - http://www.phptherightway.com/
 * PHP Certification - http://shop.zend.com/eu/zend-php5-certification-voucher.html
