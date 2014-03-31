@@ -94,7 +94,12 @@ Install packges with:
 
         composer install
 
+Debugging
+---------
 
+        var_dump
+        print_r
+        
         
 Command Line
 ------------
