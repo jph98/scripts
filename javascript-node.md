@@ -1,3 +1,7 @@
+Tutorial - http://www.nodebeginner.org/#hello-world
+
+NPM - http://howtonode.org/introduction-to-npm
+
 Basic Example
 -------------
 
