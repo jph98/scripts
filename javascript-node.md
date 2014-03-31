@@ -13,8 +13,8 @@ Libraries
 * Option Parsing - https://github.com/substack/node-optimist
 
 
-Basic Example
--------------
+HTTP Server
+-----------
 
     var http = require("http");
 
@@ -24,3 +24,26 @@ Basic Example
       response.end();
     }).listen(8888);
 
+TCP Server
+----------
+
+Connect with curl localhost:8000
+
+    var net = require('net');
+    var port = 8000;
+     
+    net.createServer(
+      function (stream) {
+        stream.write('hello\r\n');
+     
+        stream.on('end',
+          function () {
+            stream.end('goodbye\r\n');
+          }
+        );
+     
+        stream.pipe(stream);
+      }
+    ).listen(port);
+    
+    console.log("Created TCP server on port " + port);
