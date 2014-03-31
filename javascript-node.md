@@ -1,6 +1,17 @@
 Tutorial - http://www.nodebeginner.org/#hello-world
 
 NPM - http://howtonode.org/introduction-to-npm
+* ls - list dependencies
+* install - install dependencies
+
+You need a package.json file to make a package
+
+Libraries
+---------
+
+* RESTify - http://mcavage.me/node-restify/
+* Option Parsing - https://github.com/substack/node-optimist
+
 
 Basic Example
 -------------
