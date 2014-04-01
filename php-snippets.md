@@ -50,7 +50,8 @@ Frameworks and Libraries
 Working with PECL/PEAR
 ----------------------
 
-PECL is generally for extensions coded in C, whilst PEAR deals with pure PHP modules.
+* PECL - extensions coded in C
+* PEAR deals with pure PHP modules.
 
 n.b. In some cases you need to enable an extension in PHP.  For this you need the PHP source code with the extension.  You can run phpize to prepare the extension for compiling with configure and make.
 
