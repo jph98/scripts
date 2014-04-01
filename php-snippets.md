@@ -12,6 +12,11 @@ PHP
 * Dynamic, weak typing
 * PEAR - PHP Extension and Application Repository - http://pear.php.net/
 
+TODO
+----
+
+* http://daylerees.com/php-namespaces-explained
+
 Conferences
 -----------
 
