@@ -13,6 +13,12 @@ Ruby Draft Specification - http://www.ipa.go.jp/osc/english/ruby/
 
 Pry for debugging - https://github.com/pry/pry
 
+###TODO
+
+Examples/articles to run through:
+* http://watirmelon.com/2014/03/31/a-ruby-testing-framework-from-scratch-in-15-minutes/
+*
+
 ###Gem Overview
 
 	gem env | grep INSTALLATION
