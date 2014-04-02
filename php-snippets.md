@@ -278,7 +278,12 @@ Regular expressions with
 
     preg_match("//", $name)
 
+Timing
+------
 
+Use microtime:
+
+        microtime();
 
 Output
 ------
