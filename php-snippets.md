@@ -1,6 +1,8 @@
 PHP
 ===
 
+##### Table of Contents 
+
 * PHP - The Right Way - http://www.phptherightway.com/
 * PHP Docs - http://www.php.net/manual/en/
 * PHP Best Practices - http://www.phptherightway.com/
@@ -288,6 +290,11 @@ echo and print statements output things.  Echo can be used to output multiple st
 Print outputs only one thing and returns true
 
     print $name
+    
+Recursive Print:
+
+    $a = array(1, 2);
+    print_r($a);
 
 Object Oriented PHP
 -------------------
