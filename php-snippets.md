@@ -155,6 +155,12 @@ Overview of the php.ini file
 // or # can be used as a single line comment
 /* as a multiline comment
 
+Configuration and Bootstrapping
+-------------------------------
+
+* Config via ini_set and init_get - http://uk1.php.net/ini_set
+* set_include_path - http://uk3.php.net/set_include_path
+
 Testing PHP
 -----------
 
