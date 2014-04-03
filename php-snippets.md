@@ -25,10 +25,23 @@ Conferences
 * PHP Conference - http://phpconference.co.uk/
 * PHPNW14 - http://conference.phpnw.org.uk/phpnw14/
 
-Frameworks and Libraries
-------------------------
+Useful Libraries
+----------------
+
+* Underscore - http://brianhaveri.github.io/Underscore.php/
+* UBench Benchmarking - https://github.com/devster/ubench
+* Templating (Mustache) - https://github.com/bobthecow/mustache.php
+* Shell Commands (ShellWrap) - https://github.com/MrRio/shellwrap
+* 
+
+Frameworks
+----------
 
 * Various web frameworks - CodeIgnitor, Laravel, CakePHP, Yii
+
+Misc Libraries
+--------------
+
 * PHP REPL - http://phpepl.cloudcontrolled.com/
 * PHP Package Archivist - https://packagist.org/* 
 * PHAR - PHP Archives
@@ -43,7 +56,6 @@ Frameworks and Libraries
 * Filterus - https://github.com/ircmaxell/filterus
 * Filesystam Abstraction (Gaufrette) - https://github.com/KnpLabs/Gaufrette
 * File Uploads (Upload) - https://github.com/codeguy/Upload
-* Shell Commands (ShellWrap) - https://github.com/MrRio/shellwrap
 * Whoops (Exception Handling) - http://filp.github.io/whoops/
 * PHP Parser turns some PHP into an abstract syntax tree - https://github.com/nikic/PHP-Parser
 * Monolog proper logging - https://github.com/Seldaek/monolog
