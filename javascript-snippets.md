@@ -250,7 +250,19 @@ Events
 When attaching data payloads to events, pass a hash instead of a raw value (for future extension)...
 
 	$this().on('updated', function(e, data) {});
-	
+
+Delayed Actions
+---------------
+
+Call a function after a specified amount of time:
+
+	setTimeout(function(){ 
+	     assert( true, "Second test completed" ); 
+	     resume(); 
+	}, 100); 
+
+
+
 Modules
 -------
 
