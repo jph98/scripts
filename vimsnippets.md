@@ -10,6 +10,15 @@ Things are installed in .vim/bundle after that
 
 Comments - use "
 Help - use : then tab    
+
+Vimrc Settings
+--------------
+
+* Mouse compatibility - set mouse=a
+* Set line numbers - set number
+* Autocomplete - TODO
+
+    
 Color Schemes
 -------------
 
