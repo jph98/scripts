@@ -27,11 +27,15 @@ Drop a column
 
 Adding a foreign key:
 
-    -- Add a foreign key to the paypal_ipn_log table to link to config_set_to_installed_integration
     ALTER TABLE table_name 
 	    ADD COLUMN new_col_id int unsigned default null,
 	    ADD CONSTRAINT fk_new_col_id FOREIGN KEY (other_col) REFERENCES other_table (other_col);
 
+Dropping a foreign key and column:
+
+    ALTER TABLE table_name DROP foreign key fk_new_col_id,
+    			   DROP new_col_id;    			       
+    
 Database Administration
 -----------------------
 
@@ -40,6 +44,10 @@ Show database status:
     show status;
     
 Show table statistics:
+
+In a shell you can also display what the error codes are returned by MySQL with:
+
+	perror 150
 
 Querying
 --------
