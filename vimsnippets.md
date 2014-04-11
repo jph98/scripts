@@ -10,6 +10,11 @@ Things are installed in .vim/bundle after that
 
 Comments - use "
     
+Color Schemes
+-------------
+
+    :colorscheme solarized
+    
 Commands
 --------
 
