@@ -313,6 +313,11 @@ Recursive Print:
     $a = array(1, 2);
     print_r($a);
 
+Database
+--------
+
+        mysql_real_escape_string
+        
 Object Oriented PHP
 -------------------
 
