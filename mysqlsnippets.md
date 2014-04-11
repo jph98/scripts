@@ -28,7 +28,7 @@ Drop a column
 Adding a foreign key:
 
     ALTER TABLE table_name 
-	    ADD COLUMN new_col_id int unsigned default null,
+	    ADD COLUMN new_col_id int unsigned default null AFTER other_column,
 	    ADD CONSTRAINT fk_new_col_id FOREIGN KEY (other_col) REFERENCES other_table (other_col);
 
 Dropping a foreign key and column:
