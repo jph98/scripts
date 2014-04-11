@@ -143,7 +143,31 @@ but if we call it within the context of a person object... we also need to assig
 	
 	alert(person.doSomething());
 
-TODO: Inspect a Javascript object
+n.b. Inspect a Javascript object with console.table();
+
+Binding
+-------
+
+See: http://javascript.info/tutorial/binding
+
+This is problematic because it refers to the wrong thing - i.e. not menu:
+
+   function clicky(elem) {
+      
+     setTimeout(function() {
+       alert(this);
+     });
+  }
+  clicky();
+  
+  function clicky(elem) {
+      
+     setTimeout(function() {
+       alert(this)  // object! (menu)
+     }.bind(this)
+  }
+  clicky();
+
 
 Functions
 ---------
@@ -260,8 +284,25 @@ Call a function after a specified amount of time:
 	     assert( true, "Second test completed" ); 
 	     resume(); 
 	}, 100); 
+	
+Mixins
+------
 
+This can be approximated in Javascript by using extend to mix data and behaviour:
 
+	var data = {
+		name: "Jon";
+	}
+	
+	var behaviour = {
+		capitalise: function() {
+			// so something with name
+		}
+	}
+	
+	extend(data, behaviour);
+
+See - http://raganwald.com/2014/04/10/mixins-forwarding-delegation.html
 
 Modules
 -------
