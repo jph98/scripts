@@ -8,6 +8,8 @@ Use pathogen from here - https://github.com/tpope/vim-pathogen
 
 Things are installed in .vim/bundle after that
 
+Comments - use "
+    
 Commands
 --------
 
