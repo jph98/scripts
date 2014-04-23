@@ -3,6 +3,7 @@ PHP
 
 ##### Table of Contents 
 
+* PSR-2 Standard - https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md
 * PHP - The Right Way - http://www.phptherightway.com/
 * PHP Docs - http://www.php.net/manual/en/
 * PHP Best Practices - http://www.phptherightway.com/
