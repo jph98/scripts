@@ -12,8 +12,19 @@ Packages are downloaded according to the GOPATH variable you have set up.  This 
 
 Install a package with:
 
-    go get github.com/ant0ine/go-json-rest
+    go get github.com/ant0ine/go-json-rest/rest
+    go get github.com/zenazn/goji
 
+Docs
+
+    godoc -http=:8000
+    
+Compile
+
+    go build helloworld.go
+    
+Then run as an executable
+     
 ###Simple Program
 
 Note that most methods start with an uppercase letter
