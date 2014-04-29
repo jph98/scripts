@@ -71,6 +71,8 @@ Deferred, Promise and When
 
 Main problem solved - AJAX request/XMLHttpRequest only supports one callback.
 
+You can nest, but things get ugly.
+
 See:
 * http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html
 * http://css-tricks.com/multiple-simultaneous-ajax-requests-one-callback-jquery/
