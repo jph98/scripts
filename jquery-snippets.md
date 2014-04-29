@@ -86,7 +86,8 @@ Promises are a little different in the way you call them, you can also call done
     promise.done(myFunction);
     promise.done(otherFunction);
     promise.fail(myErrorFunction)
-    
+
+* These take Deffered objects    
 * You can combine them also so syncrhonise a callback.  
 * Can also chain them one after the other
 
