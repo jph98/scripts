@@ -65,8 +65,34 @@ You can loop through the elements for a selector with each.  You can refer to th
     $("input").each(function() {
         console.log($this());
     });
+
+Deferred, Promise and When
+--------------------------
+
+Main problem solved - AJAX request/XMLHttpRequest only supports one callback.
+
+See:
+* http://www.bitstorm.org/weblog/2012-1/Deferred_and_promise_in_jQuery.html
+* http://css-tricks.com/multiple-simultaneous-ajax-requests-one-callback-jquery/
+
+Promises are a little different in the way you call them, you can also call done and fail multiple times:
+
+    var promise = $.ajax({
+      url: "/myServerScript"
+    });
+     
+    promise.done(myFunction);
+    promise.done(otherFunction);
+    promise.fail(myErrorFunction)
     
-    
+* You can combine them also so syncrhonise a callback.  
+* Can also chain them one after the other
+
+Promises are returned from async calls.
+
+You need a deferred when you write such a function yourself.
+
+TODO: Deferred.
     
 Snippets
 --------
