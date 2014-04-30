@@ -49,6 +49,26 @@ In a shell you can also display what the error codes are returned by MySQL with:
 
 	perror 150
 
+Dump a database with:
+
+	mysqldump dbname > dbname.sql
+	
+Structure Only:
+
+	mysqldump -d dbname > dbname.sql
+
+Include CREATE DATABASE:
+
+	mysqldump -B -d dbname > dbname.sql
+	
+Import the database from file with:
+
+	mysql -u root < dbname.sql
+	
+or if you already have the database and want to include the tables, use:
+
+	mysql -u root _monitoring < dbname.sql
+
 Querying
 --------
 
