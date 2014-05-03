@@ -1,8 +1,12 @@
 ##Bash Snippets
 
-Best Bash Guide Ever (apparently) - http://tldp.org/LDP/abs/html/
+* Best Bash Guide Ever (apparently) - http://tldp.org/LDP/abs/html/
 
-See - http://bash.cumulonim.biz/BashPitfalls.html
+* See - http://bash.cumulonim.biz/BashPitfalls.html
+
+* Bash Special Parameters - http://www.thegeekstuff.com/2010/05/bash-shell-special-parameters/#more-4383
+
+$_
 
 ###Basics and Rules of Thumb
 
