@@ -700,7 +700,11 @@ Printing out current method and callee:
 	p __method__
 	p __callee__
 	
-Print ou the location in the source
+Print out the list of methods on an object:
+
+	puts acc.methods.sort()
+	
+Print out the location in the source
 
 	a = ->{ }
 	p a.source_location
