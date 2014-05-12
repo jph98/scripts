@@ -1,5 +1,8 @@
 CheatSheet - http://claymore.engineer.gvsu.edu/~steriana/226/C.CheatSheet.pdf
 
+Useful Libraries
+----------------
+
 * libcURL
 * libGlib - cross platform utility library - http://en.wikipedia.org/wiki/GLib
 * libGSL
@@ -14,6 +17,9 @@ Autotools:
 * configure
 * make
 * make install
+
+Hello World
+-----------
 
 hello.c
 
