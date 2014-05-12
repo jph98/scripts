@@ -22,6 +22,9 @@ PHP Extension Overview
 * garbage collection occurs (unset each var)
 * Module shutdown
 
+Structure
+---------
+
 Create a new project under the ext folder with the following:
 * config.m4 - config file used by phpize (prepares the PHP environment)
 * php_hello.h - 
@@ -30,3 +33,9 @@ Create a new project under the ext folder with the following:
 Double freeing memory is bad - causes segfaults
 
 See - http://www.php.net/manual/en/install.pecl.phpize.php
+
+To create the shared object run the following:
+
+1. Run phpize to prepare the build environment
+2. ./configure --enable-hello
+
