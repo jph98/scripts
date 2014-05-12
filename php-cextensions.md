@@ -38,4 +38,5 @@ To create the shared object run the following:
 
 1. Run phpize to prepare the build environment
 2. ./configure --enable-hello
-
+3. make
+4. cp hello.so <TARGET_PHP_EXTENSION> folder
