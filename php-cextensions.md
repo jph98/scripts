@@ -40,3 +40,16 @@ To create the shared object run the following:
 2. ./configure --enable-hello
 3. make
 4. cp hello.so <TARGET_PHP_EXTENSION> folder
+
+Datatypes
+---------
+
+    zend_parse_parameters(ZEND_NUM_ARGS() TSRMLS_CC, "s", &name, &name_len) == FAILURE)
+
+* Eight basic datatypes including a zval.  
+* Datatypes also include RESOURCE, ARRAY and OBJECT
+* All of the datatypes/variables are stored as zvals.
+* zend_parse_parameters() has it's own types which need to be defined to be returned, e.g zend_bool or zval*.
+
+A good example of implementing an extension like this is building a simplified version of vardump()
+
