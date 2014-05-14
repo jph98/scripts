@@ -1,4 +1,9 @@
-CheatSheet - http://claymore.engineer.gvsu.edu/~steriana/226/C.CheatSheet.pdf
+Books
+-----
+
+* CheatSheet - http://claymore.engineer.gvsu.edu/~steriana/226/C.CheatSheet.pdf
+* Learn C the Hard Way - http://c.learncodethehardway.org/book/
+* GNU C Library - http://www.gnu.org/software/libc/manual/html_mono/libc.html
 
 Useful Libraries
 ----------------
@@ -141,4 +146,13 @@ Here docs are a standard POSIX feature.  They allow you to define a program usin
     
 Debug, Test
 -----------
+
+Benchmarking
+------------
+
+clock - will measure the CPU time consumed
+
+
+
+
 
