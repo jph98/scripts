@@ -143,6 +143,21 @@ Here docs are a standard POSIX feature.  They allow you to define a program usin
     lines=2
     print "\nThis script is %i lines long.\n" %(lines,)
     XXXX
+
+Datatypes
+---------
+
+Basic array:
+
+    char *states[] = {
+        "California", "Oregon",
+        "Washington", "Texas"
+    };
+    
+Pointers
+--------
+
+See - http://c.learncodethehardway.org/book/ex15.html
     
 Debug, Test
 -----------
@@ -151,8 +166,4 @@ Benchmarking
 ------------
 
 clock - will measure the CPU time consumed
-
-
-
-
 
