@@ -14,3 +14,7 @@ Getting CURL to ignore SSL certificate checks:
 
     curl -k https://endpoint.com
     
+Grepping with before and after context:
+
+    grep -A 4 -B 4 Expression
+    
