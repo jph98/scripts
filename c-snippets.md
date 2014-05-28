@@ -8,11 +8,11 @@ Books
 Useful Libraries
 ----------------
 
-* libcURL
-* libGlib - cross platform utility library - http://en.wikipedia.org/wiki/GLib
-* libGSL
-* libSQLite3
-* libXML2
+* glib (don't confused with glibc) - cross platform utility library - http://en.wikipedia.org/wiki/GLib
+* libcURL - file transfer
+* libGSL - Scientific library routines
+* libSQLite3 - SQLite library
+* libXML2 - XML processing
 * Apophenia - https://github.com/b-k/Apophenia
 
 Windows - use  MinGW (./configure --host=ming32)
@@ -158,7 +158,14 @@ Pointers
 --------
 
 See - http://c.learncodethehardway.org/book/ex15.html
-    
+
+Macros
+------
+
+Macros provide a mechanism for pre-processing via the compiler.
+
+    #define WHEREARG  __FILE__, __LINE__
+
 Debug, Test
 -----------
 
