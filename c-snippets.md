@@ -14,6 +14,7 @@ Useful Libraries
 * libSQLite3 - SQLite library
 * libXML2 - XML processing
 * Apophenia - https://github.com/b-k/Apophenia
+* GTK - http://www.gtk.org/
 
 Windows - use  MinGW (./configure --host=ming32)
 Linux - 
