@@ -200,7 +200,7 @@ Useful for storing symbols:
 Dynamic Storage and Data Structures
 -----------------------------------
 
-Instead of fixed length arrays you can use linked lists.
+Instead of fixed length arrays you can use other data structures that expand dynamically, e.g. a linked list:
 
     struct island *next;
 
@@ -210,7 +210,7 @@ This means creating your own implementation or using the glib GList:
 
 https://developer.gnome.org/glib/2.37/glib-Singly-Linked-Lists.html
 
-
+We need to allocate memory on the heap for dynamic storage as opposed to the stack (local variables for functions).
 
 Debug, Test
 -----------
