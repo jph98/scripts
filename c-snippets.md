@@ -133,6 +133,10 @@ Headers
 As well as including headers are the top of your C program, with GCC you can include the headers:
 
     gcc -include stdio.h
+    
+Headers can be used to share functions.  You can also share variables across files using:
+
+    extern int passcode;
 
 Here documents 
 --------------
@@ -158,6 +162,29 @@ Pointers
 --------
 
 See - http://c.learncodethehardway.org/book/ex15.html
+
+Generally define one with:
+
+    int x = 5;
+    char *pnt_content = x;
+
+Print the address with:
+
+    printf("Address is %p", *pnt_content);
+    
+Change the contents with:
+
+    *pnt_content = 10;
+
+Strings
+-------
+
+Concatenating a string can be down in a number of ways:
+
+    snprintf();
+    
+or via strcpy() and strcat() although you'll need to malloc the space for the new string based on the lengths.
+
 
 Macros
 ------
