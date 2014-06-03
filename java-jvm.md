@@ -18,8 +18,8 @@ Memory
 ------
 
 The heap consists of:
-* Eden
-* Survivor
+* Eden (Young gen)
+* Survivor (Young gen)
 * Tenured
 
 The non-heap memory consists of:
