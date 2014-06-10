@@ -319,6 +319,22 @@ Database
 
         mysql_real_escape_string
         
+I/O and Files
+-------------
+
+Reading from as gzipped file and appending to an in-memory textfile:
+
+        $filename = "example.gz";
+
+        $fh = gzopen($filename, 'r');
+	$content = "";
+	while (!gzeof($fh)) {
+		$line = gzgets($fh);		
+		$content .= $line;		
+	}	
+
+
+        
 Object Oriented PHP
 -------------------
 
