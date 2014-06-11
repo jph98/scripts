@@ -183,6 +183,15 @@ Use PHPFiddle - http://phpfiddle.org/
 
 Boris is also handy (if compiled with pcntl as an extension to PHP.
 
+Logging
+-------
+
+Number of ways of doing this:
+
+	echo - basic output
+	print_r - print out an array
+	var_dump - displays variables and their types
+
 Typing
 ------
 
