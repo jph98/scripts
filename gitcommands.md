@@ -118,3 +118,6 @@ Remove untracked files that have been added locally
 
 	git clean -f 
 	
+Abandon the local checkout:
+
+	git checkout --theirs xhprof-bp/xhprof_bp_analyser/XHProfRunsAnalyser.php
