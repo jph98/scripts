@@ -373,9 +373,9 @@ Constructors exist and destructors with:
         __construct
         __destruct
         
-$self is used to reference methods in the same class.
+$self is used to reference methods in the same *class*.
 
-$this is used for variables.  
+$this is used for variables in the same *object*. 
 
 Access modifiers for public, protected and private exist.
 
