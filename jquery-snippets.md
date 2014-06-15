@@ -17,6 +17,23 @@ Best Practices
 * Specificity with selectors
 * Don't overuse selectors, use a variable and reuse
 
+Basic
+-----
+
+GET:
+
+    var board = $.get( "/board/<%= session['gameid'] %>/player/<%= session['current_player_number'] %>" )
+
+    	.done(function() {
+    
+    	    alert("success");
+    	})
+    	.fail(function() {
+    		alert("Error retrieving board state");
+    	});
+    });
+
+
 Constructs
 ----------
 
