@@ -83,6 +83,21 @@ You can loop through the elements for a selector with each.  You can refer to th
         console.log($this());
     });
 
+You can also do this to process JSON returned from a server (make sure to specify the content type):
+
+    
+    $.getJSON("/board/<%= session['gameid'] %>/player/<%= session['current_player_number'] %>", 
+
+		function(data) {
+
+			// Process array of rows
+			$.each(data, function(index, value) {
+				console.log(index);
+			});
+			
+		}
+	);
+			
 Deferred, Promise and When
 --------------------------
 
