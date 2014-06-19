@@ -69,6 +69,10 @@ or if you already have the database and want to include the tables, use:
 
 	mysql -u root _monitoring < dbname.sql
 
+Slow query log (slowest 5 top queries):
+
+	mysqldumpslow -a -s r -t 5 /var/log/mysql_slow-log
+	
 Querying
 --------
 
