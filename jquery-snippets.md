@@ -127,6 +127,8 @@ Promises are returned from async calls.
 
 You need a deferred when you write such a function yourself.
 
+Also, see: http://api.jquery.com/promise/
+
 TODO: Deferred.
     
 Snippets
