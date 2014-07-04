@@ -12,6 +12,7 @@ Game Engines
 
 Number of JS based engines:
 * PixiJS
+* Phaser (good if you want collision detection etc...) - http://phaser.io/
 
 Tile Editors/Map Editors
 ------------------------
