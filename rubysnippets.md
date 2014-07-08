@@ -19,6 +19,10 @@ Examples/articles to run through:
 * http://watirmelon.com/2014/03/31/a-ruby-testing-framework-from-scratch-in-15-minutes/
 *
 
+###Initialise a project
+
+	bundle gem .
+
 ###Gem Overview
 
 	gem env | grep INSTALLATION
