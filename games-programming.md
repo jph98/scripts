@@ -29,7 +29,8 @@ Most game engines provide their own implementation, some of these are based on w
 Graphics
 --------
 
-Open Game Art - http://opengameart.org/
+* Open Game Art - http://opengameart.org/
+* Sprite Database - http://spritedatabase.net/
 
 Algorithms
 ----------
