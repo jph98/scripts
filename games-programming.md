@@ -26,6 +26,11 @@ Most game engines provide their own implementation, some of these are based on w
 
 * http://www.html5rocks.com/en/tutorials/webaudio/intro/
 
+Graphics
+--------
+
+Open Game Art - http://opengameart.org/
+
 Algorithms
 ----------
 
