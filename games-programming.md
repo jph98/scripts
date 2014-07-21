@@ -17,7 +17,17 @@ Number of JS based engines:
 Tile Editors/Map Editors
 ------------------------
 
-Tiled - http://www.mapeditor.org/
+* Tiled - http://www.mapeditor.org/
 
 Sound Engines
 -------------
+
+Most game engines provide their own implementation, some of these are based on web audio.
+
+* http://www.html5rocks.com/en/tutorials/webaudio/intro/
+
+Algorithms
+----------
+
+* A* Path Search - http://www.redblobgames.com/pathfinding/a-star/introduction.html
+* Minimax (search tree for possible moves) - http://www.wieschoo.com/tutorials/optimization/connect4-ai-minimax/001189/
