@@ -122,7 +122,11 @@ Debugging
         var_dump
         print_r
         
-        
+You can enable verbose logging with:
+
+	error_reporting(E_ALL);
+	ini_set('display_errors', 1);
+
 Command Line
 ------------
 
