@@ -47,6 +47,11 @@ Show all running programs:
 Kill a running program:
 
     break <processnumber>
+
+Display disk layout:
+
+    assign vols
+    assign devices
     
 Study Plan
 
