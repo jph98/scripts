@@ -22,4 +22,17 @@ Copy a file
 Change up a directory:
 
   /
-  
+
+Show all running programs:
+
+    status
+
+Kill a running program:
+
+    break <processnumber>
+    
+Study Plan
+
+* Overview of Basic
+* Overview of Amiga C
+* Overview of 68000 programmingc
