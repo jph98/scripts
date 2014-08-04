@@ -1,6 +1,8 @@
 Linux Networking
 ================
 
+See - http://shop.oreilly.com/product/9780596006433.do
+
 Overview
 --------
 
