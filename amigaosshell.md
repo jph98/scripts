@@ -3,7 +3,9 @@ Amiga Shell Commands
 
 See - http://wiki.amigaos.net/wiki/AmigaOS_Manual:_AmigaDOS_Command_Examples
 
-Modify S:ShellCommands for aliases
+Also see - http://www.bombjack.org/commodore/amiga-books.htm
+
+Modify S:Shell-Startup for aliases
 
 Close the prompt
 
