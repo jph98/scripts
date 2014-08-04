@@ -20,6 +20,10 @@ Getting all IP's on the network:
 
     nmap -sP 192.168.1.*
 
+Getting a MAC address, use arp:
+
+    arp
+    
 Network Statistics:
 
     iptraf
