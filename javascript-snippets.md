@@ -353,3 +353,12 @@ Design Patterns
 ===============
 
 http://addyosmani.com/resources/essentialjsdesignpatterns/book
+
+Parsing Javascript
+==================
+
+JSON.parse() and walking object structures is one way to do this.
+
+* JSONIQ - http://www.jsoniq.org/
+* JSONPath - http://goessner.net/articles/JsonPath/
+* Zorba - http://www.zorba.io/home
