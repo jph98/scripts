@@ -43,3 +43,17 @@ Traceroute and ping:
 
     mtr
     
+Wireshark
+---------
+
+Specify the interface to capture on (and a filter):
+* port http - just capture http
+* tcp port http - 
+
+Filter with the following:
+* http.request
+* http.request.method=="POST"
+
+Specify Follow TCP Stream to get the combined TCP and HTTP packets
+* Change Entire Conversation to just HTTP
+* This can also be filtered
