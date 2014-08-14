@@ -18,6 +18,10 @@ Grepping with before and after context:
 
     grep -A 4 -B 4 Expression
     
-Grepping for an expression recursively with a wildcard filename:
+Grepping for an expression recursively with a wildcard filename (--include):
 
     grep -r "Process finished" . --include "*.log"
+
+Finding all files that DO NOT contain a given grep expression (-L):
+
+    grep -Lr "Process finished" . --include "*.log"
