@@ -37,11 +37,7 @@ Archetypes
 
 Create a web app:
 
-	    mvn archetype:generate  
-            -DarchetypeGroupId=org.apache.maven.archetypes  
-            -DarchetypeArtifactId=maven-archetype-webapp  
-            -DgroupId=com.mycompany  
-            -DartifactId=my-app  
+	    mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-webapp -DgroupId=com.froyo -DartifactId=skeletonwebapp  
 
 Download Sources and Javadoc
 ----------------------------
