@@ -51,6 +51,13 @@ Download Sources and Javadoc
 		</configuration>
 	</plugin>
 			
+Specifying the final name
+-------------------------
+
+	<build>
+        	<finalName>helloworldservlet</finalName>
+    	</build>
+
 Maven Exec Plugin
 -----------------
 
