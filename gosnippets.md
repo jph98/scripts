@@ -52,7 +52,9 @@ Writing a simple webserver with http
         }
     }
 
-###Object Orientation makes use of Structs
+###Object Orientated Constructs
+
+There are no classes.  Go is old school structs.
 
       type Coordinate struct {
         x, y int
