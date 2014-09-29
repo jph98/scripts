@@ -58,6 +58,29 @@ Specifying the final name
         	<finalName>helloworldservlet</finalName>
     	</build>
 
+Maven Executable JAR with Assembly Plugin
+-----------------------------------------
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>2.2-beta-5</version>
+				<configuration>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<archive>
+						<manifest>
+							<mainClass>com.application.MainApplication</mainClass>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	
 Maven Exec Plugin
 -----------------
 
