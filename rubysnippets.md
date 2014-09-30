@@ -17,7 +17,6 @@ Pry for debugging - https://github.com/pry/pry
 
 Examples/articles to run through:
 * http://watirmelon.com/2014/03/31/a-ruby-testing-framework-from-scratch-in-15-minutes/
-*
 
 ###Initialise a project
 
@@ -616,6 +615,11 @@ Listing files matching a pattern in a given directory:
 
 #####Matching a simple string (first group)
 
+Checking to see whether a name matches a string is pretty simple:
+
+	if account_name != nil and account_name.match(/^[a-zA-Z0-9]+$/) != nil
+
+
 Convenience method
 
 	name[/(.*)\.rb/]
@@ -636,11 +640,6 @@ Return the position in the stirng where the match occured with:
 
 	"abcde" =~ /bcd/
 
-Return whether there was a successful match for the string with:
-
-	"abc5" =~ /^[a-zA-Z0-9]+$/
-	
-n.b. This will return 0.  For a non matching string nil will be returned.	
 
 ###Exceptions
 
