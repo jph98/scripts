@@ -635,7 +635,13 @@ You can also specify the label as well:
 Return the position in the stirng where the match occured with:
 
 	"abcde" =~ /bcd/
+
+Return whether there was a successful match for the string with:
+
+	"abc5" =~ /^[a-zA-Z0-9]+$/
 	
+n.b. This will return 0.  For a non matching string nil will be returned.	
+
 ###Exceptions
 
 Basic pattern is (n.b. the begin is optional):
