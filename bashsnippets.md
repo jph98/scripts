@@ -75,9 +75,6 @@ Set exit status with exit n
 Previous exit status with $?
 Previous pid with $!
 
-   
-    
-
 #####Simple for loop
 
     for JMETERTEST in "$@"
@@ -195,3 +192,14 @@ Pass variables with
 #####Redirect output/error to dev null
 
     command > /dev/null 2>&1 &
+    
+#####Processing items in an array
+    
+    declare -a arr=("a", "b", "c")
+	
+    ## now loop through the above array
+    for srv in "${arr[@]}"
+    do
+        echo "Handling: $srv"
+    done
+
