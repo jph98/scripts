@@ -52,7 +52,12 @@ extend
 * http://api.jquery.com/jquery.extend/
 * Merge the contents of two objects together
 
-addClass/RemoveClass
+Getting the source of an event:
+
+	$('li>a').click( function(event) { 
+	
+		var target = $( event.target );
+	} );
 
 Get and set HTML for a given element:
 
@@ -76,6 +81,12 @@ Modifying elements:
 Find siblings for an element
 
     .siblings()
+    
+Loop through the children of an element:
+
+    $(this).children().each(function() {
+	$(this).removeClass("active");
+    });
 
 You can loop through the elements for a selector with each.  You can refer to the current element in the loop with $this().
 
