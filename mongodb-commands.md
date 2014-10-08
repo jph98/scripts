@@ -1,2 +1,3 @@
-use accounthealth;
-db.dropDatabase();
+Drop a database:
+    use accounthealth;
+    db.dropDatabase();
