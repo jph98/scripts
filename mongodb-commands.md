@@ -1,0 +1,2 @@
+use accounthealth;
+db.dropDatabase();
