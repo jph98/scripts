@@ -25,3 +25,10 @@ Grepping for an expression recursively with a wildcard filename (--include):
 Finding all files that DO NOT contain a given grep expression (-L):
 
     grep -Lr "Process finished" . --include "*.log"
+
+Screen (The very basics):
+
+    screen (new screen session)
+    screen -r (reattach)
+    screen -ls (list screens)
+    screen CTRL+A d (detach)
