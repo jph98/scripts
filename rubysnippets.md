@@ -146,6 +146,14 @@ Symbols are a way to reuse words over and over again - they exist in memory only
 	__END__
 	puts "do we ever get here"
 
+######Coercian and Converting Floats If Valid
+
+See:
+
+	def is_float(object)
+		return true if Float(object) rescue false
+	end
+	
 ######Null Object Pattern
 
 Encapsulating default values in a null object class to reduce conditionals 
