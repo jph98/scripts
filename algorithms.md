@@ -20,6 +20,11 @@ Automaton Theory, see - http://en.wikipedia.org/wiki/Automata_theory
 
 * Conways Game of Life (Cellular Automata) - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
 
+Computability Theory
+--------------------
+
+* Building a Turing Machine Simulator - http://reinh.com/blog/2011/09/03/building-a-turing-machine-simulator-with-ruby-part-1.html
+
 Type Theory
 -----------
 
