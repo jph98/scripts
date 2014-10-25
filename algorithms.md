@@ -13,6 +13,11 @@ Cluster Analysis
 
 * K-Means Clustering - http://datasciencelab.wordpress.com/2013/12/12/clustering-with-k-means-in-python/
 
+Graph Theory
+------------
+
+Krukals Minimum Spanning Tree Algorithm - http://www.markhneedham.com/blog/2012/12/23/kruskals-algorithm-using-union-find-in-ruby/
+
 Automaton Theory
 ----------------
 
