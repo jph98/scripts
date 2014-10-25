@@ -1,6 +1,8 @@
 Algorithms
 ==========
 
+Theoretical Computer Science - http://en.wikipedia.org/wiki/Theoretical_computer_science
+
 Decision Theory
 ---------------
 
