@@ -16,6 +16,8 @@ Cluster Analysis
 Automaton Theory
 ----------------
 
+Automaton Theory, see - http://en.wikipedia.org/wiki/Automata_theory
+
 * Conways Game of Life (Cellular Automata) - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
 
 Combinatorial Optimisation
