@@ -8,15 +8,15 @@ Decision Theory
 
 * Minimax - http://www.flyingmachinestudios.com/programming/minimax/
 
-Cluster analysis
+Cluster Analysis
 ---------------
 
 * K-Means Clustering - http://datasciencelab.wordpress.com/2013/12/12/clustering-with-k-means-in-python/
 
-Cellular Automaton
-------------------
+Automaton Theory
+----------------
 
-* Conways Game of Life - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
+* Conways Game of Life (Cellular Automata) - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
 
 Combinatorial Optimisation
 --------------------------
