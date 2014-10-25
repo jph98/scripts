@@ -20,6 +20,11 @@ Automaton Theory, see - http://en.wikipedia.org/wiki/Automata_theory
 
 * Conways Game of Life (Cellular Automata) - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
 
+Type Theory
+-----------
+
+Hindley–Milner type inference algorithm - http://smallshire.org.uk/sufficientlysmall/2010/04/11/a-hindley-milner-type-inference-implementation-in-python/comment-page-1/
+
 Combinatorial Optimisation
 --------------------------
 
