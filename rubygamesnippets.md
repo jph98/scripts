@@ -3,7 +3,7 @@ Ruby Grid Based Creation/Display
 
 This uses the basic concept of a Cell class.
 
-  def initialize(user_width, user_height)
+  	def initialize(user_width, user_height)
 
 		@max_width_x = user_width - 1
 		@max_height_y = user_height - 1
