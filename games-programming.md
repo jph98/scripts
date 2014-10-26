@@ -6,6 +6,10 @@ Main Languages
 * C++
 * Lua - scripting language
 * Java 
+* 
+Others:
+
+* Ruby - see Gosu
 
 Game Design
 -----------
