@@ -47,7 +47,7 @@ Automaton Theory
 ----------------
 
 Automaton Theory, see - http://en.wikipedia.org/wiki/Automata_theory
-* Finite State Machines - http://en.wikipedia.org/wiki/Finite-state_machine
+* Finite State Machines - http://en.wikipedia.org/wiki/Finite-state_machine and https://gocardless.com/blog/statesman/
 * Behaviour Trees - https://www.altamiracorp.com/blog/employee-posts/behavior-trees-in-ruby
 
 * Conways Game of Life (Cellular Automata) - http://gamedevelopment.tutsplus.com/tutorials/creating-life-conways-game-of-life--gamedev-558
