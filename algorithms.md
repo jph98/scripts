@@ -6,7 +6,7 @@ Course see:
 * Algorithms Part 2 - https://www.coursera.org/course/algs4partII
 
 List of Algorithms - http://en.wikipedia.org/wiki/List_of_algorithms
-
+con
 Theoretical Computer Science - http://en.wikipedia.org/wiki/Theoretical_computer_science
 
 Decision Theory
@@ -64,3 +64,4 @@ Swarm Intelligence
 ------------------
 
 * Ant Colony Optimisation - https://practicingruby.com/articles/ant-colony-simulation
+* Langtons Ant (A two dimensional Turing machine) - http://en.wikipedia.org/wiki/Langton%27s_ant
