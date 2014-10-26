@@ -69,3 +69,8 @@ Swarm Intelligence
 
 * Ant Colony Optimisation - https://practicingruby.com/articles/ant-colony-simulation
 * Langtons Ant (A two dimensional Turing machine) - http://en.wikipedia.org/wiki/Langton%27s_ant
+* Partical Swarm
+* Bee Colony
+* Grey Wolf
+* Bat
+* Birds
