@@ -83,3 +83,8 @@ Queuing Theory
 See - 
 
 * Markov Chains - http://brandonbyars.com/2007/05/06/tdding-a-markov-chain/
+
+Genetic Algorithms
+------------------
+
+* Basic Introduction - http://www.sitepoint.com/genetic-algorithms-in-ruby-part-i/
