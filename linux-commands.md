@@ -32,3 +32,11 @@ Screen (The very basics):
     screen -r (reattach)
     screen -ls (list screens)
     screen CTRL+A d (detach)
+
+Replacing text in many files:
+
+    perl -p -i -e 's/find/replace/g' *.php
+    
+With backups:
+
+    perl -p -i '.backup' -e 's/find/replace/g' *.php
