@@ -37,4 +37,8 @@ Commands
 --------
 
     :NERDTree
-    
+
+Search and Replace
+------------------
+
+    :%s/pattern/replace/
