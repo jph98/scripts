@@ -35,8 +35,4 @@ Screen (The very basics):
 
 Replacing text in many files:
 
-    perl -p -i -e 's/find/replace/g' *.php
-    
-With backups:
-
-    perl -p -i '.backup' -e 's/find/replace/g' *.php
+    sed -i 's/foo/bar/g' *
