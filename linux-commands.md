@@ -39,3 +39,8 @@ Screen (The very basics):
 Replacing text in many files:
 
     sed -i 's/foo/bar/g' *
+
+Sending a message to syslog
+
+    logger -t test folder
+    
