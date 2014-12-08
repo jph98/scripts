@@ -817,3 +817,15 @@ Use Function - http://www.ruby-doc.org/stdlib-2.0/libdoc/fiddle/rdoc/Fiddle.html
 ###Sinatra Skeleton and Example
 
 See: https://github.com/adamwiggins/scanty-redis/blob/master/main.rb
+
+###Apache Setup
+
+	<VirtualHost *:80>
+        ServerName dashboardperf
+
+        ServerAdmin webmaster@localhost
+        DocumentRoot /var/www/html/bigquery-reporting
+        ProxyPass / http://172.27.1.149:5000/
+        ProxyPassReverse / http://172.27.1.149:5000/
+
+	</VirtualHost>
