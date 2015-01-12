@@ -22,14 +22,13 @@ Basic
 
 GET:
 
-    var board = $.get( "/board/<%= session['gameid'] %>/player/<%= session['current_player_number'] %>" )
+    $.get( "/url" ) {
 
-    	.done(function() {
-    
+    	.done(function(data) {
     	    alert("success");
     	})
-    	.fail(function() {
-    		alert("Error retrieving board state");
+    	.fail(function(data) {
+    		alert("Error");
     	});
     });
 
