@@ -81,6 +81,28 @@ Maven Executable JAR with Assembly Plugin
 		</plugins>
 	</build>
 	
+Maven Embedded Jetty
+--------------------
+
+	      <plugin>
+	        <artifactId>maven-compiler-plugin</artifactId>
+	        <version>2.3.2</version>
+	        <configuration>
+	          <source>1.6</source>
+	          <target>1.6</target>
+	        </configuration>
+	      </plugin> -->
+	      
+	      <!-- mvn jetty:* plugin. See http://wiki.eclipse.org/Jetty/Feature/Jetty_Maven_Plugin -->
+	      <plugin>
+	        <groupId>org.mortbay.jetty</groupId>
+	        <artifactId>jetty-maven-plugin</artifactId>
+	        <configuration>
+	            <jvmArgs>-Xmx1024m -XX:PermSize=256M -XX:MaxPermSize=512M</jvmArgs>
+	            <scanIntervalSeconds>1</scanIntervalSeconds>
+	        </configuration>
+	      </plugin>      
+	
 Maven Exec Plugin
 -----------------
 
