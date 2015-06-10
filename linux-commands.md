@@ -44,3 +44,6 @@ Sending a message to syslog
 
     logger -t test folder
     
+Bulk renaming files in a directory
+
+    rename 's/^done/pdf-post/' *
