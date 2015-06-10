@@ -47,3 +47,7 @@ Sending a message to syslog
 Bulk renaming files in a directory
 
     rename 's/^done/pdf-post/' *
+
+Bulk add extension
+
+    rename 's/(.*)/$1.txt/' *
