@@ -82,7 +82,8 @@ Dependency Injection
 --------------------
 
 * Typhoon - http://typhoonframework.org/
-
+* Objection - https://github.com/atomicobject/objection
+* 
 Packaging
 ---------
 
