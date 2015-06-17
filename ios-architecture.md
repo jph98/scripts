@@ -66,3 +66,24 @@ Cocoa also provides the following high level features:
 * Foundation Framework - collections, arrays, sets, bundles, string manipulation, threads and run loops, port and sockets
 
 Storyboard, Autolayout not great.
+
+Memory Management
+-----------------
+
+* Manual Retain-Release
+* Automatic Reference Counting
+
+http://blog.teamtreehouse.com/ios-memory-management-part-1
+
+Data Structures
+---------------
+
+Dependency Injection
+--------------------
+
+* Typhoon - http://typhoonframework.org/
+
+Packaging
+---------
+
+Cocoapods
