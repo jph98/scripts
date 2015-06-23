@@ -3,6 +3,8 @@ Example Apps
 
 WWDC example apps - https://github.com/wwdc/2014
 
+iOS Good Practices - https://github.com/futurice/ios-good-practices
+
 Language Differences
 --------------------
 
