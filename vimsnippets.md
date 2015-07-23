@@ -42,3 +42,12 @@ Search and Replace
 ------------------
 
     :%s/pattern/replace/
+
+Copying/Pasting Text
+--------------------
+
+Make sure you set unnamed as the clipboard in vimrc then:
+
+    "*y
+    
+    "*p
