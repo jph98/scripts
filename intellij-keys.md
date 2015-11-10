@@ -4,8 +4,31 @@ Shortcuts
 * Eclipse Code Templates - SO
 * Live Templates - http://java.dzone.com/articles/what%E2%80%99s-cool-intellijidea-part-0
 
-Commonly Used
--------------
+Commonly Used (OSX)
+-------------------
+
+* By File - mac CTRL + N
+* By Symbol - mac CTRL ALT + N
+* Search Anywhere - shift, shift
+* Hide All - mac shift fn F12
+* Move Line - ALT + Shift Up/Down
+* Move Sroll Bar - Mac + Up/Down
+* Expand Selection - Mac + W
+* Dupe Line - mac + D
+* Delete Line - 
+* New Line After - Shift + ENTER
+* Indent Correct - CMD + ALT + I
+* Auto format all - MAC + ALT + L
+* Parameter Info - CMD + P
+* Goto Class - CMD + B
+* Goto Super Class - CMD + U
+* Show Implementing Classes - MAC + ALT + B
+* Show Class Hierarchy - CTRL + H
+* Method Hierarchy - 
+* Show Structure - MAC + FN + F12
+
+Others
+------
 
 * Surround with (trycatch, conditionals etc...) - CTRL + ALT + T (After selection)
 * Create new constructor - ALT + Ins
