@@ -1,5 +1,4 @@
-Docker
-######
+## Docker
 
 Docker Machine - 
 Docker Engine - docker binary
