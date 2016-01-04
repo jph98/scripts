@@ -18,3 +18,6 @@ Declare a method that returns a list of any type:
 
     public <T> List<T> magicalListGetter() {}
     
+Declare a class of type T that has a method returning T in some form:
+
+    public class GenericMapDeserializer<T> extends JsonDeserializer<Map<String, T>> {}
