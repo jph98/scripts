@@ -1,10 +1,36 @@
 ## Docker
 
-Docker Machine - 
-Docker Engine - docker binary
-Docker Composer -
-
 Cheatsheet - https://github.com/wsargent/docker-cheat-sheet#exposing-ports
+
+Docker (Machines)
+
+List all Machines
+
+    docker-machine ls
+    
+See: https://docs.docker.com/machine/reference/
+    
+Docker (Containers)
+
+* Show running containers
+
+    docker ps
+    
+* Get all info (including IP)
+
+    docker inspect <name>
+    docker inspect <name> | grep IPAddress
+    
+* Show stats
+
+    docker stats <name>
+    
+* Run a command in a container
+
+    docker exec <command> <name>
+
+Using Images (Templates)
+------------------------
 
 Uses the machine: default (in Virtualbox)
 
@@ -33,6 +59,8 @@ Display ALL the images:
 
 Step: Build Your Own Image - https://docs.docker.com/mac/step_four/
 -------------------------------------------------------------------
+
+See the following for command usage - https://github.com/wsargent/docker-cheat-sheet#dockerfile
 
 Simple as taking an existing base image and customising a bit to add fortunes:
 
