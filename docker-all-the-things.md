@@ -20,10 +20,14 @@ See: https://docs.docker.com/machine/reference/
     
 Docker (Containers)
 
+* Build a container from a Dockerfile (this will then be displayed in the images list once run).
+
+    docker build --no-cache -t <nameofimage> .
+
 * List all images
 
     docker images
-    
+
 * Run a container
 
     docker run --name <servicename> <imagename>
