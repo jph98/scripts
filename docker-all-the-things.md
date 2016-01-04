@@ -7,6 +7,14 @@ Docker (Machines)
 List all Machines
 
     docker-machine ls
+
+Display machine environment, including IP address and port:
+
+    docker-machine env
+    
+SSH into your docker instance
+
+    docker-machine ssh
     
 See: https://docs.docker.com/machine/reference/
     
