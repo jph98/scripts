@@ -1,6 +1,6 @@
 ## Docker
 
-Cheatsheet - https://github.com/wsargent/docker-cheat-sheet#exposing-ports
+Cheatsheet - https://github.com/wsargent/docker-cheat-sheet
 
 Docker (Machines)
 
@@ -12,6 +12,20 @@ See: https://docs.docker.com/machine/reference/
     
 Docker (Containers)
 
+* Run a container
+
+    docker run --name <servicename> <imagename>
+
+some options around this (-d for daemon, )
+
+* Stop a container
+
+    docker stop <name>
+
+* Remove a container
+
+    docker rm <name>
+    
 * Show running containers
 
     docker ps
