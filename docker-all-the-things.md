@@ -28,7 +28,9 @@ Docker (Containers)
 
     docker run --name <servicename> <imagename>
 
-some options around this (-d for daemon, )
+some options around this (-d for daemon, -i for interative, -t for tty options).
+
+n.b. Your docker container will exit if a process is completed.  You need to have a service running.  Alternatively, you can invoke (docker run ... /bin/bash) to have it keep a shell open for you to run subsequent commands.
 
 * Stop a container
 
