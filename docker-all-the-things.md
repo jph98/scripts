@@ -2,7 +2,9 @@
 
 Docker Machine - 
 Docker Engine - docker binary
-Docker Composer - 
+Docker Composer -
+
+Cheatsheet - https://github.com/wsargent/docker-cheat-sheet#exposing-ports
 
 Uses the machine: default (in Virtualbox)
 
