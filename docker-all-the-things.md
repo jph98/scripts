@@ -20,6 +20,10 @@ See: https://docs.docker.com/machine/reference/
     
 Docker (Containers)
 
+* List all images
+
+    docker images
+    
 * Run a container
 
     docker run --name <servicename> <imagename>
