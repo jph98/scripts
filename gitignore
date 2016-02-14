@@ -2,10 +2,15 @@
 .idea/
 *.iml
 *.iws
+*.log*
 
 # Mac
 .DS_Store
 
 # Maven
 log/
-*/target/**
+target/
+
+# gradle
+.gradle/
+build
