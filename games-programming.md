@@ -1,49 +1,54 @@
 IndieDB - http://www.indiedb.com/
 
-Main Languages
---------------
-
-* C++
-* Lua - scripting language
-* Java 
-* 
-Others:
-
-* Ruby - see Gosu
-
 Game Design
------------
+===========
 
 * http://www.lostgarden.com/
 
-Game Engines
+Tools
+=====
+
+Sound
+-----
+
+* cfxr - http://thirdcog.eu/apps/cfxr
+
+Music
+-----
+
+* chirp - http://chirp.rezoner.net/
+* pulseboy - http://www.pulseboy.com/
+
+2D Graphics
+-----------
+
+* Pixelmator - http://www.pixelmator.com/mac/
+* Overlap2d - http://overlap2d.com/
+
+Tile Editors
 ------------
-
-Number of JS based engines:
-* PixiJS
-* Phaser (good if you want collision detection etc...) - http://phaser.io/
-
-Tile Editors/Map Editors
-------------------------
 
 * Tiled - http://www.mapeditor.org/
 
-Sound Engines
--------------
+3D Graphics
+-----------
 
-Most game engines provide their own implementation, some of these are based on web audio.
+* Sculptris - http://pixologic.com/sculptris/
 
-* http://www.html5rocks.com/en/tutorials/webaudio/intro/
-
-Graphics
---------
+Graphic Sources
+===============
 
 * Open Game Art - http://opengameart.org/
 * Sprite Database - http://spritedatabase.net/
 * https://www.scirra.com/forum/link-to-t-111-ns-of-free-sprites_t62281
 
+Tutorials
+=========
+
+* 2D Art - https://www.udemy.com/pixel-art-for-video-games/
+
 Algorithms
-----------
+==========
 
 * A* Path Search - http://www.redblobgames.com/pathfinding/a-star/introduction.html
 * Minimax (search tree for possible moves) - http://www.wieschoo.com/tutorials/optimization/connect4-ai-minimax/001189/
