@@ -49,6 +49,7 @@ Tutorials
 =========
 
 * 2D Art - https://www.udemy.com/pixel-art-for-video-games/
+* Pixelart - http://www.pixelprospector.com/the-big-list-of-pixel-art-tutorials/
 
 Algorithms
 ==========
