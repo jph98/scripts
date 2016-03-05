@@ -1,5 +1,9 @@
 #Go Snippets Cheat Sheet
 
+Exercises: 
+
+    https://github.com/cheeyeo/golang-exercises
+
 * Go by example is great - https://gobyexample.com/
 * Effective Go - http://golang.org/doc/effective_go.html
 * Writing Web Applications - http://golang.org/doc/articles/wiki/
@@ -23,7 +27,17 @@ Compile
 
     go build helloworld.go
     
-Then run as an executable
+Running
+
+    go run script.go
+
+Docs
+
+    godoc -http=:8000
+    
+Running as a script:  
+
+    //usr/bin/env go run $0 $@; exit
      
 ###Simple Program
 
@@ -52,6 +66,103 @@ Writing a simple webserver with http
         }
     }
 
+###Variable Handing
+
+###Variables and Types
+
+    http://www.golang-book.com/books/intro/3
+
+Normally:
+
+     var x string = "Hello!
+     var (x = 5; y = 6; z = 7)
+     
+Or shorthand:
+
+     x := "Hello World""
+
+Constant:
+
+    const x string = "WORLD"
+
+###Loops
+
+There are only for loops in Go
+
+    for i:= 0; i < 10; i++ { // do stuff }
+
+or...
+
+    for i, num := range nums { // do stuff }
+  
+###Functions
+
+Write a function that takes two integers and returns two integers:
+
+      func add(a, b int) (int, int) { return a, b }
+
+You can also name the result:
+
+    func f2() (r int) {}
+    
+Functions that can fail can also return a boolean to indicate success:
+
+      if result, ok := functionThatCanFail(); ok {}
+      
+Functions can also be variadic
+
+    func add(args ...int) int {
+        for _, v := range args {}
+    }
+    
+You can create closures within functions as follows:
+
+    add := func(x, y int) int {
+        return x + y
+    }
+
+You can also create a function that returns a generator function:
+
+    return func() (ret uint) {
+        ret = i
+        i += 2
+        return
+    }
+
+You can defer a function (so that it runs after something else completes:
+
+    func main() {
+        defer second()
+        first()
+    }    
+
+###Error Handling
+
+http://blog.golang.org/error-handling-and-go
+
+Go has the concept of panic and recover:
+
+
+
+###Data Structures
+
+n.b. There's also a built in function called make which can be used to create the following data structures.
+
+#####Arrays
+
+    var a [5]int 
+
+#####Slices
+
+    letters := []string{"a", "b", "c", "d"}
+    s.append("a")
+  
+#####Maps
+
+Create with:
+
+    var a [4]int
+
 ###Object Orientated Constructs
 
 There are no classes.  Go is old school structs.
@@ -78,7 +189,7 @@ You can also pass pointers:
      cp = &p
      fmt.Println(cp)
 
-#####Interfaces
+###Interfaces
 
 Interfaces provide a simple way to group methods declarations:
 
@@ -97,6 +208,9 @@ to be used in terms of composition:
 There are no exceptions.  Explicit separate return value.
 
 ###Concurrency with Goroutines
+
+* Goroutines are lightweight threads
+* Channels provide a mechanism to communicate between goroutines, can be uni or bi directional
 
     package main
     import "fmt"
@@ -120,53 +234,20 @@ A good example of using channels and workers is to define a worker pool for proc
 
     https://gobyexample.com/worker-pools
 
-###Variable Handing
+###Running OS Commands
 
-###Loops
+Run with:
 
-There are only for loops in Go
+    cmd := exec.Command("dig", "any", "google.com")
+    out, err := cmd.Output()
 
-    for i:= 0; i < 10; i++ { // do stuff }
+###Input/Output and the Command Line
 
-or...
+Simple prompt:
 
-    for i, num := range nums { // do stuff }
+    fmt.Print("Enter a number: ")
+    var input float64
+    fmt.Scanf("%f", &input)
 
-###Functions
+Working with files:
 
-Write a function that takes two integers and returns two integers:
-
-      func add(a, b int) (int, int) {
-        return a, b
-      }
-
-Functions that can fail can also return a boolean to indicate success:
-
-      if result, ok := functionThatCanFail(); ok {
-        // do something on success
-      }
-      
-Functions can also be variadic
-  
-###Data Structures
-
-#####Arrays
-
-    var a [5]int 
-    b := [5]int{1, 2, 3, 4, 5}
-
-
-#####Slices
-
-    s := make([]string, 3)
-    s.append("a")
-  
-#####Maps
-
-    mymap := make(map[string]int)
-    mymap["key" = 1
-
-###Interfaces
-
-* There are no classes in Go
-* You can define methods on Structs
