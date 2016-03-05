@@ -363,3 +363,18 @@ Working with files:
 
 ###Web Service Calls
 
+Example of making a web-service call to a URL then transforming JSON to a struct:
+
+    sunrise_url := "http://api.sunrise-sunset.org/json"
+    resource := sunrise_url + "?lat=" + latstr + "&lng=" + longstr + "&date=" + date 
+    fmt.Printf("\tURL: \t\t%s\n", resource)
+    res, err := http.Get(resource)
+    defer res.Body.Close()
+    var sunresults SunResults
+    decoder := json.NewDecoder(res.Body)
+    err = decoder.Decode(&sunresults)
+
+### Microservices and Building Services
+
+* MicroServices - https://github.com/harlow/go-micro-services
+* Uber Engineering on Go - https://eng.uber.com/go-geofence/
