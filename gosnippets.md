@@ -215,7 +215,11 @@ You should pass a pointer with:
     }
     example(&name);
 
-###Object Orientated Constructs
+###Object Orientated Programming
+
+See:
+
+    http://nathany.com/good/
 
 There are no classes.  Go is old school structs.
 
