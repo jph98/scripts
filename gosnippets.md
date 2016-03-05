@@ -4,9 +4,21 @@ Exercises:
 
     https://github.com/cheeyeo/golang-exercises
 
-* Go by example is great - https://gobyexample.com/
-* Effective Go - http://golang.org/doc/effective_go.html
-* Writing Web Applications - http://golang.org/doc/articles/wiki/
+Go by example is great
+
+    https://gobyexample.com/
+    
+Effective Go
+
+    http://golang.org/doc/effective_go.html
+    
+Writing Web Applications
+
+    http://golang.org/doc/articles/wiki/
+
+Go Examples
+
+    https://www.youtube.com/watch?v=CUkPn3pWqks
 
 See: http://nathany.com/good/
 
@@ -141,7 +153,15 @@ You can defer a function (so that it runs after something else completes:
 http://blog.golang.org/error-handling-and-go
 
 Go has the concept of panic and recover:
+* Panic will be called
+* Deferred functions are called
+* Returned to caller
 
+    defer func() {
+        if r := recover(); r != nil {
+            fmt.Println("Recovered in f", r)
+        }
+    }()
 
 
 ###Data Structures
@@ -170,6 +190,12 @@ There are no classes.  Go is old school structs.
       type Coordinate struct {
         x, y int
       }
+      
+https://gobyexample.com/structs
+
+Structs are typed collections of fields that are mutable.  
+
+You can use a pointer to get to one.  They are automatically dereferenced.
       
 which you can add a method to by using the pointer:
 
@@ -250,4 +276,6 @@ Simple prompt:
     fmt.Scanf("%f", &input)
 
 Working with files:
+
+###Web Service Calls
 
