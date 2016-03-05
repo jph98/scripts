@@ -1,8 +1,6 @@
 #Go Snippets Cheat Sheet
 
-Exercises: 
-
-    https://github.com/cheeyeo/golang-exercises
+TODO: Channel Buffering, Synchronization and Directions.
 
 Go by example is great
 
@@ -11,16 +9,14 @@ Go by example is great
 Effective Go
 
     http://golang.org/doc/effective_go.html
-    
+
+Exercises: 
+
+    https://github.com/cheeyeo/golang-exercises
+
 Writing Web Applications
 
     http://golang.org/doc/articles/wiki/
-
-Go Examples
-
-    https://www.youtube.com/watch?v=CUkPn3pWqks
-
-See: http://nathany.com/good/
 
 ###Language Overview
 
@@ -31,6 +27,10 @@ Install a package with:
     go get github.com/ant0ine/go-json-rest/rest
     go get github.com/zenazn/goji
 
+Packages:
+
+    https://golang.org/pkg/
+    
 Docs
 
     godoc -http=:8000
@@ -96,6 +96,25 @@ Or shorthand:
 Constant:
 
     const x string = "WORLD"
+
+###Conversion
+
+See: 
+
+    https://gobyexample.com/number-parsing
+
+Integers to string:
+
+    strconv.Itoa()
+    
+Strings to integers:
+
+    strconv.Atoi()
+
+Other parse methods exist as well:
+
+    ParseInt
+    ParseFloat
 
 ###Loops
 
@@ -183,6 +202,19 @@ Create with:
 
     var a [4]int
 
+####Pointers
+
+Passing by parameter doesn't change the actual value, it's a copy of the variable instead.
+
+    https://gobyexample.com/pointers
+
+You should pass a pointer with:
+
+    example(iptr *name) {
+        *iptr = 0
+    }
+    example(&name);
+
 ###Object Orientated Constructs
 
 There are no classes.  Go is old school structs.
@@ -191,17 +223,26 @@ There are no classes.  Go is old school structs.
         x, y int
       }
       
-https://gobyexample.com/structs
+    https://gobyexample.com/structs
+    
+Instantiate one of these with:
 
-Structs are typed collections of fields that are mutable.  
+    Coordinate{1, 2}
 
-You can use a pointer to get to one.  They are automatically dereferenced.
+Structs are typed collections of fields that are mutable.  You can use a pointer to get to one.  They are automatically dereferenced.
       
-which you can add a method to by using the pointer:
+You can add a method by passing a receiver:
 
-      func (c Coordinate) pretty {
-        fmt.Println("My pretty coordinate " + x + " " + y);
-      }
+        type coord struct {
+        	x, y int
+        }
+        
+        // Define a function and add it to the receiver c
+        func (c *coord) pretty() (string) {
+        	strcoord := strconv.Itoa(c.x) + "," + strconv.Itoa(c.y)
+        	fmt.Printf("My pretty coordinate [%s]", strcoord);
+        	return strcoord
+        }
 
 then construct with the folowing:
       
@@ -217,33 +258,53 @@ You can also pass pointers:
 
 ###Interfaces
 
-Interfaces provide a simple way to group methods declarations:
+    https://gobyexample.com/interfaces
+    
+Interfaces are named collections of methods declarations:
 
-     type Animal interface {
-         Speak() string
-     }
+     type geometry interface {
+        area() float64
+        perim() float64
+    }
 
-to be used in terms of composition:
+We must define two functions for the receiver for these, otherwise we will get a compile error:
 
-     func (d Dog) Speak() string {
-         return "Woof!"
-     }
+    type circle struct {
+        radius float64
+    }
+    func (r rect) area() float64 {
+        return r.width * r.height
+    }
+    func (r rect) perim() float64 {
+        return 2*r.width + 2*r.height
+    }
+
 
 ###Errors
 
-There are no exceptions.  Explicit separate return value.
+    https://gobyexample.com/errors
+    
+Idiomatic to communicate errors via an explicit, separate return value
 
 ###Concurrency with Goroutines
 
+    https://gobyexample.com/goroutines
+    
 * Goroutines are lightweight threads
 * Channels provide a mechanism to communicate between goroutines, can be uni or bi directional
+
+Simple example:
+
+    go example("argument")
+
+Example with an anonymous function call:
 
     package main
     import "fmt"
     
     func main() {
     
-        go func(msg string) {
+        go anonDefinedFunction(msg string) {
             fmt.Println(msg)
         }("going, press enter to exit")
         
@@ -276,6 +337,25 @@ Simple prompt:
     fmt.Scanf("%f", &input)
 
 Working with files:
+
+    file, _ := os.Open(filename)
+    defer file.Close()
+    reader := bufio.NewReader(file)
+    scanner := bufio.NewScanner(reader)
+    lineCount := 1
+    for scanner.Scan() {
+        if (lineCount == randomLineNumber) {
+            return scanner.Text()
+        }
+        lineCount++
+    }
+
+## Miscellanous Cookbook Stuff
+
+###Random numberNumber
+
+    rand.Seed(time.Now().Unix())
+    return rand.Intn(max - min) + min
 
 ###Web Service Calls
 
