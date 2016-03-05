@@ -374,7 +374,25 @@ Example of making a web-service call to a URL then transforming JSON to a struct
     decoder := json.NewDecoder(res.Body)
     err = decoder.Decode(&sunresults)
 
+### Datastore Integration
+
+* MySQL - https://github.com/ziutek/mymysql
+* Mongo (mgo) - https://labix.org/mgo
+
+### Messaging
+
+* Streadway AMQP - https://github.com/streadway/amqp
+
+### Integrating Go with a webserver
+
+* Nginx Reverse Proxy and Server - https://www.vultr.com/docs/nginx-reverse-proxy-and-golang-setup-on-freebsd
+
+### Building a Webapp Wiki with Golang
+
+* https://golang.org/doc/articles/wiki/
+
 ### Microservices and Building Services
 
 * MicroServices - https://github.com/harlow/go-micro-services
 * Uber Engineering on Go - https://eng.uber.com/go-geofence/
+* Scaling microservices in Go - https://speakerdeck.com/mattheath/scaling-microservices-in-go-high-load-strategy-2015
