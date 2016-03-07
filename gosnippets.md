@@ -336,7 +336,10 @@ n.b. Sends and receives are blocked until the sender and receiver are ready.
     
 *Direction* - Channels also have direction
 
+n.b. Sends and receives are blocking by default.
+
 Send:
+
     pings chan<- string
     
 Receive:
@@ -345,11 +348,13 @@ Receive:
 
 *Select* - select allows you to wait on multiple channels    
 
+Default/Timeouts (TODO)
+Unblocking (TODO)
+Closing Channels (TODO)
 Wait Groups (TODO)
-
-Worker Pools (TODO)
-
-    https://gobyexample.com/worker-pools
+Worker Pools (TODO) - https://gobyexample.com/worker-pools
+Atomic Counters
+Mutexes
 
 ###Timers and Tickers
 
