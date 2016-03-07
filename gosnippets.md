@@ -1,7 +1,5 @@
 #Go Snippets Cheat Sheet
 
-TODO: Channel Buffering, Synchronization and Directions.
-
 Go by example is great
 
     https://gobyexample.com/
@@ -319,11 +317,41 @@ Example with an anonymous function call:
     
 #####Channels
 
-Channels provide a way to connect concurrent goroutines into a pipeline
+Connect goroutines and provide synchronisation.  Simple unbuffered example would be for the following which uses string type:
 
-A good example of using channels and workers is to define a worker pool for processing jobs and outputting results
+    messages := make(chan string)
+
+n.b. Sends and receives are blocked until the sender and receiver are ready.
+
+*Buffered* - Buffered channels accept a number of values without a receiver attached.
+
+* Synchronisation* -  can be carried out using:
+
+    func() {
+        ...
+        done <- true
+    }
+    done := make(chan bool, 1)
+    <-done
+    
+*Direction* - Channels also have direction
+
+Send:
+    pings chan<- string
+    
+Receive:
+
+    pings <-chan string
+
+*Select* - select allows you to wait on multiple channels    
+
+Wait Groups (TODO)
+
+Worker Pools (TODO)
 
     https://gobyexample.com/worker-pools
+
+###Timers and Tickers
 
 ###Running OS Commands
 
