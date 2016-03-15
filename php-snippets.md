@@ -245,6 +245,13 @@ Equality works with the following:
     and // And
     or // Or
 
+String Manipulation
+-------------------
+
+* implode - joins an array into a string using a char
+* explode - splits a string out into an array
+* preg_match(pattern, text, matches) - matches will be filled with results
+
 Superglobals
 ------------
 
