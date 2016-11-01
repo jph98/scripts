@@ -21,7 +21,11 @@ istock.com
 resourcecards.com
 flaticon.com
 
-Design Patterns
+Design Resources
 ===============
 
-https://dribbble.com/
+dribbble.com
+pttrns.com
+siteinspire.com
+land-book.com
+behance.net
