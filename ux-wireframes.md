@@ -24,8 +24,8 @@ flaticon.com
 Design Resources
 ===============
 
-dribbble.com
-pttrns.com
-siteinspire.com
-land-book.com
-behance.net
+* dribbble.com
+* pttrns.com
+* siteinspire.com
+* land-book.com
+* behance.net
