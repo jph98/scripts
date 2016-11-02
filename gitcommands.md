@@ -1,5 +1,4 @@
-Config
-------
+## Config
 
 .gitconfig
 
@@ -23,8 +22,7 @@ Display paths relative to non-root
 
     git config --global status.relativePaths true
 
-Logs and Diffs
---------------
+## Logs and Diffs
 
 Show the log for a set of commits:
 
@@ -34,8 +32,7 @@ Show a plain status:
 
      git status --porcelain
 
-Stashing
---------
+## Stashing
 
 Store a stash
 	
@@ -50,8 +47,7 @@ Apply a stash
 	git stash apply stash@{0}
 
 
-Committing
-----------
+## Committing
 
 Add all modified files
 
@@ -60,8 +56,7 @@ Add all modified files
 Commit the files:
 	git commit -m "Message"
      
-Branches and Merging
---------------------
+## Branches and Merging
 
 Create a branch and switch to that branch:
 
@@ -96,8 +91,7 @@ Compare changes on branch with master:
 
     git diff --name-status master
 
-Dealing With Conflicts
-----------------------
+## Dealing With Conflicts
 
 Pull changes and merge conflicts
 
@@ -107,8 +101,7 @@ Pull changes (no merge)
 
     git fetch
 
-Abandon Local Changes
----------------------
+## Abandon Local Changes
 
 Replace with HEAD and abandon all local changes:
 
@@ -121,3 +114,30 @@ Remove untracked files that have been added locally
 Abandon the local checkout:
 
 	git checkout --theirs xhprof-bp/xhprof_bp_analyser/XHProfRunsAnalyser.php
+
+## Creating a branch
+
+```
+git checkout master
+git pull
+git checkout -b branchname
+git push -u origin branchname
+```
+
+## Creating a patch from outstanding changes
+
+```git diff --cached > patch.txt```
+
+## Creating a patch and applying it
+
+```
+git format-patch -1 {commit-id}
+git apply --stat fix_empty_poster.patch
+```
+
+## Merging branch into master
+
+```
+git checkout aq
+git merge origin/master
+```
