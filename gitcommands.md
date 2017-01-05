@@ -28,6 +28,14 @@ Show the log for a set of commits:
 
 	git log --max-count=2
 
+Show a oneline format for log with a decoration for branches/tags:
+
+	git log --oneline --decorate
+
+Show a graph of commits:
+
+	git log --graph --oneline --decorate
+	
 Show a plain status:
 
      git status --porcelain
