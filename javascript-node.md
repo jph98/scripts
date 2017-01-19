@@ -1,20 +1,57 @@
-Tutorial - http://www.nodebeginner.org/#hello-world
+# Node Overview
 
-NPM - http://howtonode.org/introduction-to-npm
-* ls - list dependencies
-* install - install dependencies
+* Can use ES6, Typescript to write apps
+* Non-blocking commands
+* Callback heavy
+* Each incoming connection is a small heap allocation
 
-You need a package.json file to make a package
+npm commands:
+* npm init
+* npm i package --save
 
-Libraries
----------
+https://gist.github.com/martinheidegger/5554941
 
+## Libraries
+
+RESTful Libraries
 * RESTify - http://mcavage.me/node-restify/
+* Unirest - http://unirest.io/nodejs.html
+
+Command Line
+* Commander
 * Option Parsing - https://github.com/substack/node-optimist
 
+Webapp Framework:
+* Express
+* hapi.js
 
-HTTP Server
------------
+Process Management:
+* pm2 
+
+## Language Notes
+
+* let/var difference in terms of scoping - let is scoped to the nearest block rather than function
+* 
+
+## RESTful Calls with Unirest
+
+Example get request:
+
+    unirest.get(url)
+        .set('Accept', 'application/json')
+        .set('Content-Type', 'application/json')
+        .set('User-Agent', userAgent)
+        .end(function (response) {
+            console.log(response.body['response']);
+        }
+        
+
+        
+## Networking
+
+### HTTP Server
+
+Create a simple HTTP server with:
 
     var http = require("http");
 
@@ -24,10 +61,9 @@ HTTP Server
       response.end();
     }).listen(8888);
 
-TCP Server
-----------
+### TCP Server
 
-Connect with curl localhost:8000
+Connect with curl localhost:8000 for the following TCP server:
 
     var net = require('net');
     var port = 8000;
