@@ -1,4 +1,4 @@
-# Node Overview
+# Node Notes
 
 * Can use ES6, Typescript to write apps
 * Non-blocking commands
@@ -47,7 +47,11 @@ Example get request:
         .end(function (response) {
             console.log(response.body['response']);
         }
-               
+
+JSON display:
+
+    JSON.stringify(baseResponse, null, 2)
+    
 ## Networking
 
 ### HTTP Server
