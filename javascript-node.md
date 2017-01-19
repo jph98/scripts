@@ -28,10 +28,13 @@ Webapp Framework:
 Process Management:
 * pm2 
 
-## Language Notes
+## Commonly Used Constructs
 
+Not exclusive to Node at all, but commonly used constructs.
+
+* const for initial module imports
 * let/var difference in terms of scoping - let is scoped to the nearest block rather than function
-* 
+* ES6 Arrow Function Expression
 
 ## RESTful Calls with Unirest
 
@@ -44,9 +47,7 @@ Example get request:
         .end(function (response) {
             console.log(response.body['response']);
         }
-        
-
-        
+               
 ## Networking
 
 ### HTTP Server
