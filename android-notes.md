@@ -12,3 +12,4 @@ Capabilities
 * GPS
 * Phone Services
 
+Page 27 (Chapter 3)
