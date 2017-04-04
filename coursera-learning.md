@@ -48,3 +48,15 @@ Sleep in Learning:
 * Strengthens the other parts
 
 If you go over what you've learned BEFORE sleep it greatly helps your ability to remember them.
+
+What helps learning?
+* Interruption - active engagement - allows you to learn more.
+* Jogging/exercise allows you to learn better
+
+Multitasking
+Context Switching
+
+New neurons are born all the time
+
+Being in a creative environment is important
+
