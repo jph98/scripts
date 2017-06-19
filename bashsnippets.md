@@ -1,4 +1,4 @@
-##Bash Snippets
+## Bash Snippets
 
 * Best Bash Guide Ever (apparently) - http://tldp.org/LDP/abs/html/
 
@@ -8,15 +8,15 @@
 
 $_
 
-###Basics and Rules of Thumb
+### Basics and Rules of Thumb
 
 
 * Always use round brackets for numeric comparisons.  With square brackets you have to use -eq instead of == ascii comparison
 
 
-###Variable Handing
+### Variable Handing
 
-####Die unless arguments are correct
+#### Die unless arguments are correct
 
 
     die () {
@@ -31,20 +31,20 @@ $_
     [ -z "$RPATH" ] && RPATH="/usr/bin/R"
 
 
-####Shifting variables
+#### Shifting variables
 
     # Grab the servername then shift
     SERVER=$1
     shift
 
-####Increment variable
+#### Increment variable
 
     counter=$((counter+1))
     
-###Looping and Conditional Constructs
+### Looping and Conditional Constructs
 
 
-#####Simple if
+##### Simple if
 
     if (( $counter == 3 )); then    		
 		kill -9 $PID
@@ -62,29 +62,29 @@ $_
     [[ -n var ]]  // non zero
     [[ -z var ]] // zero length
    
-#####Maths
+##### Maths
 
 	let
 	(( j > 0 ))
 	typeset -i k=$1
 
-#####Exit Status
+##### Exit Status
 
 Set exit status with exit n
 
 Previous exit status with $?
 Previous pid with $!
 
-#####Simple for loop
+##### Simple for loop
 
     for JMETERTEST in "$@"
     do
         <stuff>
     done
 
-###Executing Things
+### Executing Things
 
-#####Backtick
+##### Backtick
 
 Take the output from a variable and store this:
 
@@ -92,11 +92,11 @@ Take the output from a variable and store this:
 ]
 Alternatively, use a subshell using $()
 
-#####Subshell
+##### Subshell
 
     for cmd in $(ls metrics*.rb)
 
-#####Parsing output of a command to check whether something is present
+##### Parsing output of a command to check whether something is present
 
 In this case an R package
 
@@ -114,7 +114,8 @@ In this case an R package
 	}
 
 checkpackage "RNMImport"
-#####Find files and execute them
+
+##### Find files and execute them
 
     #!/bin/bash
 
@@ -124,7 +125,7 @@ checkpackage "RNMImport"
     	`cd $directory; execute $filename >> output.txt`
     done
     
-#####Finding a process by name, shutting it down and forcefully terminating just in case
+##### Finding a process by name, shutting it down and forcefully terminating just in case
 
 	#!/bin/bash
 
@@ -155,30 +156,30 @@ checkpackage "RNMImport"
 	restartservice tomcat7
 
 
-###Working With Arrays
+### Working With Arrays
 
-#####Adding an item to an array
+##### Adding an item to an array
 
     remotepids=("${remotepids[@]}" $pid)
     
-#####Checking an array length
+##### Checking an array length
 
     if (( ${#remotepids[@]} > 0 )); then    
     echo -ne "\nStarted processes [ ${remotepids[@]} ] \n"
     echo ${remotepids[@]} > $pidsfile
 
-###Dates
+### Dates
 
     `date +"%m-%d-%y_%T"-$serverhost`
     
-###Functions
+### Functions
 
 See: http://www.linuxjournal.com/content/return-values-bash-functions
 
 local sets a local variable
 
 
-#####Basic
+##### Basic
 
     function clean {
         echo "Parameter is $1"
@@ -189,11 +190,11 @@ Pass variables with
     clean tomcatlogdir
 
 
-#####Redirect output/error to dev null
+##### Redirect output/error to dev null
 
     command > /dev/null 2>&1 &
     
-#####Processing items in an array
+##### Processing items in an array
     
     declare -a arr=("a", "b", "c")
 	
