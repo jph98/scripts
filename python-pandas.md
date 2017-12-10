@@ -114,3 +114,49 @@ Filter with
   
 cvfgbhnjmklc  
 
+## Processing Data
+
+Iterate over rows in a dataframe:
+
+  for index, row in chunk.iterrows():
+  
+Iterate over columnns in a specific row:
+
+  for label, value in row.iteritems():
+  
+Convert row to a string:
+
+  row.to_string(header=False, index=False)
+ 
+## Dumping to CSV's
+
+### Data Frames
+You can dump a data-frame to a CSV file or to a StringIO buffer.  
+
+You can specify quoting in terms of level and the quote characters.
+
+  output = df.to_csv(output,
+                     quoting=2,
+                     quotechar="'",
+                     header=False,
+                     index=False)
+
+### Rows/Series
+When you get to the row level you can only control limited parts, due to dealing with Series instead of a DataFrame
+
+You can call to_string on the series:
+
+  buf = io.StringIO
+  row.to_string(buf, index=False, header=False)
+
+Exclude the header and index rows
+
+  output = row.to_csv(header=False, index=False)
+  
+Process a dataframe, row by row, outputting type safe values:
+
+  for index, row in chunk.iterrows():
+    for label, value in row.iteritems():
+
+      print value
+      print type(value)
