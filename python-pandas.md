@@ -72,9 +72,19 @@ Select by a regexp
   
 ## Missing Data
 
-Basic - https://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data
+* Basic - https://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data
+* Advanced - https://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook-missing-data
+* Handling Missing Data - https://machinelearningmastery.com/handle-missing-data-python/
 
-Advanced - https://pandas.pydata.org/pandas-docs/stable/cookbook.html#cookbook-missing-data
+You can inspect missing data with .describe() and look for columns with a min of zero.
+
+To check number of NaN's in the dataset use:
+
+    stuff['browser'].isnull().sum()
+    
+To do a comparison and count use the following:
+
+    (stuff[['start_time']] == 0).sum()
 
 Fill missing data with a specific value:
 
