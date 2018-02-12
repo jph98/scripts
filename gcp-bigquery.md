@@ -79,8 +79,6 @@ n.b. Everytime you use an aggregate function, you need to specify all those in t
 ```
 select company, sum(revenue) as totrvenue from table, group by company
 ```
-```
-
 
 Data Types:
 * Numeric, String, Bytes, Date and DateTime
