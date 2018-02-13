@@ -168,6 +168,10 @@ Weather + Stations
 * RIGHT (OUTER) - commons plus stations
 * OUTER - everything
 
+There is also the CROSS JOIN:
+* Cartesian Product of two tables
+* Each row is multiplied
+
 https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
 
 ## Cleaning and Transforming Data
@@ -336,6 +340,45 @@ Normalised vs Denormalised vs Repeated
 
 With repeated fields we can nest them inside a data structure to prevent repeated data:
 
+Always create an alias for a struct.
+
+You can't query for something inside a struct by default, it requires something special:
+
+```
+SELECT
+  ein,
+  expense
+FROM `data-to-insights.irs_990.irs_990_repeated` n, n.expense_struct AS expense
+WHERE expense.type = 'Legal'
+ORDER BY expense.amount DESC
+LIMIT 10
+```
+
+n.b. The , here indicates a CROSS JOIN and an UNNEST (CROSS JOIN UNNEST(n.expense_struct) AS expense.
+
+## Optimising for Performance
+
+* I/O - how many bytes
+* Shuffle - how many bytes did you pass?
+* Materialisation - how many did you write to storage
+* CPU Work - UDF's, functions
+
+* Avoid SELECT *
+* Always filter as early as possible
+* Do not use ORDER BY without LIMIT
+* Be aware of data skew
+
+Diagnose with the Query Explanation Map
+
+Partitioning:
+* Partition a single table based on specified day or date column
+
+Use Stackdriver to monitor performance of Bigquery.
+
+* Only query the columns need
+* Check skewed data
+* No ORDER BY without LIMIT
+* GROUP BY on hgih cardinality field
 
 ## References
 
