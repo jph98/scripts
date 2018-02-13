@@ -1,4 +1,4 @@
-# Google Storage Technology Overview
+# BigQuery and Google Storage Tech
 
 Run-down of the options are as follows:
 * Cloud SQL - MySQL and Postgres fundamentally
