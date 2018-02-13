@@ -4,7 +4,7 @@ Run-down of the options are as follows:
 * Cloud SQL - MySQL and Postgres fundamentally
 * Cloud Datastore - NoSQL solution for web/mobile.  Operations are based around a specific query API - GQL.  Optimised more for smaller datasets.
 * BigQuery - OLAP style solution.  2 sec query min. Lacks cross row tx support.
-* BigTable - OLTP solution, operations are RESTFul in nature (GET, PUT, SCAN|0
+* BigTable - OLTP solution, operations are RESTFul in nature (GET, PUT, SCAN)
 * Cloud Spanner - versioned key/value store.  Table state is stored in Colossus.
 
 https://weidongzhou.wordpress.com/2017/06/10/google-cloud-sql-vs-cloud-datastore-vs-bigtable-vs-bigquery-vs-spanner/
