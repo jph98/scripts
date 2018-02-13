@@ -371,7 +371,7 @@ n.b. The , here indicates a CROSS JOIN and an UNNEST (CROSS JOIN UNNEST(n.expens
 Diagnose with the Query Explanation Map
 
 Partitioning:
-* Partition a single table based on specified day or date column
+* Partition a single table based on specified day (NOT DATE)
 
 Use Stackdriver to monitor performance of Bigquery.
 
@@ -379,6 +379,17 @@ Use Stackdriver to monitor performance of Bigquery.
 * Check skewed data
 * No ORDER BY without LIMIT
 * GROUP BY on hgih cardinality field
+
+## Visualisation
+
+Dimensions
+* An independent variable
+* Qualitative
+* Categorical information
+
+Measures
+* Dependent Variable
+* 
 
 ## References
 
