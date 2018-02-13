@@ -161,6 +161,182 @@ n.b. You can filter tables using a _TABLE_SUFFIX to include lots of different ta
 select a, b, c FROM `bigquery.public.thing*` WHERE _TABLE_SUFFIX > '1950';
 ```
 
+Weather + Stations
+
+* JOIN (INNER) - common
+* LEFT (OUTER) - common plus weather
+* RIGHT (OUTER) - commons plus stations
+* OUTER - everything
+
+https://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
+
+## Cleaning and Transforming Data
+
+* Dataprep mainly
+* 80% of analysts time is spent preparing data
+* Ensure data is unique
+* Ensure data is in the range of possible values
+
+Data Cleaning - https://www.dataquest.io/blog/data-cleaning-with-python/
+
+Need completeness - all possible cases required
+* Lamps and Clocks - machine learning difference
+
+Consistent data ensures harmony across systems:
+
+Uniformity in data means measuring the same way
+
+Understanding dataset shape (tall and wide, wide, but short, even, small)
+* Number of rows
+* Number of columns
+
+Understanding dataset skew (distribution of values)
+* e.g. More data in California than the rest of the states
+
+Clean and Transform:
+* Setup field data type constraints - unique etc... on insert
+* Specify fields as nullable and required
+* Propactively check for null values
+* Explore dataset shape and skew and look for missing values - NULLIF, IFNULL, COALESCE
+* Enrich the existing data by using UNION and JOIN
+
+Document and comment your approach
+* Format to clearly indicate units
+* Cast data types to the same format
+
+Careful with NULL and empty values
+
+Chain rules together into a recipe
+
+e.g. 
+* Break rows using \n
+* Split column into another 200
+* Convert row 1 to hearder
+* Change EIN to integer
+
+## Explore With Tools - DataPrep
+
+Create repeatable data transformation flows in a UI
+
+Create Flow
+* Add Dataset or Import Datasets
+* Add New Recipe.  Then Edit Recipe and the transformer.
+* Resulting dataset is displayed with columns and summaries for the data including missing or bad values.
+
+You can do this over a sample of your data and get your transformations right.
+
+After this, we can apply transformations to all our datasets.
+
+Add Wranglers:
+* Eliminate duplicates
+* Split column out into multiple
+* Add a header row
+
+You can change the way it samples?
+
+Remove duplicates is the default normal step, mostly.
+
+Dataprep has 17 data types - https://cloud.google.com/dataprep/docs/html/Supported-Data-Types_57344778
+
+Run Job - effectively creates a Google DataFlow from the recipe and runs it:
+* you can view the dataflow, plus the dependencies as well
+* Specify output file in Google Storage or Bigquery etc..
+
+With BigQuery:
+* Append or drop the table when data is inserted
+
+Union the datasets
+
+Specify a custom formula for a given column to split and format it appropropriately
+* e.g. merge([left(tax_pd, 4),right(tax_pd, 2),'01'], '-')
+
+## Stats Functions
+
+* CORRELATE - Look at whether one variable is highly correlate to another (e.g. company revenue and company expenses)
+* STDDEV - 
+
+Approximation functions - lots of
+* e.g. APPROX_COUNT_DISTINCT - 99.97% accurate vs COUNT_DISTINCT
+* 7 seconds to 5 minutes on BigQuery
+* Very good and very fast generally.  Approx is cheap!
+* Another good example is when you need a rough number and there's lots of data (think counting log files at Google scale)
+
+Analytic 'Window' Functions:
+* These are not partitioning tables
+* RANK() function for aggregating over groups of rows
+
+```
+SELECT firstname, department, startdate, RANK() OVER ( PARTITION BY department ORDER BY startdate) AS rank FROM Employees;
+```
+
+* Doesn't separate tables
+* Can group by to separate into departments
+* Example given of Shakespeare books (partition by) and find word_count for each corpus/book
+
+User Defined Functions - avoid if you can:
+* They are costly
+* https://cloud.google.com/bigquery/docs/reference/standard-sql/user-defined-functions#supported-external-udf-languages
+
+WITH clauses (CTE's) and Subqueries:
+* CTE - Common Table Expression - WITH is simply a named query
+* Subqueries are not materialised
+* Act as temporary tables
+* Breaks up complex queries
+* Can reference subqueries in other subqueries
+
+Example:
+
+```
+WITH summary AS (
+SELECT
+  CONCAT("20",_TABLE_SUFFIX) AS year_filed,
+  COUNT(ein) AS nonprofit_count,
+  AVG(totrevenue) AS avg_revenue,
+  AVG(totfuncexpns) AS avg_expenses
+FROM `bigquery-public-data.irs_990.irs_990_20*`
+WHERE _TABLE_SUFFIX >= '13'
+GROUP BY year_filed
+ORDER BY year_filed DESC
+)
+
+SELECT
+  year_filed,
+  nonprofit_count,
+  avg_revenue,
+  avg_expenses,
+  avg_revenue - avg_expenses AS avg_income
+FROM summary
+ORDER BY avg_income DESC
+```
+
+## Complex SQL And Data Architecture
+
+* Break out things into lookup tables if needed
+* Problem with normalisation is cost - you have to join, which is more expensive
+* If you can avoid JOIN's then do it
+
+## Schema Design and Nested Data Structures
+
+In relational database if you need to access one column in a row you have to read the whole row
+
+* Bigquery is column oriented, not record oriented, built for speed
+* Bigquery breaks apart table into pieces - onto GFS2
+* Nested Fields
+
+Bigquery minions communicate by shuffling data in-memory
+1. Workers consume data values and perform ops in parallel
+2. Workers produce output to in-mem shuffle service
+3. Workers consume new data
+
+2000 minions available for a query approx
+
+Normalised vs Denormalised vs Repeated
+* Three tables related in music, artist info, dif albums per artist, songs per album per artist (normalised)
+* Join all the tables and create a new table from it - actually 40% bigger! (denormalised)
+
+With repeated fields we can nest them inside a data structure to prevent repeated data:
+
+
 ## References
 
 * Standard SQL Guide - https://cloud.google.com/bigquery/docs/reference/standard-sql/
