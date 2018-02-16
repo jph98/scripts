@@ -45,6 +45,8 @@ Google Cloud Service (GCS) handles edge services - replication, edge-caching, re
 * Use multiple zones in a region for redundancy
 * Use multiple regions for global domination!
 
+n.b. Cloud Shell is ephemeral and gets terminated every 60 minutes.
+
 ## Module 3. Managed Services
 
 ML Model:
@@ -124,5 +126,45 @@ Datalab - interactive notebook
 datalab create cpb100lab
 ```
 
+or connect with:
+
+```
+datalab connect cpb100lab
+```
+
 Cloud Source Repositories provide Git repositories on GCP:
 * https://cloud.google.com/source-repositories/
+
+Can use datalab to connect with BigQuery (SQL Code named wxquery) + standard Python (new cell for wxquery)
+
+* Cloud Shell - create new VM
+* Web Preview - switch to port 8081
+
+https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/CPB100/lab4a/demandforecast.ipynb
+
+Create a BQ Query:
+
+```
+%bq query -n taxiquery
+WITH trips AS (
+  SELECT EXTRACT (DAYOFYEAR from pickup_datetime) AS daynumber 
+  FROM `bigquery-public-data.new_york.tlc_yellow_trips_*`
+  where _TABLE_SUFFIX = @YEAR
+)
+SELECT daynumber, COUNT(1) AS numtrips FROM trips
+GROUP BY daynumber ORDER BY daynumber
+```
+
+and feed it some parameters:
+
+```
+query_parameters = [
+  {
+    'name': 'YEAR',
+    'parameterType': {'type': 'STRING'},
+    'parameterValue': {'value': 2015}
+  }
+]
+trips = taxiquery.execute(query_params=query_parameters).result().to_dataframe()
+trips[:5]
+```
