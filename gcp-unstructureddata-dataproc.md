@@ -73,3 +73,28 @@ gcloud dataproc clusters create --help
 
 Firewall rule required to access browser interfaces
 
+### Custom Machine Types
+
+Dataproc cluster consists of:
+* Dataproc cluster
+* Dataproc agent
+* Master Node
+* Persistent Workers
+* PVM Workers(s) - Compute Engine
+* HDFS Persistent Disk
+
+To create a custom machine with 6 CPU's and 22.5GB of RAM we use:
+
+```
+gcloud dataproc clusters create
+...
+--worker-machine-type custom-6-23040
+```
+
+n.b. You are charged for egress.
+
+Can show command line or REST API.
+
+### Running Jobs
+
+TODO
