@@ -1,5 +1,19 @@
 # GCP Data Engineering Training
 
+Launching datalab - https://codelabs.developers.google.com/codelabs/cpb100-datalab/index.html#0
+
+```
+datalab create mydatalabvm --zone europe-west4-d
+```
+
+n.b. This creates:
+* VM
+* Persistent Disk
+* Network and all relevant sub-nets
+* Firewall rule to allow ssh
+
+n.b. Shift Enter runs a block
+
 ## Module 1. Google Cloud Platform
 
 * On Premise, Datacenter, Cloud
@@ -168,3 +182,166 @@ query_parameters = [
 trips = taxiquery.execute(query_params=query_parameters).result().to_dataframe()
 trips[:5]
 ```
+
+## Tensorflow
+
+* C++ engine fundamentally with a Python scripting engine.
+* x and y co-ordinates - predict colour of dot
+* Prediction - sum of x and y, < 0 (orange) > 0 (blue)
+* Data, Features, Hidden Layers and Output
+* Distance square root of x squared and y squared
+* Insight (distance) - put into network - train with weights
+
+Options:
+* Feature Engineering
+* Neural Network
+
+Iterations, Learning Rate, Activation, Regularization, Reg Rate
+
+10 weights, 5 weights - tweak and find weights to capture the data
+
+Go with the simplest possible network that gives you best performance
+
+### Training a neural network model
+
+1. Collect predictors and target data - Rain and max temp (input our x,y)
+2. Create model
+3. Train the model based on input data (Adjusted the weight
+4. Use the model to do the predictions
+
+Neural Network - everytihng must be numeric for this
+
+day of the week - categorical variable
+* Use On Hot Encoding to convert them to 0/1 representation
+* https://hackernoon.com/what-is-one-hot-encoding-why-and-when-do-you-have-to-use-it-e3c6186d008f
+
+Do we have at least five examples of a particular value?
+* Days in which temperature is 38 degrees (for example)
+* Training set is two years of data
+* n.b. Need to throw away day number as it's too specific
+
+npredictors > nhidden > [activation function = relu] noutputs 
+
+1. Collect predictors and target data (throw away other info, cat var)
+
+* rain and max temp
+* predict demand
+
+```
+predictors = data.iloc[:,2:5]
+for day in xrange(1,8):
+  matching = data['dayofweek'] == day
+  predictors.loc[matching, 'day_' + str(day)] = 1
+  predictors.loc[~matching, 'day_' + str(day)] = 0
+```
+
+2. Create the neural network model.  
+* Regression (predicting number)
+* Classification (predicting a category)
+
+```
+estimator = tf.contrib.learn.DNNRegressor(ihdden_units=[5], feature_columns=[...]);
+```
+
+3. Train...
+
+How many layers
+
+* adjust weight - rain and temp - get close to the no. of observed rides on the day
+
+```
+estimator.fit(predictors, targets, steps=1000)
+```
+
+4. Use... (just use original inputs)
+* Create dict of all the variables
+* Read the trained model in
+* call estimator.predict
+
+### Lab - Machine Learning with Tensorflow
+
+* Use Tensorflow to create a neural network model
+* Forecast taxi cab demand in New York
+* Train 75%, validate with 25%
+
+Full spectrum of machine learning:
+* Tensorflow - if you want to extend the open source SDK  (ML Researcher)
+* CloudMLE - Build machine learning models on your dataset (Build custom models as a data scientist)
+* ML API's (Vision, Speech, Translate etc...) - Use Prebuilt Models (App Developer)
+
+Size of dataset - accuracy goes up, huge compute problem
+* Make use of Google ones (cause they're big, well trained and available to use)
+
+### Machine Learning API's Lab
+
+https://console.cloud.google.com/apis/
+
+Create an API key, restricting if you need to
+
+Install google-api-python-client and reset session
+
+```
+import base64
+IMAGE="gs://cpb100data/llanfair.jpg"
+vservice = build('vision', 'v1', developerKey=APIKEY)
+request = vservice.images().annotate(body={
+        'requests': [{
+                'image': {
+                    'source': {
+                        'gcs_image_uri': IMAGE
+                    }
+                },
+                'features': [{
+                    'type': 'TEXT_DETECTION',
+                    'maxResults': 3,
+                }]
+            }],
+        })
+responses = request.execute(num_retries=3)
+```
+
+## Data Processing Architectures - Ingest, Transform and Load
+
+* Async Processing - great way to absorb shock and change
+* Great for highly available systems
+* Balance load across multiple workers
+* Reduce coupling
+* Accept requests closer to the edge
+
+### Cloud Pub Sub
+
+* Reliable, realtime messaging
+
+### Serverless Data Pipelines
+
+* Dataflow - allows you to execute Apache Beam pipelines
+
+https://beam.apache.org/get-started/wordcount-example/
+
+* Essentially a set of filters
+* ParDo - parallel do (across multiple machines) - managed by Dataflow
+* Each block is a Java Class or a Python class
+* Can be executed on Flink, Spark, not just GCP
+* Real-time and batch
+
+Same code 
+* Read from text, read from pub/sub
+
+This will read from a topic, apply a sliding window function and output to a topic
+```
+Pipeline p Pipeline.create()
+p.begin()
+.apply(PubSubIO.Read.from("inputtopic")
+.apply(SlidingWindow.of(60, MINUTES))
+.apply(PubSubIO.Write.to("outputtopic"));
+p.run();
+```
+
+Dataflow does the ingest, transform and load.
+
+Task Scheduling - https://cloud.google.com/solutions/reliable-task-scheduling-compute-engine
+
+Utilising Kubernetes for Real Time Data Analysis
+
+* https://cloud.google.com/solutions/real-time/kubernetes-pubsub-bigquery
+
