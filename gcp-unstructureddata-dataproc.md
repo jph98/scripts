@@ -97,4 +97,42 @@ Can show command line or REST API.
 
 ### Running Jobs
 
-TODO
+Pre-emptible nodes - don't have HDFS.
+
+Run a simple Spark job:
+
+```
+data = [0, 1, 2, 3, 4, 5]  # range(6)
+distData = sc.parallelize(data)
+squares = distData.map(lambda x : x*x)
+res = squares.reduce(lambda a, b : a + b)
+print res
+```
+
+Run a Pig job:
+
+* Copy the files into HDFS
+* Run the Pig job
+
+Splitting storage and compute:
+
+Separation of Storage/Compute
+* YARN - cluster management
+* Compute and Storage are coupled
+
+GPC provides Google Cloud Storage (Colossus)
+
+Pub/Sub > Dataflow > BigQuery
+
+Benefits of serverless data processing:
+* Speed to insights
+* Low Cost
+* Freedom to explore
+
+Google have their own routers:
+* With only specific software installed
+* They omit the rest
+
+## Submitting Jobs
+
+https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp/lecture/jaUDf/submitting-jobs-with-dataproc-and-cloud-shell
