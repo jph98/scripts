@@ -162,3 +162,28 @@ Read from Spark using the BQ package
 
 ## Machine Learning API's
 
+Child:
+* Show pictures of dogs
+* Show pictures of not dogs
+* Ask them whether a given picture is a dog or not
+
+Lots of options for machine learning in GCP
+
+Pre trained ML models with GCP
+
+For more than that use ML Engine or Tensorflow
+
+### Translation API
+
+GCP provides:
+* Detections
+* Languages
+* Translations
+
+Specify:
+* q
+* target
+
+Ocado routes emails based on NLP
+Wootric collects both numeric and qualitative feedback
+* NLP API and custom ML models
