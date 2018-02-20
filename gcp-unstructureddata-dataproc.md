@@ -136,3 +136,29 @@ Google have their own routers:
 ## Submitting Jobs
 
 https://www.coursera.org/learn/leveraging-unstructured-data-dataproc-gcp/lecture/jaUDf/submitting-jobs-with-dataproc-and-cloud-shell
+
+# Separation of Storage and Compute
+
+You can replace Hadoop filesystem with GCP google storage.
+
+## Submitting Jobs
+
+## Customising Clusters
+
+Use the dataproc initialization script to install custom packages
+
+GCP provides a Github repository with commonly installed packages
+
+n.b. You can also modify the core-site.xml file
+
+You can look at the ROLE metadata to determine whether you're running on the master/workers
+* Then install the required tools
+
+## Bigquery and Spark
+
+Read from Spark using the BQ package
+* Take resultset
+* Convert to Pandas data frame (in memory though).  Pandas dataset needs to fit in-memory.
+
+## Machine Learning API's
+
