@@ -149,7 +149,7 @@ Terms:
 * Features
 * Feature Engineering 
 
-## Effective Machine Learning
+## Effective Machine Learning
 
 * Have to organise data (as well as collect data and develop model)
 * Make sure data you collect covers all possible issues
