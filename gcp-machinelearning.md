@@ -169,14 +169,16 @@ Error Metrics:
 * Start with outcome of specific event (win $98, but you lost 
 * Error = truth - prediction $103 off!
 
-For regression...
+### Regression - Mean Squared Error
+
 * Take the list of outcomes and the errors
 * Square all of them individually
 * Calculate the mean!
 * this is our mean squared error
 * https://en.wikipedia.org/wiki/Mean_squared_error
 
-* For classification:
+### Classification - Confusion Matrix
+
 * We use Cross Entropy instead
 * It is differentiable
 * Between 0 and 1
@@ -207,7 +209,8 @@ If dataset is not balanced, accuracy has a problem
 * 990 of one class and 10 of another
 * For unbalanced look at precision and recall
 
-Precision and recall:
+### Precision and recall
+
 * Precision - positive prediction value
 * Cats and Nocats
 * 2/5, so 0.40  or 40%
@@ -227,6 +230,8 @@ So, bottom line:
 * Precision and recall are the measures of skills we use to describe dataset, the performance of model
 * Precision and recall if unbalanced
 * Accuracy - if balanced
+
+### Model Threshold
 
 Changing the model threshold:
 * ML classifiers return a number between 0 and 1
