@@ -274,3 +274,362 @@ Evaluating the final model:
 * Option 1. Cross validate - average of all of these tell you how good your model is.  Change splits
 * Option 2. Use independent test data - wait for new data?
 
+## Lab - Taxi Ride Regression Fare Prediction Problem
+
+* Fair bit wrong with the data that needs cleaning (zero passengers in cars for example)
+* Clean that up with Python, then prepare the datasets for training, validation and test
+* Picked only 10k rows here
+
+Key things done here:
+1. Explored data
+2. Figured out parameters to use.  Wrote out CSV of parameters
+3. Built a benchmark
+
+Know what the target is.  You have to have a benchmark/target in mind.
+
+```
+shuffled = tripsqc.sample(frac=1)
+trainsize = int(len(shuffled['fare_amount']) * 0.70)
+validsize = int(len(shuffled['fare_amount']) * 0.15)
+
+df_train = shuffled.iloc[:trainsize, :]
+df_valid = shuffled.iloc[trainsize:(trainsize+validsize), :]
+df_test = shuffled.iloc[(trainsize+validsize):, :]
+```
+
+* Write these out to CSV's
+* Firstly let's build a very very simple model
+
+```
+FEATURES = ['pickuplon','pickuplat','dropofflon','dropofflat','passengers']
+```
+
+```
+TARGET = 'fare_amount'
+columns = list([TARGET])
+columns.extend(FEATURES) # in CSV, target is the first column, after the features
+```
+
+and compute the RMSE:
+
+```
+def compute_rmse(actual, predicted):
+  return np.sqrt(np.mean((actual-predicted)**2))
+
+def print_rmse(df, rate, name):
+  print ("{1} RMSE = {0}".format(compute_rmse(df['fare_amount'], rate*estimate_distance(df)), name))
+ ```
+ 
+## Getting Started with Tensorflow
+
+Getting started, loops, graphs and monitoring with TensorBoard.
+
+* Tensorflow - numeric computation library.
+* Runs on a variety of hardware platforms
+* Training an ML model
+* Running an ML model
+* We write neural networks in Tensorflow
+* You can run Tensorflow in a distributed mode, on many machines
+
+What is a tensor?
+* n dimensional matrices/vectors
+
+NumPy - array(3,5,8) - holds three numbers
+* Can add things in this
+
+### Graphs
+
+* We need to separate out building and running.
+* A simple graph can be built and run as follows (bad way):
+* MatMul can be carried out on one machine and results sent to another.
+* Some parts of the graph could execute on a GPU, some on a CPU.
+* New nondes can be added to the graph whilst it is executing.
+
+```
+a = tf.constant([5, 3, 8])
+b = tf.constant([3, -1, 2])
+c = tf.add(a, b)
+with tf.Session() as sess:
+  result = sess.run(c)
+  print result
+ ```
+ 
+but you should use placeholders and put a dict in instead.
+
+Find area of a graph using tf.
+
+### Tensorflow Operations
+
+https://www.tensorflow.org/api_docs/python/tf
+
+## Use Tensorflow for Machine Learning (Worked Example)
+
+Use the Estimator API.
+
+Regression or classification problem?
+
+* Label? - price
+* Features? - square footage of the house
+
+Square Footage > Model > Price
+Train > Evaluate > Predict
+
+"Here's the square footage, predict the price based on previous data"
+
+* Use the LinearRegressor from the contrib model (as opposed to LinearClassifier.
+* You must pass a function that is callable to Tensorflow, you cannot pass a parameter
+
+```
+#!/usr/bin/env python
+
+import tensorflow as tf
+
+# Our training function that takes features, labels and values
+def train():
+    fd = { "sq_footage": tf.constant([1000, 2000])}
+    ld = tf.constant([100000, 200000])
+    return fd, ld
+
+def predict():
+    return { "sq_footage": tf.constant([1500])}
+
+# Regression Model
+cols = [tf.contrib.layers.real_valued_column("sq_footage")]
+
+# 1. Setup feature columns
+estimator = tf.contrib.learn.LinearRegressor(feature_columns=cols)
+
+# 2. Train
+estimator.fit(input_fn=train, steps=100)
+
+# 3. Predict (price of new house for 1500 square feet)
+for i in list(estimator.predict(input_fn=predict)):
+    print i
+```
+
+Creating a DNNRegressor:
+* 1 input
+* 3 hidden
+* 1 output
+
+How do we know how many to use?
+
+```
+tf.contrib.DNNRegressor(feature_columns=..., hidden_units=[128,64,32])
+```
+
+### Create a Machine Learning model with a DNNRegressor
+
+* Simple linear regression based on previous example, we convert the Pandas dataframe into a tf dataframe.
+* Columns in the CSV file are the features.
+* Batch size is the same as epoch in the example
+* Create a model
+* Trained it
+* Predict!
+
+* Now, let's try with a deep neural network (since the prediction above was for $11 for every trip)
+
+## Tensorflow on Big Data using Batches
+
+Now we need to learn to do this on a bigger dataset
+* The Pandas dataset was held in-memory
+* Calculate RMSE
+
+Let's deal with out of memory data, add features and look at the model architecture.
+
+Look at tensorflow middle layer (useful components).
+
+https://www.coursera.org/learn/serverless-machine-learning-gcp/lecture/G9gVu/gaining-more-flexibility-lab
+
+Doing gradient descent.
+* Going through data 50 times is same as going through the data once.
+* Random shuffle on filename
+* Create a filename queue (each file num epoch times)
+* Could repeat ABC, ABC, but this is problematic.  Files are not the same size though.  One of the files might cause a slowdown.
+* So Randomize!
+* Readers will process these, decode them add add to an example queue
+* Tensorflow will read from this queue
+
+```
+filename_queue = tf.train.string_input_producer(input_file_names, num_epochs=num_epochs, shuffle=True) 
+```
+
+Create the reader for this and get a line_number (or whatever it returns) and a value (array of lines):
+
+```
+reader = tf.TextFileReader()
+_, value = reader.read_up_to(filename_queue, num_records=batch_size)
+```
+
+Convert to a tensor with dims:
+
+```
+tf.expand_dims(value, -1)
+```
+
+If we have missing numbers, we specify a default values array for each input:
+
+```
+columns = decode_csv(value_column, record_defaults=DEFAULTS)
+```
+
+What?
+
+```
+layers.real_valued_column('pickuplon')
+```
+
+1. So this ran the training for num_steps or num_epochs
+2. Saved checkpoints during training (Kept fitting, kept saving)
+3. Used the final checkpoint as the model
+
+70th step might be the best model, we just picked the last one?!?!
+
+## Use Tensorflow's Estimator Experiment for Distributed Training
+
+Going forward we need to:
+
+1. Handle failure of a machine
+2. Choose model based on validation dataset
+3. Monitor training, what epoch it is on
+4. Resume training if we need to
+
+
+* Instead of using the linear regressor directly, use the Experimenter class instead of hand-coding our ML pipeline.
+* Estimator provides Experiment
+* Evaluate: Could optimise on cross_entropy and validate on recall, potentially
+* Use eval_metrics to pass the evaluation function (see below)
+* Change to INFO instead of WARN (default)
+* Monitor training - use Tennsorboard
+
+```
+import tensorflow.contrib.learn as tflearn
+from tensorflow.contrib.learn.python.learn import learn_runner
+import tensorflow.contrib.metrics as metrics
+
+def experiment_fn(output_dir):
+    return tflearn.Experiment(
+        tflearn.LinearRegressor(feature_columns=feature_cols, model_dir=output_dir),
+        train_input_fn=get_train(),
+        eval_input_fn=get_valid(),
+        eval_metrics={
+            'rmse': tflearn.MetricSpec(
+                metric_fn=metrics.streaming_root_mean_squared_error
+            )
+        }
+    )
+shutil.rmtree('taxi_trained', ignore_errors=True) # start fresh each time
+learn_runner.run(experiment_fn, 'taxi_trained')
+```
+
+As you train:
+* Model will not generalise over time
+* Loss will keep going down.  Error (the loss) will increase however EVENTUALLY
+* So we only want to train until the errort STOPS decreasing, early stopping.
+
+In real world we need to train in distributed way
+... and choose model that gives us best genneralisation process (on validation dataset).  Important!
+
+## Scaling up machine learning with CloudMLE
+
+We have a Tensorflow model, nonw lets run it at scale.
+* Split into batches, run on different machines
+* Inputs > Preprocessing > Feature Creation > Train Model > Model
+* Might combine features, might square things etc...
+* Might not be sure about model, how many layers etc... (Tune - Hyper-parameter tuning)
+* Take model - put it behind a REST API - make available to webapp
+
+Training - Serving Skew, how to we go this?
+* CLoudML helps here
+* Scales out training
+* Apply same feature creation and training
+* Apply hyper param tuning
+* Maturing your model
+* Use Apache Beam - cope with historical, but also with streaming data
+* Input Data - Batch Pipeline
+* Realtime - streaming data from the client
+
+### Packaging up the model
+
+* Package as a Python module
+
+```
+setup.py
+\training
+\training\task.py - the executable 
+\training\model.py - ML model - estimator.Experiment etc...
+__init__.py
+```
+
+export the PYTHON_PATH and execute.
+
+Run locally:
+
+```
+gcloud ml-engine local train \
+   --module-name=trainer.task \
+   --package-path=${REPO}/courses/machine_learning/cloudmle/taxifare/trainer \
+   -- \
+   --train_data_paths=${REPO}/courses/machine_learning/datasets/taxi-train.csv \
+   --eval_data_paths=${REPO}/courses/machine_learning/datasets/taxi-valid.csv  \
+   --num_epochs=10 \
+   --output_dir=${REPO}/courses/machine_learning/cloudmle/taxi_trained 
+```
+
+First copy the training data to the cloud.  Then, launch a training job.
+
+Submit the job to CloudMLE:
+
+```
+gcloud ml-engine jobs submit training $JOBNAME \
+   --region=$REGION \
+   --module-name=trainer.task \
+   --package-path=${REPO}/courses/machine_learning/cloudmle/taxifare/trainer \
+   --job-dir=$OUTDIR \
+   --staging-bucket=gs://$BUCKET \
+   --scale-tier=BASIC \
+   --runtime-version=1.0 \
+   -- \
+   --train_data_paths="gs://${BUCKET}/taxifare/smallinput/taxi-train*" \
+   --eval_data_paths="gs://${BUCKET}/taxifare/smallinput/taxi-valid*"  \
+   --output_dir=$OUTDIR \
+   --num_epochs=100
+```
+
+This will run through a queue and set of states, until CloudML and Tensorflow has finished runninng it.
+
+Next deploy the model:
+
+## Feature Engineering
+
+Next we will improve the ML model using feature engineering.
+
+https://8081-dot-3463068-dot-devshell.appspot.com/notebooks/datalab/training-data-analyst/courses/machine_learning/feateng/feateng.ipynb
+
+* Getting better than our heuristic model. Haven't got here yet!
+* Better models, better performance.
+
+### Good features
+
+* Related to the objective (have a reasonable hypothesis), otherwise throw it away
+* Known at production time
+* Numeric, with good magnitude
+* Enough examples
+* Have human insights
+
+Don't do data dredging! (Relationship of stalks to babies)
+
+Objective > Feature
+
+e.g. Predict credit card fraud:
+* Whether cardholder has purchased here before (YES)
+* Card reader speed (NO)
+* Category of item (TV) - (YES)
+* Expiry date of credit card - (NO)
+
+### Known value at the time of predicting
+
+* Make sure every input/feature will be there at prediction time!
+* Collecting in timely manner
+* Legal/ethical aspects of collecting the data
+* 
