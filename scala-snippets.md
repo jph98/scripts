@@ -1,61 +1,21 @@
-Resources
----------
+### Intro
 
-Number of good resources online.
+Scala Properties:
+* 
 
-This takes you through the Scala basics and what is required for programming with Spark:
-
-    http://ampcamp.berkeley.edu/3/exercises/
-
-Intro and Tools
-------
-
-Console can be started with Scala, you can import a script defined using:
-
-    :load script.scala
-
-Scripts should be suffixed with .sh if they are to be run as scala scripts as follows:
-
-    #!/bin/sh
-    exec scala $0 $@
-    !#
-    println("Hello, " + args(0) + "!")
-
-Alternatively you can create a Scala Application then compile and run it.  You have to define object/class here.
-
-hello.scala
-
-       object GreeterApp {
-          def main(args: Array[String]) {
-            println("Hello World")
-          }
-       }
-
-compile with:
-    scalac hello.scala
-
-run with:
-    scala hello
-    
-You can also use fsc (Fast Scala Compiler) or sbt (Scala Build Tool).
-
-
-
-Types
-------
+### Types
 
 * val - assigned once and never change
 * var - standard variable
+* implicit
     
-Console Output
-------
+### Console Output
 
 Simples:
 
     println("Hello World")
 
-Functions
-------
+### Functions
 
 You don't need to specify the parenthesis for the method
 
@@ -71,8 +31,7 @@ or replace the expression with a function call, in this case square:
 
     numbers.map(square)
 
-Collections
-------
+### Collections
 
 Array
 
@@ -100,8 +59,7 @@ same with HashMap
     boats += "toy" -> "My first boat"
     val boats = Map("toy" -> "My first boat")
 
-Loops
-------
+### Loops
 
     args.foreach(arg => println(arg))
     for (arg <- args)
@@ -114,8 +72,7 @@ Prefix and Suffix Concat
     :: - prepend
     ::: - append
     
-Classes
-------
+### Classes
 
 There's a basic companion (Singleton) object which is defined as a module here:
 
@@ -155,8 +112,7 @@ Scripts NEED to end in a result otherwise you can't run them with scala
     fsc WApp.scala WGreeter.scala
     scala WApp
     
-Traits
-------
+### Traits
 
 Traits can contain method definitions which can be extended and overridden:
 
@@ -180,12 +136,48 @@ You can also mixin behaviour at instantiation time allowing to override methods 
       }
       val a: Animal = new Dog with Woofer
 
-Input and Output
-----------------
+### Input and Output
 
 Read lines from a file into an array with:
 
     import scala.io.Source
     val lines = Source.fromFile("/root/mesos/README").getLines.toArray
     
+### Running, SBT etc...
+
+Console can be started with Scala, you can import a script defined using:
+
+    :load script.scala
+
+Scripts should be suffixed with .sh if they are to be run as scala scripts as follows:
+
+    #!/bin/sh
+    exec scala $0 $@
+    !#
+    println("Hello, " + args(0) + "!")
+
+Alternatively you can create a Scala Application then compile and run it.  You have to define object/class here.
+
+hello.scala
+
+       object GreeterApp {
+          def main(args: Array[String]) {
+            println("Hello World")
+          }
+       }
+
+compile with:
+    scalac hello.scala
+
+run with:
+    scala hello
     
+You can also use fsc (Fast Scala Compiler) or sbt (Scala Build Tool).
+
+### Usage
+
+Number of good resources online.
+
+This takes you through the Scala basics and what is required for programming with Spark:
+
+    http://ampcamp.berkeley.edu/3/exercises/
