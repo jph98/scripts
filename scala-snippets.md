@@ -1,8 +1,5 @@
 ### Intro
 
-Scala Language Properties:
-* 
-
 ### Types
 
 * val - assigned once and never change
@@ -181,7 +178,7 @@ Read lines from a file into an array with:
     import scala.io.Source
     val lines = Source.fromFile("/root/mesos/README").getLines.toArray
     
-### Running, SBT etc...
+### Running, SBT etc
 
 Console can be started with Scala, you can import a script defined using:
 
