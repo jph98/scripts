@@ -86,8 +86,6 @@ Microformats:
 * GeoJSON - JSON based
 * GML - XML based 
 
-
-
 Geodetic location - latitude and longitude information (precise point on the earth)
 
 Cartographic transformations - 
@@ -96,7 +94,7 @@ Geodetic computations -
  
 ## Tools
 
-* 
+* QGIS - tool for exploring shape files
 * Python - fiona, geopandas
 * Geotools (Java) - http://docs.geotools.org/latest/userguide/tutorial/quickstart/intellij.html
 * Openlayers (Mashup Tool) - https://openlayers.org/en/latest/examples/
