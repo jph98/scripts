@@ -1,8 +1,17 @@
 # React Native
 
-Setup Guide:
+## Resources
 
-https://habiletechnologies.com/blog/getting-started-react-native-complete-setup-guide/
+* Components - http://www.awesome-react-native.com/
+* Showcase - https://facebook.github.io/react-native/showcase.html
+* JS Coach - https://js.coach/?collection=React+Native
+* Components and API's - https://facebook.github.io/react-native/docs/components-and-apis.html
+
+Setup Guide - https://habiletechnologies.com/blog/getting-started-react-native-complete-setup-guide/
+
+* Use Expo - previewing the apps
+
+Platform Specific Code - https://facebook.github.io/react-native/docs/platform-specific-code.html
 
 ## Basics
 
@@ -96,3 +105,48 @@ Long press - pass a function to the onLongPress props of any of the "Touchable" 
 
 ## Scrollviews
 
+* Provide way for simple scrolling
+* Can also enable swiping (pageindEnabled) and zooming with this
+
+https://facebook.github.io/react-native/docs/using-a-scrollview.html
+
+## FlatList
+
+ListView provides a way to display simple lists of items:
+* data - list of items
+* renderItem - return a formatted display component
+
+https://facebook.github.io/react-native/docs/using-a-listview.html
+
+## Networking
+
+* Provides the fetch API
+* e.g. fetch('https://mywebsite.com/mydata.json');
+* POST example follows:
+
+```
+ async componentDidMount() {
+    try {
+      let response = await fetch('https://facebook.github.io/react-native/movies.json');
+      let responseJson = await response.json();
+      this.setState({
+        isLoading: false,
+        dataSource: responseJson.movies,
+      }, function(){
+  
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }
+```
+
+See: https://developer.mozilla.org/en-US/docs/Web/API/Request
+* Async, returns a promise
+* Can also use the standard async/await example
+
+n.b. iOS will block requests that aren't encrypted - https://facebook.github.io/react-native/docs/integration-with-existing-apps.html#test-your-integration
+
+You can also use XMLHttpRequest - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
+
+React Native also supports WebSockets
