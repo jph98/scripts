@@ -12,6 +12,16 @@ https://habiletechnologies.com/blog/getting-started-react-native-complete-setup-
 * Image component
 * View - container for other components
 
+Component Example
+```
+export default class Example extends Component {
+
+  constructor() {}
+  render() {}
+}
+AppRegistry.registerComponent('Example', () => Example);
+```
+
 ## State
 
 * init in constructor and call setState when you need to change it
@@ -46,13 +56,43 @@ const styles = StyleSheet.create({
 For FlexLayout:
 * Default is column, can change to row then use width/height
 * justifyContent options (flex-start, center, flex-end, and stretch) can be used to distribute the children
-
+* alignItems allows for horz change
 ```
-<View style={{
+ <View style={{
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}>
 ```
 
+More layout options here - https://facebook.github.io/react-native/docs/layout-props.html
+
+## Text Input
+
+* TextInput - onChangeEvent fires off the back of this to allow you to update something
+* Text - standard text view components
+
+## Touches
+
+Display a button with an alert
+
+```
+<Button
+          onPress={() => {
+            Alert.alert('Yowie!');
+          }}
+          title="Click Me"/>
+```
+
+If the basic button doesn't work for you then you can create your own touchable components.
+
+* TouchableHighlight - button
+* TouchableNativeFeedback - android trails after press
+* TouchableOpacity - when you want to dim everything ele
+* TouchableWithoutFeedback - tap, but no feedback
+
+Long press - pass a function to the onLongPress props of any of the "Touchable" components.
+
+## Scrollviews
 
