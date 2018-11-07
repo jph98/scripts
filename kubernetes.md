@@ -1,5 +1,7 @@
 # Managing Kubernetes
 
+See - https://www.oreilly.com/library/view/managing-kubernetes/9781492033905/
+
 ## Chapter 1
 Orchestration for containerized apps
 
