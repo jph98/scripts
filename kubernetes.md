@@ -2,6 +2,10 @@
 
 See - https://www.oreilly.com/library/view/managing-kubernetes/9781492033905/
 
+Resources:
+* Learn Kubernetes the Hard Way - https://github.com/kelseyhightower/kubernetes-the-hard-way
+* Kubeless FaaS - https://kubeless.io/
+
 ## Chapter 1
 Orchestration for containerized apps
 
