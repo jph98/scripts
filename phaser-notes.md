@@ -1,5 +1,9 @@
 # Phaser Notes
 
+See: 
+
+https://photonstorm.github.io/phaser3-docs/index.html
+
 ## Resources
 
 * Phaser Youtube - https://www.youtube.com/results?search_query=phaser+game
@@ -29,3 +33,6 @@
 * You can transition to new scenes with this.scene.start() passing in the name
 
 n.b. Always save images as PNG as this format has the advantages of being lossless – it does not lose quality when saved – and supports alpha channel (transparency).
+
+Sprite - can be animated, unlike an image
+
