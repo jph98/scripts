@@ -12,6 +12,13 @@
 * Piskels to create images
 * Asperite to animate
 
+## Game Katas
+
+* Platform Basicss
+* Tile game
+* Parallax Scrolling Endless Runner (Horz)
+* Parallax Scrolling Endless Runner (Top Down)
+
 ## Concepts
 
 * Each screen - scene with separate resources etc...
