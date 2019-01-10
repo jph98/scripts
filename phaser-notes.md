@@ -6,21 +6,42 @@ https://photonstorm.github.io/phaser3-docs/index.html
 
 ## Resources
 
+* Tutorials - http://labs.phaser.io/
 * Phaser Youtube - https://www.youtube.com/results?search_query=phaser+game
 * HTML5 Games Programming With Phaser 
 * Phaser Learn - https://phaser.io/learn
 * Examples - https://leanpub.com/html5shootemupinanafternoon/readJonathans-MacBook-Pro:003-shootemup
-* Phaser 3 GRaphics - https://phaser.io/news/2019/01/introduction-to-phaser-3-graphics
+* Phaser 3 Graphics - https://phaser.io/news/2019/01/introduction-to-phaser-3-graphics
+* 15 Games - https://academy.zenva.com/product/the-complete-mobile-game-development-course-platinum-edition/?zva_src=gda-topdown-tiled
 
-## Specific Game Types
+
+## Techniques
+
+* Real Time Socket Server Example - https://www.dynetisgames.com/2017/03/06/how-to-make-a-multiplayer-online-game-with-phaser-socket-io-and-node-js/
+* Tilemaps - https://itnext.io/@michaelwesthadley
+* Pathfinding - https://phaser.io/news/2018/03/pathfinding-and-phaser-3
+* Game Analytics - http://phaser.io/tutorials/game-analytics
+
+## Specific Game Exercises
 
 * Mario - https://github.com/nkholski/phaser3-es6-webpack
+* Turn Based RPG - https://gamedevacademy.org/phaser-rpg-tutorial/?a=13
+* Space Hipster - https://gamedevacademy.org/html5-phaser-tutorial-spacehipster-a-space-exploration-game/
+* Tower Defence - https://phaser.io/news/2018/12/tower-defense-tutorial
+* zNumbers (Tile) - https://phaser.io/news/2017/10/znumbers-game-tutorial
 
-## Images
+## Specific Game - Complete Examples
+
+* Theodoric (RPG) - https://github.com/tlmader/theodoric
+* Salazar The Alchemist (Tile) - http://www.agame.com/game/salazar-the-alchemist
+* 
+
+## Image Work
 
 * Shapes (+ Negative Space) > Cleanup > Shading > Choose Palette > Colour
 * Piskels to create images
 * Asperite to animate
+* Tiled to create maps - https://www.mapeditor.org/
 
 ## Game Katas
 
