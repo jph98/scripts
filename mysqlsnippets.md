@@ -19,6 +19,26 @@ Creating a database
     FLUSH PRIVILEGES;
 ```
 
+Using a dockerised image:
+
+```
+docker pull mysql/mysql-server:tag
+docker run -p 3306:3006 --name=mysql01 -d mysql/mysql-server:latest
+docker ps
+docker rm <image>
+docker exec -it mysql01 mysql -u root -proot
+
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root';
+CREATE database globechain;
+CREATE USER 'globechain'@'localhost' IDENTIFIED BY 'globechain';
+GRANT ALL PRIVILEGES ON globechain.* TO 'globechain'@'localhost';
+FLUSH PRIVILEGES;
+
+docker cp globechain.com.sql mysql01:/opt
+docker exec -it mysql01 mysql -u root -proot
+source /opt/globechain.com.sql
+```
+
 Showing the create table statements:
 
 ```
