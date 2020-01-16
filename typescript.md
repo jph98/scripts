@@ -27,6 +27,8 @@ export = foo;
 
 ## Classes and Interfaces 
 
+Classes and interfaces can be defined as follows:
+
 ```
 class Student {
     name: string;
