@@ -1,0 +1,37 @@
+# Project Makefile
+
+.DEFAULT_GOAL := all
+
+all: lint security test
+
+install:
+	pip install flake8
+
+build:
+	docker build --tag testdock:0.1 .
+
+# You can debug with docker events
+run:
+	docker run -i --name testdock -v /opt/pipeline testdock:0.1
+	docker cp testdock:/opt/pipeline/output.txt output.txt
+
+stop:
+	docker container stop testdock
+
+start:
+	docker container start --name testdock testdock:0.1
+
+logs:
+	docker logs testdock
+
+ssh:
+	docker exec -it testdock /bin/bash
+
+killall:
+	docker kill $(docker ps -q)
+
+remove:
+	docker rm testdock
+
+volumels:
+	docker volume ls
