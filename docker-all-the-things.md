@@ -1,8 +1,27 @@
 ## Docker
 
+See the docker-makefile example for example commands. 
+
 Cheatsheet - https://github.com/wsargent/docker-cheat-sheet
 
-Docker (Machines)
+## Running a Script
+
+The simplest Dockerfile could be something like follow for running a script:
+
+```
+FROM python:3.7
+
+WORKDIR /opt/pipeline
+
+RUN apt-get update 
+RUN apt-get install -y vim less
+
+COPY test.py /opt/pipeline
+   
+CMD ["python3", "test.py"]
+```
+
+## Docker (Machines)
 
 List all Machines
 
@@ -18,7 +37,7 @@ SSH into your docker instance
     
 See: https://docs.docker.com/machine/reference/
     
-Docker (Containers)
+## Docker Containers - Building
 
 Build a container from a Dockerfile (this will then be displayed in the images list once run).
 
@@ -125,11 +144,7 @@ Download with:
    
 You can search for a particular image on the command line with:
 
-    docker search java:java8
-  
-Install Docker toolbox - https://docs.docker.com/installation/mac/
-Products - http://www.docker.com/products/overview
-Setup an automated build - https://docs.docker.com/docker-hub/
+    docker search java:java8  
 
 ## Using Docker Images For Processing
 
@@ -166,7 +181,9 @@ It is created on the fly.
 You can use mount as follows which mounts /source on host to /app on the target:
 
     --mount type=bind,source="$(pwd)"/source,target=/app
-    
+
+Easy 
+
 ## Delete all the containers
 
     docker rm $(docker ps -a -q) -f
