@@ -15,6 +15,12 @@ Allow user to createdb role:
 
     ALTER USER jon CREATEDB;
 
+## PSQL
+
+Connect to database
+
+    psql -h localhost -U postgres
+
 Switch to new database
 
     \c dbname
