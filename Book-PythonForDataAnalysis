@@ -1,0 +1,95 @@
+# Python for Data Analysis
+
+## Basics/Terminology
+
+* Categorical (Nominal) Variable - variable that can take on one of a limited set of values (e.g. hair colour)
+* Ordinal - similar to categorical, but has ordering present, not necessarily evenly spaced (e.g 1,2,3,4)
+* Numerical - similar to ordinal, but has equally spaced (1000, 1500, 200)
+
+## Chapter 4 - Numpy Basics
+
+## Chapter 5 - Pandas
+
+## Chapter 6 - Data Loading
+
+## Chapter 7 - Data Wrangling
+
+### Merging, Concat, Combine 
+
+* Merge - merges dataframes
+* Concat - glues together objects
+* Combine_first - splicing together overlapping data
+
+### Reshaping
+
+* Stack - rotates or pviots columns into rows
+* Unstack - changes rows into columns
+
+Long/stacked format - when keys are stored in row format (think repeating realgdp, infl, unemp every three rows
+* This is common in time-series databases
+* You can pivot data in this format to a wide format instead
+
+You can transform data using a function using map.
+
+### Discrete/continuous data and Binning
+
+You can define bins (e.g. for age groups) and use cut in pandas to put continuous data into these.
+
+## Permuting and Random Sampling
+
+Permuting is randomly reordering a series of rows in a dataframe.
+
+Random sampling involves selecting a subset of the data
+
+## Computing Indicator/Dummy Variables
+
+Computing indicator variables (converting to a matrix for ML purposes) can be acomplished with the get_dummies function.
+
+## Chapter 8 - Plotting
+
+## Chapter 9 - Data Aggregation and Grouping
+
+Split Apply Combine Dynamics
+
+pivot_table can be used to provide a pivot.  Example given is the tipping dataset with sex and day as the pivot variables.
+
+Cross tabulation - computes across group frequencies
+
+```
+pd.crosstab(data.Gender, data.Handedness, margins=True)
+```
+
+## Chapter 10 - Time Series
+
+Pandas has a whole set of timeseries functions similar to moment.js for doing work here.  
+
+* Get four hour frequency: pd.date_range('1/1/2020', '1/3/2000 23:59', freq='4h')
+* Check for Dupe Values (For Multiple Dates in a Col): dup_ts['1/3/2000']
+* Date Ranges: pd.date_range('4/1/2021', '6/1/2021')
+* Hour/minute Representation: four_hours = Hour(4)
+* Week of Month (Every third Friday of each month): pd.date_range('4/1/2021', '6/1/2021', freq='WOM-3FRI')
+* Shifting Forward a Month/Back a Month: use ts.shift(1) - 1
+* Periods, Time Spans: p = pd.Period(2007, freq='A-DEC') or Period('2007-06', Q-JAN) for quarterly
+* You can convert between Timestamps and Periods easily
+* Downsampling/Upsampling: ts.resample('M', how='mean')
+
+This is way easier than writing your own logic and working with timestamps.
+
+### Moving Window Functions
+
+Common to have statistics evaluated over a sliding window or with exponentially decreasing weights.
+
+* rolling_mean
+
+## Chapter 11 - Financial and Economic
+
+* Time Series Cross Section Alignment
+* Calculate Volume (amount traded over a day) Weighted Average Price
+* Annual/Quarterly/Monthly/Daily - resample/reindex to the given frequency
+
+Factor Analysis - quantitative portfolio management technique.  
+* Portfolios have a number of weights e..g. stock price co-movement with an index (S&P 500) is known as a beta - common risk factor
+* Example given of a portfolio with three randomly generated factors (factor loadings) and some weights
+* 
+
+## Chapter 12 - Advanced Numpy
