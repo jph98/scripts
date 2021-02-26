@@ -20,6 +20,10 @@ Allow user to createdb role:
 
 ## PSQL
 
+List databases
+
+    \list
+    
 Switch to new database
 
     \c dbname
