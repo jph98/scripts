@@ -1,9 +1,11 @@
-# Intro
+# Intro and Manual
 
-* Basics - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
-* Migrating from Javascript - https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html
+https://www.typescriptlang.org/docs/handbook/intro.html
 
-## Basics
+1. Basics - https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+2. Migrating from Javascript - https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html
+
+## 1. Basics
 
 * parameter: type;
 * import foo = require("foo");
